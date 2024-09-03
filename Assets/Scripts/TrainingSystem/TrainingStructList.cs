@@ -9,6 +9,7 @@ public class TrainingStructList : MonoBehaviour
 
     [Header("Variables")]
     public int _percentage;
+    public int _trainDelayTime;
 
     int percentChkMinScore;
     int percentChkMaxScore;
@@ -38,16 +39,21 @@ public class TrainingStructList : MonoBehaviour
     [ContextMenu("Train")]
     public void Train()
     {
-        foreach(TrainingUnit unit in trainingUnits)
+        StartCoroutine(TrainUnitRoutine(trainingUnits));
+    }
+    IEnumerator TrainUnitRoutine(TrainingUnit[] units)
+    {
+        foreach (TrainingUnit unit in units)
         {
             var randomValue = UnityEngine.Random.Range(0, 101);
-            Debug.Log(randomValue);
             if (randomValue <= _percentage)
             {
-                Debug.Log("Training Success ! : "+unit._trainingRate);
+                Debug.Log("Training Success ! : " + unit._trainingRate);
+                yield return new WaitForSeconds(_trainDelayTime);
             }
             else
             {
+                Debug.Log("Training Fail=============");
                 break;
             }
         }

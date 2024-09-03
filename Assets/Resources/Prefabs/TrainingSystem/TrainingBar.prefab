@@ -199,6 +199,10 @@ PrefabInstance:
       value: TrainingGridLayout
       objectReference: {fileID: 0}
     - target: {fileID: 4845774774196788001, guid: c4110ecdc1981ba4bab4cac71c170b86, type: 3}
+      propertyPath: _trainDelayTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4845774774196788001, guid: c4110ecdc1981ba4bab4cac71c170b86, type: 3}
       propertyPath: list.Array.data[0].percentWeight
       value: 50
       objectReference: {fileID: 0}
