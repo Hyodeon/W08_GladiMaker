@@ -5,6 +5,7 @@ using Utils;
 
 public class Player : ActorBase
 {
+
     [Header("Basic Stats")]
     [Space]
     [Header("MaxHp (value)")]
@@ -35,22 +36,23 @@ public class Player : ActorBase
         Intialize();
     }
 
+    [Header("<color=green>ÌñâÎèô Ïï†ÎãàÎ©îÏù¥ÏÖò ÌÅ¥Î¶Ω")]
+    [SerializeField]
+    private List<AnimationClip> _animators = new List<AnimationClip>();
+
+
     public override void Intialize()
     {
         base.Intialize();
-        
-        Status.MaxHp = _maxHp;
-        Status.Hp = _maxHp;
-        Status.Attack = _attack;
-        Status.Accuracy = _accuracy;
-        Status.Evade = _evade;
-        Status.Guard = _guard;
 
-        Status.Strike = _strike;
-        Status.Slash = _slash;
-        Status.Penetration = _penetration;
-        Status.Ranged = _ranged;
-        Status.Counter = _counter;
+        _status = GameManager.Instance.PlayerStatus;
+
+        Debug.Log($"{gameObject.GetInstanceID()}");
+
+        if (_status == null)
+        {
+            Debug.Log("[Player.cs] Player Status Initialize Error!");
+        }
 
         myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
         myHealthBar.player = this;
@@ -62,30 +64,37 @@ public class Player : ActorBase
 
     public void BindActions()
     {
-        Actions.Add(TestAction);
-        Actions.Add(TestSkill);
+        Actions.Add(Action_Attack);
+        Actions.Add(Action_Skill);
         Actions.Add(TestRepeatedSkill);
     }
 
-    public SkillInfo TestAction()
+    public override void PlayAnimationClip(string name)
+    {
+        _animator.SetTrigger(WeaponType.Sword.ToString());
+    }
+
+    public SkillInfo Action_Attack()
     {
         Debug.Log($"{name} Attack");
 
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 1f;
-        skillInfo.Delay = 0.5f;
+        skillInfo.PlayerDamage = CalculateDamage();
+        skillInfo.Clip = _animators[5];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
     }
 
-    public SkillInfo TestSkill()
+    public SkillInfo Action_Skill()
     {
         Debug.Log($"{name} Skill");
 
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 2f;
-        skillInfo.Delay = 1f;
+        skillInfo.PlayerDamage = CalculateDamage();
+        skillInfo.Clip = _animators[5];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
@@ -95,10 +104,10 @@ public class Player : ActorBase
     {
         Debug.Log($"{name} Repeated Skill!!!!");
 
-        // √÷¥Î 5»∏ π›∫π, 50∆€ºæ∆Æ »Æ∑¸∑Œ ø©∑Øπ¯ πﬂµø
+        // ÏµúÎåÄ 5Ìöå Î∞òÎ≥µ, 50ÌçºÏÑºÌä∏ ÌôïÎ•†Î°ú Ïó¨Îü¨Î≤à Î∞úÎèô
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 2f;
-        skillInfo.Delay = 1f;
+        skillInfo.Clip = _animators[2];
         skillInfo.IsRepeated = true;
         skillInfo.RepeatProbability = 0.9f;
         skillInfo.MaxRepeatCount = 5;

@@ -24,6 +24,7 @@ public class BattleManager : MonoBehaviour
     private ActorBase _player;
     private ActorBase _enemy;
 
+    private Queue<float> _damageQueue;
 
     // Head to next Turn
     private bool _isNextTurn;
@@ -35,6 +36,12 @@ public class BattleManager : MonoBehaviour
     // is On Fighting
     private bool _isFighting;
 
+    private int _playerTurnCount;
+    private int _enemyTurnCount;
+
+    private int _playerAttackCount;
+    private int _criticalAttackCount;
+
     public void InitializeActor(ActorBase player, ActorBase enemy)
     {
 
@@ -45,8 +52,16 @@ public class BattleManager : MonoBehaviour
         _isPlayerTurn = false;
         _isFighting = false;
 
+        _playerTurnCount = 0;
+        _enemyTurnCount = 0;
+
+        _criticalAttackCount = 0;
+        _playerAttackCount = 0;
+
         _player.Intialize();
         _enemy.Intialize();
+
+        _damageQueue = new Queue<float>();
 
         StartCoroutine(StartBattleInTime(4f));
     }
@@ -71,8 +86,15 @@ public class BattleManager : MonoBehaviour
 
     private void ProceedAttack()
     {
-        if (_isPlayerTurn) StartCoroutine(AttackRoutine(_player.Attack()));
-        else StartCoroutine(AttackRoutine(_enemy.Attack()));
+        if (_isPlayerTurn)
+        {
+            StartCoroutine(AttackRoutine(_player.Attack(_playerTurnCount)));
+            _playerAttackCount++;
+        }
+        else
+        {
+            StartCoroutine(AttackRoutine(_enemy.Attack(_enemyTurnCount)));
+        }
     }
 
     private IEnumerator AttackRoutine(Func<SkillInfo> attackAction)
@@ -80,6 +102,11 @@ public class BattleManager : MonoBehaviour
         yield return null;
 
         SkillInfo skillInfo = attackAction.Invoke();
+
+        _damageQueue.Enqueue(skillInfo.PlayerDamage * skillInfo.DamageRatio);
+
+        if (_isPlayerTurn) _player.PlayAnimationClip(skillInfo.Clip.name);
+        else _enemy.PlayAnimationClip(skillInfo.Clip.name);
 
         if (skillInfo.IsRepeated)
         {
@@ -95,12 +122,11 @@ public class BattleManager : MonoBehaviour
 
             for (int i = 0; i < cnt - 1; i++)
             {
-                // 보여주기용
                 attackAction.Invoke();
             }
         }
 
-        yield return new WaitForSeconds(skillInfo.Delay);
+        yield return new WaitForSeconds(skillInfo.Clip.length + 0.5f);
 
         _isNextTurn = true;
     }
@@ -111,6 +137,37 @@ public class BattleManager : MonoBehaviour
         _enemy.StopAnimation();
     }
 
+    public void TakeDamage()
+    {
+        int currentDamage = Mathf.CeilToInt(_damageQueue.Dequeue());
+
+        Debug.Log($"{currentDamage} 의 데미지를 주었습니다!");
+
+        if (!_isPlayerTurn)
+        {
+            if (_player.GetDamageCheckDead(currentDamage))
+            {
+                // TODO : 게임 오버
+                Debug.Log("Game Over");
+                EndBattle();
+            }
+        }
+        else
+        {
+            if (currentDamage > _enemy.Status.MaxHp / 10)
+            {
+                _criticalAttackCount++;
+            }
+
+            if (_enemy.GetDamageCheckDead(currentDamage))
+            {
+                // TODO : 결과 집계
+                Debug.Log("Killed Enemy");
+                EndBattle();
+            }
+        }
+    }
+
     private IEnumerator StartBattleInTime(float time)
     {
         // TODO : 전투 시작 이펙트 적용
@@ -119,5 +176,36 @@ public class BattleManager : MonoBehaviour
 
         _isNextTurn = true;
         _isFighting = true;
+    }
+
+    private void EndBattle()
+    {
+        _isFighting = false;
+
+        if (_isPlayerTurn)
+        {
+            _enemy.PlayAnimationClip("Die");
+        }
+
+        float goldWeight = 1f;
+
+        float attackRate;
+        float overKillRate;
+        float lowHpRate;
+        float criticalRate;
+
+        // 1. 플레이어 공격 횟수
+        attackRate = 1f + _playerAttackCount / 100;
+
+        // 2. 오버킬 레이트
+        overKillRate = 1f + Mathf.Abs(_enemy.Status.Hp / _enemy.Status.MaxHp) * 6;
+
+        // 3. 플레이어 체력 낮음
+        lowHpRate = 1f;
+
+        // 4. 강력한 공격
+        criticalRate = 1f + _criticalAttackCount / 10;
+
+        goldWeight *= attackRate * overKillRate * lowHpRate * criticalRate;
     }
 }

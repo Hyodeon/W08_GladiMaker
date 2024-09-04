@@ -5,28 +5,40 @@ using Utils;
 
 public class EnemySample : ActorBase
 {
-    [Header("Basic Stats")]
+    [Header("<color=yellow>기본 스탯")]
     [Space]
-    [Header("MaxHp (value)")]
+    [Header("최대 체력 <color=yellow>(값)")]
     [SerializeField] private float _maxHp;
-    [Header("Attack (value)")]
+    [Header("공격력 <color=yellow>(값)")]
     [SerializeField] private float _attack;
-    [Header("Accuracy (%)")]
+    [Header("정확도 <color=purple>(%)")]
     [SerializeField] private float _accuracy;
-    [Header("Evade (%)")]
+    [Header("회피율 <color=purple>(%)")]
     [SerializeField] private float _evade;
-    [Header("Guard (value)")]
+    [Header("방어도 <color=yellow>(값)")]
     [SerializeField] private float _guard;
 
     [Space]
 
-    [Header("Specific Stats")]
+    [Header("<color=red>특수 스탯")]
+    [Space]
+    [Header("타격 <color=purple>(%)")]
     [SerializeField] private float _strike;
+    [Header("참격 <color=purple>(%)")]
     [SerializeField] private float _slash;
+    [Header("관통 <color=purple>(%)")]
     [SerializeField] private float _penetration;
+    [Header("투척 <color=purple>(%)")]
     [SerializeField] private float _ranged;
+    [Header("반격 <color=purple>(%)")]
     [SerializeField] private float _counter;
 
+    [Space]
+    [Space]
+
+    [Header("<color=green>행동 애니메이션 클립")]
+    [SerializeField]
+    private List<AnimationClip> _animators = new List<AnimationClip>();
 
     [Space]
     [SerializeField] HealthBar myHealthBar;
@@ -73,7 +85,7 @@ public class EnemySample : ActorBase
 
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 1f;
-        skillInfo.Delay = 0.5f;
+        skillInfo.Clip = _animators[0];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
@@ -85,7 +97,7 @@ public class EnemySample : ActorBase
 
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 2f;
-        skillInfo.Delay = 1f;
+        skillInfo.Clip = _animators[1];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
@@ -97,7 +109,7 @@ public class EnemySample : ActorBase
 
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 2f;
-        skillInfo.Delay = 1f;
+        skillInfo.Clip = _animators[2];
         skillInfo.IsRepeated = true;
         skillInfo.RepeatProbability = 0.5f;
         skillInfo.MaxRepeatCount = 5;
