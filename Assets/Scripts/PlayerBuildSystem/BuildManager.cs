@@ -54,9 +54,11 @@ public class BuildManager : MonoBehaviour
         switch (currentState)
         {
             case BuildState.Event:
+                ItemShopUIObj.SetActive(false);
                 EnableUI(EventUIObj);
                 break;
             case BuildState.Train:
+                ItemShopUIObj.SetActive(true);
                 EnableUI(TrainUIObj);   
                 break;
             case BuildState.Battle:

@@ -169,7 +169,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 65.31, y: 0}
-  m_SizeDelta: {x: 700, y: 900}
+  m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6386053300509172616
 CanvasRenderer:
@@ -302,15 +302,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list:
-  - _npcSprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
-    _title: "\uC548\uB1FD\uD558\uC138\uC6A9~"
-    _info: "\uBC29\uAC00\uC6CC\uC6A9~ "
+  - _npcSprite: {fileID: 21300000, guid: 609c48ebbaaf6134fa7a20aac107745a, type: 3}
+    _title: "\uC8FC\uC815\uBC45\uC774 \uD560\uC544\uBC84\uC9C0"
+    _info: "\"\uC624\uD638\uD638, \uB0B4\uAC00 \uBCF4\uAE30\uC5D0 \uC790\uB124\uB294
+      \uAC80\uD22C\uC7A5 \uC81C\uC77C\uC758 \uD0C0\uACA9\uC7C1\uC774\uAC00 \uB420
+      \uAC00\uB2A5\uC131\uC774 \uB18D\uD6C4\uD558\uB124... \uB0B4\uAC00 \uC655\uB144\uC5D0
+      \uC774\uB984\uC744 \uB0A0\uB9AC\uB358 \uD0C0\uACA9\uC7C1\uC774\uC600\uC73C\uB2C8,
+      \uB098\uC758 \uAC00\uB974\uCE68\uC744 \uBC1B\uC544\uBCF4\uB294 \uAC83\uC774
+      \uC5B4\uB5A4\uAC00?"
     choices:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8850833984977564111}
           m_TargetAssemblyTypeName: EventList, Assembly-CSharp
-          m_MethodName: Event0_Choice0_hello
+          m_MethodName: Event0_Choice0_StrikeUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -324,7 +329,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8850833984977564111}
           m_TargetAssemblyTypeName: EventList, Assembly-CSharp
-          m_MethodName: Event0_Choice0_hello
+          m_MethodName: Event0_Choice1_MoneyEarn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -335,8 +340,546 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     choicesInfo:
-    - "\uD558\uC774"
-    - "\uD558\uC774\uD558\uC774"
+    - "1. \uD560\uC544\uBC84\uC9C0\uC758 \uAC00\uB974\uCE68\uC744 \uBC1B\uB294\uB2E4.<color=red>(\uD0C0\uACA9
+      + 20)</color>"
+    - "2. \uBB34\uC2DC\uD558\uACE0 \uD560\uC544\uBC84\uC9C0\uC758 \uB3C8\uC744 \uB72F\uB294\uB2E4.
+      <color=red>(\uB3C8 +5000)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 7d93e5625591dfb46ad568bee8da1e3f, type: 3}
+    _title: "\uBCC0\uAE30\uB9E8\uC758 \uB4F1\uC7A5"
+    _info: "\"\uC138\uC0C1 \uC0AC\uB78C\uB4E4\uC740 \uB098\uB97C \uB354\uB7FD\uB2E4\uACE0
+      \uBB34\uC2DC\uD558\uC9C0\uB9CC, \uB0B4\uAC00 \uC5C6\uB294 \uC0AC\uD68C\uB294
+      \uB054\uCC0D\uD558\uAE30 \uC9DD\uC774 \uC5C6\uC744\uAC78\uC138. \uC790\uB124\uB3C4
+      \uB2F9\uC7A5 \uB098\uB97C \uCC2C\uC591\uD558\uB3C4\uB85D!\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event1_Choice0_AllStat
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event1_Choice1_LossHp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uC22D\uBC30\uD569\uB2C8\uB2E4 GOAT<color=red>(\uC804\uCCB4 \uC2A4\uD0EF
+      + 10)</color>"
+    - "2.  \uAEBC\uC9C0\uC2ED\uC1FC JOAT <color=red>(\uCCB4\uB825 - 10)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 88d98cc49a16e6443b12957f472dffa7, type: 3}
+    _title: "\uBE44\uC2E4\uC774\uC758 \uD558\uC18C\uC5F0"
+    _info: "\"\uC800\uAE30\uC694...? \uB204\uAD6C \uC5C6\uC5B4\uC694...? \uC800 \uC190\uC774
+      \uB2E4 \uB5A8\uC5B4\uC838\uC11C \uBAB8\uC744 \uC870\uD569\uD560 \uC218\uAC00
+      \uC5C6\uC5B4\uC694... \uC800 \uC880 \uB9DE\uCDB0\uC8FC\uC138\uC694!!!\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event1_Choice0_AllStat
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event1_Choice1_LossHp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uB3C4\uC640\uC900\uB2E4. <color=red>(\uB3C8 + 3000)</color>"
+    - "2.  \uBC1F\uACE0 \uC9C0\uB098\uAC04\uB2E4. <color=red>(\uACF5\uACA9\uB825
+      +5)</color>"
+  - _npcSprite: {fileID: 21300000, guid: dc3df9449cf10ee4e987ea5d131a93f3, type: 3}
+    _title: "\uC774\uC57C\uAE30\uAFBC \uC3D9\uB3C5\uC0C8"
+    _info: "\"\uC5B4\uC774 \uC18C\uB144. \uC774 \uBAB8\uC758 \uBAA8\uD5D8\uB2F4 \uB4E4\uC5B4\uBD10\uB77C.
+      \uB098\uB294 \uD558\uB298\uC744 \uB0A0\uACE0 \uC2F6\uC5C8\uB2E4. \uADF8\uB798\uC11C
+      \uB098\uB294 \uAE00\uB77C\uC774\uB354\uB97C \uD0D4\uB2E4. \uC5B4\uCA4C\uAD6C
+      \uC800\uCA4C\uAD6C (\uC911\uB7B5)\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event3_Choice0_AttackUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event3_Choice1_LossHp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uD55C \uB300 \uD32C\uB2E4. <color=red>(\uACF5\uACA9\uB825 + 10)</color>"
+    - "2.  \uACBD\uCCAD\uD574\uC900\uB2E4. <color=red>(\uCCB4\uB825 - 10 / \uB3C8
+      + 7500)</color>"
+  - _npcSprite: {fileID: 21300000, guid: ee4d0c8de24d05c4d9b97792627278c1, type: 3}
+    _title: "\uCFE0\uD0A4 \uC9D1\uCC29\uB0A8\uACFC\uC758 \uB9CC\uB0A8"
+    _info: "\"\uCFE0\uD0A4\uC57C \uB9D0\uB85C \uB3C4\uD30C\uBBFC\uC758 \uC6D0\uCC9C\uC774\uC9C0!
+      \uCFE0\uD0A4\uB97C \uADF8\uB0E5 \uBA39\uC5B4\uB3C4 \uB9DB\uC788\uB294\uB370
+      7\uAC1C\uB97C \uB3D9\uC2DC\uC5D0 \uBA39\uC73C\uBA74 \uC5BC\uB9C8\uB098 \uB3C4\uD30C\uBBFC\uC774
+      \uC3DF\uC544\uC838\uB098\uC624\uACA0\uC5B4?\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event4_Choice0_HpUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event4_Choice1_EvaUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uCFE0\uD0A4\uB97C \uBA39\uB294\uB2E4. <color=red>(\uCCB4\uB825 + 10)</color>"
+    - "2.  \uADF8\uB97C \uC5ED\uBCD1\uCDE8\uAE09\uD55C\uB2E4. <color=red>(\uD68C\uD53C
+      + 10)</color>"
+  - _npcSprite: {fileID: 21300000, guid: b7828386a4318594e96b584649e788bd, type: 3}
+    _title: "\uBC31\uB9C8\uC640\uC758 \uCDA9\uB3CC"
+    _info: "\uAC11\uC790\uAE30 \uBC31\uB9C8\uAC00 \uB2F9\uC2E0\uC5D0\uAC8C \uB3CC\uC9C4\uD574\uC635\uB2C8\uB2E4!
+      \uB2F9\uC2E0\uC740 \uD53C\uD560 \uC218 \uC788\uC744\uAE4C\uC694?"
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event5_Choice0_HpDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event5_Choice1_GuardUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uD53C\uD574\uBCF8\uB2E4. <color=red>(\uCCB4\uB825 -5 / 50%\uB85C \uD68C\uD53C+50)</color>"
+    - "2.  \uBC84\uD2F4\uB2E4 <color=red>(\uBC29\uC5B4\uB825 + 10)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 827f4cbe64706b947a4ba8d9f458ec11, type: 3}
+    _title: "\uC228\uB9C9\uD788\uB294 \uCD94\uACA9\uC804"
+    _info: "\uB625\uACFC \uD734\uC9C0\uAC00 \uC228\uB9C9\uD788\uB294 \uCD94\uACA9\uC804\uC744
+      \uBC8C\uC774\uACE0 \uC788\uC2B5\uB2C8\uB2E4! \uB2F9\uC2E0\uC740 \uB3C8\uC744
+      \uAC74\uB2E4\uBA74 \uC5B4\uB514\uC5D0 \uAC78\uACA0\uC2B5\uB2C8\uAE4C?"
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event6_Choice0_Money
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event6_Choice1_TrainRate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uB625 <color=red>( 50%\uB85C \uB3C8+10000)</color>"
+    - "2.  \uD734\uC9C0 <color=red>(50%\uB85C  \uCF64\uBCF4\uD6A8\uC728+0.1)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 6c16915166f5e8146b21fc16536eaed7, type: 3}
+    _title: "\uC2AC\uD508 \uB300\uB9AC\uBBF8"
+    _info: "\"\uC220 \uB9C8 \uC2DC \uACE0 \uC2DC \uD37C~ \uC220 \uC774 \uBD80 \uC870
+      \uCE90~ \""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event7_Choice0_Money
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event7_Choice1_TrainRate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uC54C\uBE60\uB2E4.  <color=red>( \uB3C8\uC744 \uBAA8\uB450 \uC783\uACE0,
+      \uADF8\uC5D0 \uBE44\uB840\uD574\uC11C \uD22C\uCC99\uC0C1\uC2B9)</color>"
+    - "2.  \uC54C\uBE60No\uB2E4. <color=red>(\uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0
+      \uC54A\uC74C)</color>"
+  - _npcSprite: {fileID: 21300000, guid: aafd8f8e2672ec744b0cf60f5655fe9e, type: 3}
+    _title: "\uBD88\uC9EC\uBF55\uC758 \uC2AC\uD508 \uC0AC\uC5F0"
+    _info: "\"\uC138\uC0C1\uC774 \uBC09\uB2E4. \uB204\uAD70\uAC00\uB294 \uC0AC\uB791\uD558\uB294
+      \uC0AC\uB78C\uC744 \uB9CC\uB098\uACE0, \uB204\uAD70\uAC00\uB294 \uAC00\uC871\uACFC
+      \uC2DC\uAC04\uC744 \uBCF4\uB0B8\uB2E4. \uADF8\uAC8C \uC65C \uB098\uC77C \uC218
+      \uC5C6\uB294 \uAC78\uAE4C. \uB098\uB294 \uB108\uBB34\uB098\uB3C4 \uB9E4\uC6B4
+      \uBD88\uC9EC\uBF55... \uADF8\uB9AC\uACE0 \uB0B4 \uC190\uB2D8\uC740 \uB9E4\uC6B4
+      \uAC83\uC744 \uBABB\uBA39\uB294 \uC0AC\uB78C... \uC774 \uBB34\uC2A8 \uC6B4\uBA85\uC758
+      \uC7A5\uB09C\uC774\uB780 \uB9D0\uC778\uAC00.\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event8_Choice0_Attack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event8_Choice1_Acc
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uC9DC\uC7A5\uBA74\uC774 \uB354 \uC88B\uB2E4 \uD55C\uB2E4.  <color=red>(\uACF5\uACA9\uB825
+      * 1.1)</color>"
+    - "2.  \uADF8\uC5D0\uAC8C \uC0AC\uB791\uC758 \uAC10\uC815\uC744 \uC54C\uB824\uC900\uB2E4.
+      <color=red>(\uBA85\uC911 + 20)</color>"
+  - _npcSprite: {fileID: 21300000, guid: af9a32be35158ef4f952bca550e5fa8b, type: 3}
+    _title: "\uC870\uC6B0\uC11D.\uC694\uAD6C\uB974\uD2B8.\uCEE4\uBE44.\uC544\uB839"
+    _info: "\uC870\uC6B0\uC11D. \uC694\uAD6C\uB974\uD2B8. \uCEE4\uBE44. \uC544\uB839"
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event9_Choice0
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event9_Choice0
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. ?????  <color=red>(\uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0 \uC54A\uC74C)</color>"
+    - "2.  \uCCA0\uD559\uC744 \uAE68\uB2EC\uC558\uB2E4. <color=red>(\uC544\uBB34
+      \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0 \uC54A\uC74C)</color>"
+  - _npcSprite: {fileID: 21300000, guid: ff5958e946cbf7241a4ccf713b1a28df, type: 3}
+    _title: "\uCF67 \uC18D \uB300\uD0D0\uD5D8"
+    _info: "\"\uCF54\uAC00 \uB108\uBB34 \uB2F5\uB2F5\uD574\uC11C \uCF54\uB97C \uD30C\uACE0
+      \uC788\uC5C8\uC5B4. \uB0B4 \uCF67 \uC18D\uC5D0\uC11C \uB098\uC628 \uACB0\uACFC\uBB3C
+      \uAC19\uC774 \uBCFC\uB798?\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event10_Choice0_AttackUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event10_Choice1_AllStat
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uC8FD\uC778\uB2E4.  <color=red>(\uACF5\uACA9\uB825 + 5)</color>"
+    - "2.  \uD638\uAE30\uC2EC\uC744 \uB0B4\uBCF8\uB2E4. <color=red>(5% \uD655\uB960\uB85C
+      \uC804\uC2A4\uD0EF + 50)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 7df2d53cb9247af41bf17424c9e87670, type: 3}
+    _title: "\uC774\uC6C3\uC9D1 \uADF8\uB140\uC11D"
+    _info: "\uC774\uC6C3\uC9D1\uC5D0 \uC774\uC0C1\uD55C \uB140\uC11D\uC774 \uC774\uC0AC\uC654\uC2B5\uB2C8\uB2E4.
+      \uB5A1\uC744 \uB3CC\uB9AC\uB7EC \uC628 \uAC83 \uAC19\uC740\uB370 \uC5B4\uB5BB\uAC8C
+      \uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event11_Choice0_Guard
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event11_Choice1_Hp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uB5A1 \uD558\uB098 \uC8FC\uB2C8 \uC548\uC7A1\uC544\uBA39\uB294\uB2E4. 
+      <color=red>(\uBE59\uC5B4\uB825 + 30)</color>"
+    - "2.  \uC7A1\uC544\uBA39\uB294\uB2E4. <color=red>(\uCCB4\uB825 + 30)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 173fabca9b15002459681448785ca5e3, type: 3}
+    _title: "\uC815\uC0C1\uB300\uC804"
+    _info: "\"\uBC15\uBD80\uC7A5\uB2D8 \uC2AC\uC2AC \uC740\uD1F4\uD558\uC154\uC57C\uC8E0~\"\n\"\uC544\uC9C1
+      100\uB144\uC740 \uC774\uB974\uB2E4...\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event12_Choice0_Lee
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event12_Choice1_Park
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uC774\uBD80\uC7A5\uC774 \uC774\uAE34\uB2E4.  <color=red>(50% \uD655\uB960\uB85C
+      \uCC38\uACA9 +100)</color>"
+    - "2. \uBC15\uBD80\uC7A5\uC774 \uC774\uAE34\uB2E4.  <color=red>(50% \uD655\uB960\uB85C
+      \uD0C0\uACA9 +100)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 09386649ffa96e54fb9379ec7f9a966e, type: 3}
+    _title: "\uACE0\uB9B4\uB77C \uD0C8\uCD9C\uC0AC\uAC74"
+    _info: "\uB3D9\uBB3C\uC6D0\uC5D0\uC11C \uACE0\uB9B4\uB77C\uAC00 \uD0C8\uCD9C\uD588\uC2B5\uB2C8\uB2E4.
+      \uACE0\uB9B4\uB77C\uB97C \uBD99\uC7A1\uB294\uB2E4\uBA74, \uD604\uC0C1\uAE08\uC744
+      \uD0C8 \uC218 \uC788\uACA0\uC9C0\uB9CC \uC798\uBABB\uD588\uB2E4 \uC8FD\uC744
+      \uC218\uB3C4 \uC788\uC2B5\uB2C8\uB2E4."
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event13_Choice0_Gamble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event9_Choice0
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uB3C4\uC804\uD55C\uB2E4.  <color=red>(50% \uD655\uB960\uB85C \uB3C8 +
+      50000 / \uCCB4\uB825 \uC808\uBC18)</color>"
+    - "2. \uBB34\uC2DC\uD55C\uB2E4.  <color=red>(\uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0
+      \uC54A\uC74C)</color>"
+  - _npcSprite: {fileID: 21300000, guid: 1646cbf2c9366f349aaeb81416ef943b, type: 3}
+    _title: "\uAF2C\uCE58\uB97C \uC88B\uC544\uD558\uB294 \uAE30\uC0AC"
+    _info: "\"\uB098\uB294 \uAF2C\uCE58\uAC00 \uC88B\uC544! \uB108\uB3C4 \uAF2C\uCE58\uAC00
+      \uC88B\uC544?\""
+    choices:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event13_Choice0_Gamble
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event9_Choice0
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    choicesInfo:
+    - "1. \uB098\uB3C4 \uC88B\uC544.  <color=red>(\uCCB4\uB825 * 1.1)</color>"
+    - "2. \uADF8\uB7F0\uAC70 \uC65C \uBA39\uC5B4?  <color=red>(\uACF5\uACA9\uB825
+      + 20)</color>"
   _choiceBtnPrefab: {fileID: 4363788649131492387, guid: 3bf18795373d3fa4f81926aab94431dd, type: 3}
   _npcImage: {fileID: 3034466491529406059}
   _titleText: {fileID: 4275581498305144591}

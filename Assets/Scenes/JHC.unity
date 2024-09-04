@@ -1385,43 +1385,43 @@ MonoBehaviour:
     _name: "\uB9E5\uBC18\uC11D \uB2EC\uAC40"
     _info: "\uB9C8\uC2DC\uBA74 \uC7A0\uC2DC \uAE30\uC5B5\uC744 \uC783\uACE0 \uD6C8\uB828\uC774
       \uB2E4\uC2DC \uC0DD\uC131\uB429\uB2C8\uB2E4."
-    _price: 200
+    _price: 20000
   - _no: 1
     _sprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
     _name: "\uAC01\uAC1C\uBE64\uC2A4"
     _info: "\uCCB4\uB825\uC774 30 \uC624\uB985\uB2C8\uB2E4."
-    _price: 30
+    _price: 3000
   - _no: 2
     _sprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
     _name: "\uAC00\uC2DC\uBE64\uC2A4"
     _info: "\uACF5\uACA9\uC774 30 \uC624\uB985\uB2C8\uB2E4."
-    _price: 30
+    _price: 3000
   - _no: 3
     _sprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
     _name: "\uAC15\uCCA0\uBE64\uC2A4"
     _info: "\uBC29\uC5B4\uAC00 30 \uC624\uB985\uB2C8\uB2E4."
-    _price: 30
+    _price: 3000
   - _no: 4
     _sprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
     _name: "\uAD6C\uBA4D\uBE64\uC2A4"
     _info: "\uBA85\uC911\uC774 30 \uC624\uB985\uB2C8\uB2E4."
-    _price: 30
+    _price: 3000
   - _no: 5
     _sprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
     _name: "T\uBE64\uC2A4"
     _info: "\uD68C\uD53C\uAC00 30 \uC624\uB985\uB2C8\uB2E4."
-    _price: 30
+    _price: 3000
   - _no: 6
     _sprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
     _name: "\uBD80\uCD94 \uC62C\uB9B0 \uC7A5\uC5B4\uAD6C\uC774"
     _info: "\uB2E4\uC74C \uD6C8\uB828 \uC2DC, \uC2E4\uD328\uD655\uB960\uC758 \uAC10\uC18C\uD3ED\uC774
       \uB0AE\uC544\uC9D1\uB2C8\uB2E4."
-    _price: 350
+    _price: 35000
   - _no: 7
     _sprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
     _name: "\uACE0\uCD94\uC7A5\uCC38\uAE30\uB984\uBCF6\uC74C"
     _info: "\uCF64\uBCF4 \uBC30\uC728\uC774 0.1 \uC99D\uAC00\uD569\uB2C8\uB2E4."
-    _price: 300
+    _price: 30000
 --- !u!1 &790581059
 GameObject:
   m_ObjectHideFlags: 0
