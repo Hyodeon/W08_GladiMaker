@@ -65,10 +65,10 @@ public class EnemySample : ActorBase
         Status.Ranged = _ranged;
         Status.Counter = _counter;
 
-        myHealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
-        myHealthBar.Enemy = this;
-        myHealthBar.max_HP = _maxHp;
-        myHealthBar.Initialize();
+        //myHealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
+        //myHealthBar.Enemy = this;
+        //myHealthBar.max_HP = _maxHp;
+        //myHealthBar.Initialize();
         BindActions();
     }
 

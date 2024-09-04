@@ -80,6 +80,8 @@ public class GameManager : MonoBehaviour
         _playerStatus.Counter = 0;
     }
 
+    
+
     #region Status Management
 
     public void SetStatus(Status status)

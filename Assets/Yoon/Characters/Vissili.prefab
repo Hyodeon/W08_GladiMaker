@@ -599,7 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7005001851989964756}
   - component: {fileID: 1423826290476012689}
-  - component: {fileID: 8713858074386644906}
+  - component: {fileID: 8954122596972036694}
   m_Layer: 0
   m_Name: Vissili
   m_TagString: Enemy
@@ -636,7 +636,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f27a0be93399f28468f4d704921f96dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -644,7 +644,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8713858074386644906
+--- !u!114 &8954122596972036694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,11 +653,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7444808472329751549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fff3ab638835f43855a2aa84eaec02, type: 3}
+  m_Script: {fileID: 11500000, guid: 518318f82183be14b97e3f5c6bb2b241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 0
-  _attack: 0
+  _maxHp: 50
+  _attack: 5
   _accuracy: 0
   _evade: 0
   _guard: 0
@@ -666,7 +666,9 @@ MonoBehaviour:
   _penetration: 0
   _ranged: 0
   _counter: 0
-  myHealthBar: {fileID: 0}
+  _animators:
+  - {fileID: 7400000, guid: 5e6c9b8e1d7a5e24caf1e64b73610d5b, type: 2}
+  - {fileID: 7400000, guid: 5e6c9b8e1d7a5e24caf1e64b73610d5b, type: 2}
 --- !u!1 &9146278651744714215
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,30 +5,6 @@ using Utils;
 
 public class Player : ActorBase
 {
-
-    [Header("Basic Stats")]
-    [Space]
-    [Header("MaxHp (value)")]
-    [SerializeField] private float _maxHp;
-    [Header("Attack (value)")]
-    [SerializeField] private float _attack;
-    [Header("Accuracy (%)")]
-    [SerializeField] private float _accuracy;
-    [Header("Evade (%)")]
-    [SerializeField] private float _evade;
-    [Header("Guard (value)")]
-    [SerializeField] private float _guard;
-
-    [Space]
-
-    [Header("Specific Stats")]
-    [SerializeField] private float _strike;
-    [SerializeField] private float _slash;
-    [SerializeField] private float _penetration;
-    [SerializeField] private float _ranged;
-    [SerializeField] private float _counter;
-
-    [Space]
     [SerializeField] HealthBar myHealthBar;
 
     private void Start()
@@ -54,10 +30,10 @@ public class Player : ActorBase
             Debug.Log("[Player.cs] Player Status Initialize Error!");
         }
 
-        myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
-        myHealthBar.player = this;
-        myHealthBar.max_HP = _maxHp;
-        myHealthBar.Initialize();
+        //myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
+        //myHealthBar.player = this;
+        //myHealthBar.max_HP = _maxHp;
+        //myHealthBar.Initialize();
 
         BindActions();
     }
