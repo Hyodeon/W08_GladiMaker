@@ -34,18 +34,21 @@ public class Skill_Effect_Manager : MonoBehaviour
 
     public void Spawn_Weapon_Trail()
     {
+        if (Current_Weapon.GetComponent<Weapon_Skill>().Weapon_Trail == null) return;
         var effect = Instantiate(Current_Weapon.GetComponent<Weapon_Skill>().Weapon_Trail, Current_Enemy.transform.position, Quaternion.identity);
         Destroy(effect, .5f);
     }
 
     public void Spawn_Weapon_Effect()
     {
+        if (Current_Weapon.GetComponent<Weapon_Skill>().Weapon_Effect == null) return;
         var effect = Instantiate(Current_Weapon.GetComponent<Weapon_Skill>().Weapon_Effect, Current_Enemy.transform.position, Quaternion.identity);
         Destroy(effect, .5f);
     }
 
     public void Spawn_Hit_Effect()
     {
+        if (Current_Weapon.GetComponent<Weapon_Skill>().Hit_Effect == null) return;
         var effect = Instantiate(Current_Weapon.GetComponent<Weapon_Skill>().Hit_Effect, Current_Enemy.transform.position, Quaternion.identity);
         Destroy(effect, .5f);
     }

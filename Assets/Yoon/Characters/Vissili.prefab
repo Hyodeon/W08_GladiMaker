@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -466008365
+  m_SortingLayerID: 2014960861
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -9198855195657846984, guid: 8f4663500a00ce548a29c7a28a80c03e, type: 3}
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -466008365
+  m_SortingLayerID: 2014960861
   m_SortingLayer: 1
   m_SortingOrder: -1
   m_Sprite: {fileID: 1470494929566854673, guid: 8f4663500a00ce548a29c7a28a80c03e, type: 3}
@@ -238,7 +238,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -466008365
+  m_SortingLayerID: 2014960861
   m_SortingLayer: 1
   m_SortingOrder: -1
   m_Sprite: {fileID: 2183823915522145498, guid: 8f4663500a00ce548a29c7a28a80c03e, type: 3}
@@ -323,7 +323,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -466008365
+  m_SortingLayerID: 2014960861
   m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: 2447602121042496333, guid: 8f4663500a00ce548a29c7a28a80c03e, type: 3}
@@ -407,7 +407,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -466008365
+  m_SortingLayerID: 2014960861
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 3931222835063382286, guid: 8f4663500a00ce548a29c7a28a80c03e, type: 3}
@@ -491,7 +491,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -466008365
+  m_SortingLayerID: 2014960861
   m_SortingLayer: 1
   m_SortingOrder: -1
   m_Sprite: {fileID: 7381343782021374218, guid: 8f4663500a00ce548a29c7a28a80c03e, type: 3}
@@ -575,7 +575,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -466008365
+  m_SortingLayerID: 2014960861
   m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9b2295da1b9c7744f8e8aff826086a76, type: 3}
