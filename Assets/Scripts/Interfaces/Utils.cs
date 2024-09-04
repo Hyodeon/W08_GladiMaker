@@ -62,21 +62,33 @@ namespace Utils
         public int MaxRepeatCount = 1;
     }
 
-    public class Weapon
+    [System.Serializable]
+    public struct Weapon
     {
-        public float WeaponDamage = 1f;
+        public float WeaponDamage;
+        public WeaponTier Tier;
+        public WeaponAttackType Type;
+        public SkillMechanism Mechanic;
 
-        public WeaponTier Tier = WeaponTier.Common;
+        public float Per_ActivationPercentage;
+        public float Per_DamageRatio;
 
-        public WeaponAttackType Type = WeaponAttackType.Strike;
+        public int Turn_TurnCount;
+        public float Turn_DamageRatio;
 
-        public SkillMechanism Mechanic = SkillMechanism.Percentage;
-
-        public float    Per_ActivationPercentage = 0f;
-        public float    Per_DamageRatio = 0f;
-
-        public int      Turn_TurnCount = 0;
-        public float    Turn_DamageRatio = 0f;
+        // 생성자 추가
+        public Weapon(float weaponDamage, WeaponTier tier, WeaponAttackType type, SkillMechanism mechanic,
+                      float perActivationPercentage, float perDamageRatio, int turnTurnCount, float turnDamageRatio)
+        {
+            WeaponDamage = weaponDamage;
+            Tier = tier;
+            Type = type;
+            Mechanic = mechanic;
+            Per_ActivationPercentage = perActivationPercentage;
+            Per_DamageRatio = perDamageRatio;
+            Turn_TurnCount = turnTurnCount;
+            Turn_DamageRatio = turnDamageRatio;
+        }
     }
 
     public enum WeaponAttackType

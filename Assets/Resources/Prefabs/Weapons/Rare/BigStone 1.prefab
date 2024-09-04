@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7066655656619843785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6311772208104942876}
+  - component: {fileID: 2582128087107940747}
+  - component: {fileID: 7783502861414789580}
+  - component: {fileID: -8883249507570257075}
+  m_Layer: 0
+  m_Name: BigStone 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6311772208104942876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066655656619843785}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00085925363, y: -0.02328958, z: -0.03685924, w: 0.9990487}
+  m_LocalPosition: {x: -0.031, y: -0.312, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -0.197, y: -2.664, z: -4.221}
+--- !u!212 &2582128087107940747
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066655656619843785}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1983798285
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 238335a91976f6d4985e49d780c4d955, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5, y: 5}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &7783502861414789580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066655656619843785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740831d587f830546aed3a1c1c3cf5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponOffsetPosition: {x: -0.031, y: -0.312}
+  weaponOffsetRotation: {x: -0.197, y: -2.664, z: -4.221}
+  weaponOffsetScale: {x: 0.4, y: 0.4, z: 1}
+  Enemy: {fileID: 0}
+  my_WeaponType: 3
+  Weapon_Trail: {fileID: 0}
+  Weapon_Effect: {fileID: 0}
+  Hit_Effect: {fileID: 3542004156341354139, guid: 82aadd2add482b049b80fcf1f1d539d5, type: 3}
+  Player: {fileID: 0}
+--- !u!114 &-8883249507570257075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066655656619843785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0efd9b2bbd998f409acc4d9798f5bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon:
+    WeaponDamage: 75
+    Tier: 1
+    Type: 3
+    Mechanic: 0
+    Per_ActivationPercentage: 0
+    Per_DamageRatio: 0
+    Turn_TurnCount: 5
+    Turn_DamageRatio: 3
+  weaponStruct:
+    _name: "\uC9F1\uB3CC"
+    _skillName: 
+    _skillInfo: "5\uD134\uC5D0 \uD55C \uBC88 \uC9F1\uB3CC\uC744 \uAC15\uD558\uAC8C
+      \uB358\uC9D1\uB2C8\uB2E4."
