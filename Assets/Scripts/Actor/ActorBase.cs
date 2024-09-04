@@ -7,7 +7,7 @@ using Utils;
 
 public class ActorBase : MonoBehaviour
 {
-    private Status _status;
+    protected Status _status;
 
     public Status Status { get { return _status; } }
 
@@ -15,8 +15,12 @@ public class ActorBase : MonoBehaviour
 
     public List<Func<SkillInfo>> Actions { get { return _actions; } }
 
-    private Animator _animator;
-    
+    protected Animator _animator;
+
+    private Weapon _currentWeapon;
+
+    public Weapon CurrentWeapon { get { return _currentWeapon; } }
+
     public Animator Animator { get { return _animator; } }
 
     public virtual void Intialize()
@@ -26,21 +30,26 @@ public class ActorBase : MonoBehaviour
         _animator = GetComponent<Animator>();
 
         // TODO : Animator Idle로 설정하기
+        _animator.Play("Idle");
+
+        _currentWeapon = new Weapon();
 
         Debug.Log($"Initialized {name}");
     }
 
-    public Func<SkillInfo> Attack()
+    public Func<SkillInfo> Attack(int turnCount)
     {
-        int result = UnityEngine.Random.value < 0.3f ? 2 : 0;
+        int result = UnityEngine.Random.value < 0.3f ? 1 : 0;
 
         return Actions[result];
     }
 
     public bool GetDamageCheckDead(int damage)
     {
+
         Status.Hp -= damage;
-        
+        Debug.Log($"{name}: {damage} 만큼의 피해를 입었습니다! (현재 체력: {Status.Hp}");
+
         if (Status.Hp < 0)
         {
             return true;
@@ -49,10 +58,57 @@ public class ActorBase : MonoBehaviour
         return false;
     }
 
+    public virtual void PlayAnimationClip(string name)
+    {
+        _animator.Play(name);
+    }
+
     public void StopAnimation()
     {
         _animator.StopPlayback();
     }
+
+    public void SwitchWeapon(Weapon weapon)
+    {
+        _currentWeapon = weapon;
+
+        // Test Code
+        _currentWeapon.WeaponDamage = 100;
+        _currentWeapon.Type = WeaponAttackType.Strike;
+        _currentWeapon.Tier = WeaponTier.Epic;
+        _currentWeapon.Mechanic = SkillMechanism.Percentage;
+        _currentWeapon.Per_DamageRatio = 1.5f;
+        _currentWeapon.Per_ActivationPercentage = 50;
+    }
+
+    protected float CalculateDamage()
+    {
+        float ratio = 1f;
+        float damage = 0f;
+
+        // 1. 공격력 배수에 따른 공격력 증가
+        ratio *= 1f + (Status.Attack * 0.005f);
+        damage += Status.Attack;
+
+        // 2. 무기 공격력 합산
+        damage += CurrentWeapon.WeaponDamage;
+
+        // 3. 무기 타입에 따른 배수
+        ratio *= 1 + CurrentWeapon.Type switch
+        {
+            WeaponAttackType.Strike => Status.Strike / 100,
+            WeaponAttackType.Slash => Status.Slash / 100,
+            WeaponAttackType.Ranged => Status.Ranged / 100,
+            WeaponAttackType.Penetration => Status.Penetration / 100,
+            _ => 0f
+        };
+
+        return ratio * damage;
+    }
+
+    public void CallTakeDamage()
+    {
+        BattleManager.Instance.TakeDamage();
+    }
+    
 }
-
-
