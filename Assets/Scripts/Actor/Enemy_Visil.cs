@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 
-public class EnemySample : ActorBase
+public class Enemy_Visil : ActorBase
 {
     [Header("<color=yellow>±‚∫ª Ω∫≈»")]
     [Space]
@@ -63,46 +63,47 @@ public class EnemySample : ActorBase
 
     public void BindActions()
     {
-        Actions.Add(TestAction);
-        Actions.Add(TestSkill);
-        Actions.Add(TestRepeatedSkill);
+        Actions.Add(Action_Attack);
+        Actions.Add(Action_Skill);
     }
 
-    public SkillInfo TestAction()
+    public SkillInfo Action_Attack()
     {
         Debug.Log($"{name} Attack");
 
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 1f;
-        skillInfo.Clip = _animators[0];
-        skillInfo.IsRepeated = false;
-
-        return skillInfo;
-    }
-
-    public SkillInfo TestSkill()
-    {
-        Debug.Log($"{name} Skill");
-
-        SkillInfo skillInfo = new SkillInfo();
-        skillInfo.DamageRatio = 2f;
+        skillInfo.PlayerDamage = CalculateDamage();
         skillInfo.Clip = _animators[1];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
     }
 
-    public SkillInfo TestRepeatedSkill()
+    public SkillInfo Action_Skill()
     {
-        Debug.Log($"{name} Repeated Skill!!!!");
+        Debug.Log($"{name} Skill");
 
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 2f;
-        skillInfo.Clip = _animators[2];
-        skillInfo.IsRepeated = true;
-        skillInfo.RepeatProbability = 0.5f;
-        skillInfo.MaxRepeatCount = 5;
+        skillInfo.PlayerDamage = CalculateDamage();
+        skillInfo.Clip = _animators[1];
+        skillInfo.IsRepeated = false;
 
         return skillInfo;
     }
+
+    //public SkillInfo TestRepeatedSkill()
+    //{
+    //    Debug.Log($"{name} Repeated Skill!!!!");
+
+    //    SkillInfo skillInfo = new SkillInfo();
+    //    skillInfo.DamageRatio = 2f;
+    //    skillInfo.Delay = 1f;
+    //    skillInfo.IsRepeated = true;
+    //    skillInfo.RepeatProbability = 0.5f;
+    //    skillInfo.MaxRepeatCount = 5;
+
+    //    return skillInfo;
+    //}
 }
