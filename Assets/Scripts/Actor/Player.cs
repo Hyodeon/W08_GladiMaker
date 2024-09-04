@@ -45,11 +45,6 @@ public class Player : ActorBase
         Actions.Add(TestRepeatedSkill);
     }
 
-    public override void PlayAnimationClip(string name)
-    {
-        _animator.SetTrigger(WeaponType.Sword.ToString());
-    }
-
     public SkillInfo Action_Attack()
     {
         Debug.Log($"{name} Attack");
@@ -57,7 +52,7 @@ public class Player : ActorBase
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 1f;
         skillInfo.PlayerDamage = CalculateDamage();
-        skillInfo.Clip = _animators[5];
+        skillInfo.Clip = _animators[0];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
@@ -70,7 +65,7 @@ public class Player : ActorBase
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 2f;
         skillInfo.PlayerDamage = CalculateDamage();
-        skillInfo.Clip = _animators[5];
+        skillInfo.Clip = _animators[1];
         skillInfo.IsRepeated = false;
 
         return skillInfo;

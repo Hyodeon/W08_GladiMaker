@@ -107,7 +107,7 @@ public class ActorBase : MonoBehaviour
         _currentWeapon.Tier = WeaponTier.Epic;
         _currentWeapon.Mechanic = SkillMechanism.Percentage;
         _currentWeapon.Per_DamageRatio = 1.5f;
-        _currentWeapon.Per_ActivationPercentage = 50;
+        _currentWeapon.Per_ActivationPercentage = 10;
     }
 
     protected float CalculateDamage()
