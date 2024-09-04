@@ -28,23 +28,11 @@ public class Player : ActorBase
     [SerializeField] private float _counter;
 
 
-
     public override void Intialize()
     {
         base.Intialize();
-        
-        Status.MaxHp = _maxHp;
-        Status.Hp = _maxHp;
-        Status.Attack = _attack;
-        Status.Accuracy = _accuracy;
-        Status.Evade = _evade;
-        Status.Guard = _guard;
 
-        Status.Strike = _strike;
-        Status.Slash = _slash;
-        Status.Penetration = _penetration;
-        Status.Ranged = _ranged;
-        Status.Counter = _counter;
+        _status = GameManager.Instance.PlayerStatus;
 
         BindActions();
     }
