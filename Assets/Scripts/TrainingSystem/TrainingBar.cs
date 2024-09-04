@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrainingBar : MonoBehaviour
 {
-    [SerializeField] TrainingStructList _trainingStructList;
+    public TrainingStructList _trainingStructList;
+
     [SerializeField] TMPro.TMP_Text _percentText;
 
     private void Start()
     {
         SetBar();
     }
+    private void OnEnable()
+    {
+        SetBar();
+        this.GetComponentInChildren<Button>().enabled = true;
+    }
 
     [ContextMenu("SetBar")]
-    void SetBar()
+    public void SetBar()
     {
         _trainingStructList.SetTrainingUnits();
+    }
+
+    private void FixedUpdate()
+    {
         this._percentText.text = $"Percent : {_trainingStructList._percentage}%";
     }
 }

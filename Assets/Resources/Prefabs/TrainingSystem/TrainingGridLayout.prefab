@@ -86,23 +86,35 @@ MonoBehaviour:
   _comboTextPrefab: {fileID: 4858217172922606477, guid: 75ba98061b575004c9ca9ab71c5a5d59, type: 3}
   list:
   - color: {r: 1, g: 0, b: 0, a: 1}
-    name: 
     trainingRate: 5
-    percentWeight: 0
+    percentWeight: 100
+    isSpecial: 1
   - color: {r: 1, g: 0.50675887, b: 0, a: 1}
-    name: 
-    trainingRate: 10
-    percentWeight: 70
+    trainingRate: 5
+    percentWeight: 100
+    isSpecial: 0
   - color: {r: 0, g: 0.36312842, b: 1, a: 1}
-    name: 
-    trainingRate: 3
-    percentWeight: 100
+    trainingRate: 2
+    percentWeight: 20
+    isSpecial: 0
   - color: {r: 0.5707547, g: 0.727303, b: 1, a: 1}
-    name: 
     trainingRate: 1
-    percentWeight: 100
+    percentWeight: 10
+    isSpecial: 0
+  _normalStat:
+  - Hp
+  - Att
+  - Def
+  - Acc
+  - Eva
+  _specialStat:
+  - Stk
+  - Sla
+  - Pen
+  - Ran
   _percentage: 0
   _trainDelayTime: 1
+  isUsingItem: 0
 --- !u!1001 &2348511797665177522
 PrefabInstance:
   m_ObjectHideFlags: 0

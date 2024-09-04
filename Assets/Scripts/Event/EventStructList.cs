@@ -16,6 +16,10 @@ public class EventStructList : MonoBehaviour
     [SerializeField] TMP_Text _infoText;
     [SerializeField] GameObject _gridLayout;
 
+    private void Start()
+    {
+        Set(list[Random.Range(0, list.Count)]); 
+    }
 
     public void Set(EventStruct eventStruct)
     {

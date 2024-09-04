@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2b8f553e0d283418c7ac9c1421455b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 60
+  moveDistance: 30
   duration: 1
 --- !u!222 &-4537718231980312957
 CanvasRenderer:

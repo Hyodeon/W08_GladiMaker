@@ -8,9 +8,6 @@ public class ComboTxt : MonoBehaviour
 {
     TMPro.TMP_Text text;
 
-    int combo = 0;
-
-    public string textString => $"Combo {combo.ToString()}!";
     public float moveDistance = 100f;
     public float duration = 2f;
 
@@ -20,17 +17,16 @@ public class ComboTxt : MonoBehaviour
         text = this.GetComponent<TMPro.TMP_Text>(); 
     }
 
-    virtual public void Set(int bonusScore)
+    virtual public void Set(string textValue,Color32 color)
     {
 
-        this.combo = bonusScore;
-        text.text = textString;
+        text.text = textValue;
 
-        Color initialColor = text.color;
+        Color initialColor = color;
         initialColor.a = 1f;
         text.color = initialColor;
 
         text.rectTransform.DOMoveY(text.rectTransform.position.y + moveDistance, duration).SetEase(Ease.OutQuad);
-        text.DOFade(0, duration).SetEase(Ease.OutQuad).OnComplete(() => Destroy(gameObject));
+        text.DOFade(0, duration).SetEase(Ease.InQuad).OnComplete(() => Destroy(gameObject));
     }
 }

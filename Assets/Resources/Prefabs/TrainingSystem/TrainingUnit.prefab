@@ -52,6 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 8640480983491304989}
+  _trainingStruct:
+    color: {r: 0, g: 0, b: 0, a: 0}
+    trainingRate: 0
+    percentWeight: 0
+    isSpecial: 0
+  _name: 
 --- !u!222 &6333094293697739524
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -155,7 +161,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP
+  m_text: 'HPa
 
 '
   m_isRightToLeft: 0
@@ -184,13 +190,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.6
+  m_fontSizeBase: 0.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 0
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

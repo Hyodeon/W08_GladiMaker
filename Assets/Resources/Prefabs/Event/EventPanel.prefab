@@ -65,10 +65,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: lalalalallalalalalallalal
+  m_text: "\uC548\uB155\uD558\uC138\uC694"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e360bfee293bca344ac403bfb910fa1b, type: 2}
+  m_sharedMaterial: {fileID: -7450270006750401046, guid: e360bfee293bca344ac403bfb910fa1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 1186583003193306298}
   - component: {fileID: 654926341754639450}
   - component: {fileID: 4870272717962299862}
+  - component: {fileID: 8850833984977564111}
   m_Layer: 5
   m_Name: EventPanel
   m_TagString: Untagged
@@ -301,15 +302,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   list:
-  - _npcSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    _title: abcdefg
-    _info: higklmnop
+  - _npcSprite: {fileID: 21300000, guid: d1a29c5498d29284496328e6b3c05699, type: 3}
+    _title: "\uC548\uB1FD\uD558\uC138\uC6A9~"
+    _info: "\uBC29\uAC00\uC6CC\uC6A9~ "
     choices:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4870272717962299862}
-          m_TargetAssemblyTypeName: EventStructList, Assembly-CSharp
-          m_MethodName: ff
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event0_Choice0_hello
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -321,9 +322,9 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4870272717962299862}
-          m_TargetAssemblyTypeName: EventStructList, Assembly-CSharp
-          m_MethodName: ff2
+        - m_Target: {fileID: 8850833984977564111}
+          m_TargetAssemblyTypeName: EventList, Assembly-CSharp
+          m_MethodName: Event0_Choice0_hello
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -334,13 +335,25 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     choicesInfo:
-    - zzzzzz
-    - dddddd
+    - "\uD558\uC774"
+    - "\uD558\uC774\uD558\uC774"
   _choiceBtnPrefab: {fileID: 4363788649131492387, guid: 3bf18795373d3fa4f81926aab94431dd, type: 3}
   _npcImage: {fileID: 3034466491529406059}
   _titleText: {fileID: 4275581498305144591}
   _infoText: {fileID: 4098004753168123788}
   _gridLayout: {fileID: 8522447609036685971}
+--- !u!114 &8850833984977564111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778173492797314292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5724b7d393d576848b269a03688fd220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4128965162241146423
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +421,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: lalalalallalalalalallalallalalalallalalalalallalallalalalallalalalalallalallalalalallalalalalallalallalalalallalalalalallalallalalalallalalalalallalalla
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e360bfee293bca344ac403bfb910fa1b, type: 2}
+  m_sharedMaterial: {fileID: -7450270006750401046, guid: e360bfee293bca344ac403bfb910fa1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
