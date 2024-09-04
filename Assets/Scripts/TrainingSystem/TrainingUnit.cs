@@ -12,7 +12,7 @@ public class TrainingUnit : MonoBehaviour
     // Training Rate of Unit
     public float _trainingRate => _trainingStruct.trainingRate;
 
-    private void Start()
+    private void Awake()
     {
         _image = GetComponent<Image>(); 
     }
@@ -21,6 +21,10 @@ public class TrainingUnit : MonoBehaviour
     {
         _trainingStruct = trainingStruct;
         _image.color = _trainingStruct.color;
+    }
+    public void SetColor(Color color)
+    {
+        _image.color = color;
     }
 }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrainingStructList : MonoBehaviour
 {
+    [SerializeField] GameObject _comboTextPrefab;
     [SerializeField]List<TrainingStruct> list;
     TrainingUnit[] trainingUnits;
 
@@ -15,9 +16,10 @@ public class TrainingStructList : MonoBehaviour
     int percentChkMaxScore;
     
     
-    private void Start()
+    private void Awake()
     {
         trainingUnits = this.transform.GetComponentsInChildren<TrainingUnit>();
+
     }
 
     //Training Unit Color Set
@@ -41,23 +43,40 @@ public class TrainingStructList : MonoBehaviour
     {
         StartCoroutine(TrainUnitRoutine(trainingUnits));
     }
+
     IEnumerator TrainUnitRoutine(TrainingUnit[] units)
     {
+        int combo = 0;
+        bool failChk = false;
         foreach (TrainingUnit unit in units)
         {
             var randomValue = UnityEngine.Random.Range(0, 101);
-            if (randomValue <= _percentage)
+            if (failChk)
             {
+                unit.SetColor(Color.black);
+            }
+            else if (randomValue <= _percentage)
+            {
+                // create Combo Text
+                var comboText = Instantiate(_comboTextPrefab,unit.transform);
+                comboText.transform.Translate(new Vector3(0,30,0));
+                comboText.transform.localScale *= 0.5f+(combo*0.15f);
+                comboText.GetComponent<ComboTxt>().Set(++combo);
+
+                unit.SetColor(Color.green);
                 Debug.Log("Training Success ! : " + unit._trainingRate);
                 yield return new WaitForSeconds(_trainDelayTime);
             }
             else
             {
+                failChk = true;
+                unit.SetColor(Color.black);
                 Debug.Log("Training Fail=============");
-                break;
             }
         }
     }
+
+
 }
 [System.Serializable]
 public class TrainingStruct

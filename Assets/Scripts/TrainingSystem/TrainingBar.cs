@@ -9,6 +9,7 @@ public class TrainingBar : MonoBehaviour
 
     private void Start()
     {
+        SetBar();
     }
 
     [ContextMenu("SetBar")]

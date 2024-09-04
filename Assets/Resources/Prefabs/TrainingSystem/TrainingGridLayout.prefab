@@ -83,24 +83,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3310d5bd7b98e0e43a2fdd3123ce535f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _comboTextPrefab: {fileID: 4858217172922606477, guid: 75ba98061b575004c9ca9ab71c5a5d59, type: 3}
   list:
   - color: {r: 1, g: 0, b: 0, a: 1}
     name: 
     trainingRate: 5
-    percentWeight: 40
+    percentWeight: 0
   - color: {r: 1, g: 0.50675887, b: 0, a: 1}
     name: 
     trainingRate: 10
-    percentWeight: 60
+    percentWeight: 70
   - color: {r: 0, g: 0.36312842, b: 1, a: 1}
     name: 
     trainingRate: 3
-    percentWeight: 98
+    percentWeight: 100
   - color: {r: 0.5707547, g: 0.727303, b: 1, a: 1}
     name: 
     trainingRate: 1
     percentWeight: 100
   _percentage: 0
+  _trainDelayTime: 1
 --- !u!1001 &2348511797665177522
 PrefabInstance:
   m_ObjectHideFlags: 0
