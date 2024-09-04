@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    public Player player;
+    public EnemySample Enemy;
+
     public float max_HP;
     public float current_HP;
 
@@ -14,16 +17,11 @@ public class HealthBar : MonoBehaviour
     public Image HP;
     public Image HP_Effect;
 
-    [SerializeField] float damage = 10;
+    public void Initialize() => current_HP = max_HP;
 
-    private void Start()
-    {
-        current_HP = max_HP;
-    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) TakeDamage(damage);
         if (Input.GetKeyDown(KeyCode.LeftShift)) current_HP = max_HP;
 
         float target = Mathf.Lerp(HP.fillAmount, current_HP / max_HP, speed * Time.deltaTime);

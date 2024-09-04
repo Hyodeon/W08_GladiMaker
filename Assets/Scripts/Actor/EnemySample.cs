@@ -40,6 +40,13 @@ public class EnemySample : ActorBase
     [SerializeField]
     private List<AnimationClip> _animators = new List<AnimationClip>();
 
+    [Space]
+    [SerializeField] HealthBar myHealthBar;
+
+    private void Start()
+    {
+        Intialize();
+    }
 
     public override void Intialize()
     {
@@ -58,6 +65,10 @@ public class EnemySample : ActorBase
         Status.Ranged = _ranged;
         Status.Counter = _counter;
 
+        myHealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
+        myHealthBar.Enemy = this;
+        myHealthBar.max_HP = _maxHp;
+        myHealthBar.Initialize();
         BindActions();
     }
 

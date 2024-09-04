@@ -30,6 +30,9 @@ public class BattleManager : MonoBehaviour
     private bool _isNextTurn;
     // Player or Enemy Turn
     private bool _isPlayerTurn;
+
+    public bool IsPlayerTurn { get { return _isPlayerTurn; } }
+
     // is On Fighting
     private bool _isFighting;
 

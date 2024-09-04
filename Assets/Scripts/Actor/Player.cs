@@ -5,9 +5,41 @@ using Utils;
 
 public class Player : ActorBase
 {
-    [Header("<color=green>Çàµ¿ ¾Ö´Ï¸ŞÀÌ¼Ç Å¬¸³")]
+
+    [Header("Basic Stats")]
+    [Space]
+    [Header("MaxHp (value)")]
+    [SerializeField] private float _maxHp;
+    [Header("Attack (value)")]
+    [SerializeField] private float _attack;
+    [Header("Accuracy (%)")]
+    [SerializeField] private float _accuracy;
+    [Header("Evade (%)")]
+    [SerializeField] private float _evade;
+    [Header("Guard (value)")]
+    [SerializeField] private float _guard;
+
+    [Space]
+
+    [Header("Specific Stats")]
+    [SerializeField] private float _strike;
+    [SerializeField] private float _slash;
+    [SerializeField] private float _penetration;
+    [SerializeField] private float _ranged;
+    [SerializeField] private float _counter;
+
+    [Space]
+    [SerializeField] HealthBar myHealthBar;
+
+    private void Start()
+    {
+        Intialize();
+    }
+
+    [Header("<color=green>í–‰ë™ ì• ë‹ˆë©”ì´ì…˜ í´ë¦½")]
     [SerializeField]
     private List<AnimationClip> _animators = new List<AnimationClip>();
+
 
     public override void Intialize()
     {
@@ -21,6 +53,11 @@ public class Player : ActorBase
         {
             Debug.Log("[Player.cs] Player Status Initialize Error!");
         }
+
+        myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
+        myHealthBar.player = this;
+        myHealthBar.max_HP = _maxHp;
+        myHealthBar.Initialize();
 
         BindActions();
     }
@@ -67,7 +104,7 @@ public class Player : ActorBase
     {
         Debug.Log($"{name} Repeated Skill!!!!");
 
-        // ÃÖ´ë 5È¸ ¹İº¹, 50ÆÛ¼¾Æ® È®·ü·Î ¿©·¯¹ø ¹ßµ¿
+        // ìµœëŒ€ 5íšŒ ë°˜ë³µ, 50í¼ì„¼íŠ¸ í™•ë¥ ë¡œ ì—¬ëŸ¬ë²ˆ ë°œë™
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 2f;
         skillInfo.Clip = _animators[2];
