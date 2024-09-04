@@ -20,6 +20,10 @@ public class BuildManager : MonoBehaviour
     [SerializeField] GameObject BuildingStatUIObj;
     [SerializeField] GameObject ItemShopUIObj;
 
+    [Header("TEST")]
+    [SerializeField] GameObject WeaponUIPrefab;
+    [SerializeField] GameObject WeaponTest;
+
     GameObject[] canvasChildrens;
     public PlayerBuildProperty _playerBuildProperty;
 
@@ -27,6 +31,14 @@ public class BuildManager : MonoBehaviour
     [SerializeField] int leftTurn;
 
     BuildState currentState;
+
+
+    [ContextMenu("test")]
+    public void test()
+    {
+        var testObj = Instantiate(WeaponUIPrefab,BuildingStatUIObj.transform);
+        testObj.GetComponent<WeaponUI>().Set(WeaponTest);
+    }
 
     private void Awake()
     {
@@ -40,6 +52,7 @@ public class BuildManager : MonoBehaviour
     }
     private void Start()
     {
+        leftTurn = 5;
         ChangeUI(BuildState.Train);
     }
     private void Update()

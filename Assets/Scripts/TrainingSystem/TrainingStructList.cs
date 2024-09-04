@@ -35,6 +35,8 @@ public class TrainingStructList : MonoBehaviour
     //Training Unit Color Set
     public void SetTrainingUnits()
     {
+        isUsingItem = false;
+
         percentChkMinScore = 0;
         percentChkMaxScore = 0;
 
@@ -48,9 +50,9 @@ public class TrainingStructList : MonoBehaviour
             TrainingStruct trainingStruct = list[UnityEngine.Random.Range(0, list.Count)];
             var unitText = !trainingStruct.isSpecial ? normalStatText : specialStatText;
             unit.Set(trainingStruct,unitText);
-            percentChkMaxScore += trainingStruct.percentWeight;
+            percentChkMaxScore += 100;
         }
-        percentChkMinScore = percentChkMaxScore - trainingUnits[0]._trainingStruct.percentWeight/2;
+        percentChkMinScore = percentChkMaxScore - trainingUnits[0]._trainingStruct.percentWeight;
         SetPercentage();
     }
 
@@ -71,7 +73,7 @@ public class TrainingStructList : MonoBehaviour
         Dictionary<string, int> trainResult = new Dictionary<string, int>();
         int combo = 0;
         bool failChk = false;
-
+        
         foreach (TrainingUnit unit in units)
         {
             var randomValue = UnityEngine.Random.Range(0, 101);
@@ -90,7 +92,11 @@ public class TrainingStructList : MonoBehaviour
                 comboText.transform.Translate(new Vector3(0,100,0));
                 comboText.transform.localScale *= 0.5f+(combo*0.1f);
 
-                string comboTextInfo = $"Combo {(++combo).ToString()}!\nx{trainingRate}(+{addStatValue})";
+                combo++;
+                if(combo == 10)
+                    trainingRate *= 2;
+                
+                string comboTextInfo = $"Combo {(combo).ToString()}!\nx{trainingRate}(+{addStatValue})";
                 comboText.GetComponent<ComboTxt>().Set(comboTextInfo,Color.white);
 
 
@@ -150,7 +156,10 @@ public class TrainingStructList : MonoBehaviour
         Debug.Log("==================================");
 
         //Change UI
-        BuildManager.Instance.ChangeUI(BuildState.Event);
+        if(UnityEngine.Random.Range(0,101)<=50)
+            BuildManager.Instance.ChangeUI(BuildState.Event);
+        else
+            BuildManager.Instance.ChangeUI(BuildState.TurnEnd);
     }
 
     private void trainStat(string statName, int value)
