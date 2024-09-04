@@ -27,7 +27,13 @@ public class Player : ActorBase
     [SerializeField] private float _ranged;
     [SerializeField] private float _counter;
 
+    [Space]
+    [SerializeField] HealthBar myHealthBar;
 
+    private void Start()
+    {
+        Intialize();
+    }
 
     public override void Intialize()
     {
@@ -45,6 +51,11 @@ public class Player : ActorBase
         Status.Penetration = _penetration;
         Status.Ranged = _ranged;
         Status.Counter = _counter;
+
+        myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
+        myHealthBar.player = this;
+        myHealthBar.max_HP = _maxHp;
+        myHealthBar.Initialize();
 
         BindActions();
     }

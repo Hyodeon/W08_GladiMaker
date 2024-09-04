@@ -722,6 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7695559643836051154}
   - component: {fileID: 2802121562975577640}
+  - component: {fileID: 506887686042687845}
   m_Layer: 0
   m_Name: DooBur
   m_TagString: Enemy
@@ -766,6 +767,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &506887686042687845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6736178563122481299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fff3ab638835f43855a2aa84eaec02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 0
+  _attack: 0
+  _accuracy: 0
+  _evade: 0
+  _guard: 0
+  _strike: 0
+  _slash: 0
+  _penetration: 0
+  _ranged: 0
+  _counter: 0
+  myHealthBar: {fileID: 0}
 --- !u!1 &7600343826771391105
 GameObject:
   m_ObjectHideFlags: 0
