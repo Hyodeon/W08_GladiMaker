@@ -20,6 +20,10 @@ public class EventStructList : MonoBehaviour
     {
         Set(list[Random.Range(0, list.Count)]); 
     }
+    private void OnEnable()
+    {
+        Set(list[Random.Range(0, list.Count)]);
+    }
 
     public void Set(EventStruct eventStruct)
     {
@@ -50,6 +54,7 @@ public struct EventStruct
 {
     public Sprite _npcSprite;
     public string _title;
+    [TextArea]
     public string _info;
     public List<UnityEvent> choices;
     public List<string> choicesInfo;
