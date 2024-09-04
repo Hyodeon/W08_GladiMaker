@@ -5,7 +5,6 @@ using Utils;
 
 public class Player : ActorBase
 {
-
     [SerializeField] HealthBar myHealthBar;
 
     private void Start()

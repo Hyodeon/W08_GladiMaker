@@ -15,7 +15,6 @@ public class BattleManager : MonoBehaviour
             {
                 GameObject battleManagerObject = new GameObject("BattleManager");
                 _instance = battleManagerObject.AddComponent<BattleManager>();
-                DontDestroyOnLoad(battleManagerObject);
             }
             return _instance;
         }

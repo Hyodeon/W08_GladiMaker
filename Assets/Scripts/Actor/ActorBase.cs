@@ -34,14 +34,43 @@ public class ActorBase : MonoBehaviour
 
         _currentWeapon = new Weapon();
 
+        SwitchWeapon(new Weapon());
+
         Debug.Log($"Initialized {name}");
     }
 
     public Func<SkillInfo> Attack(int turnCount)
     {
-        int result = UnityEngine.Random.value < 0.3f ? 1 : 0;
+        switch (CurrentWeapon.Mechanic)
+        {
+            case SkillMechanism.TurnBased:
 
-        return Actions[result];
+                if (turnCount % CurrentWeapon.Turn_TurnCount == 0)
+                {
+                    // TODO : 스킬 발동
+                    return Actions[1];
+                }
+                else
+                {
+                    return Actions[0];
+                }
+
+            case SkillMechanism.Percentage:
+
+                int result = UnityEngine.Random.value
+                    < CurrentWeapon.Per_ActivationPercentage / 100
+                    ? 1 : 0;
+
+                return Actions[result];
+
+        }
+
+        return Actions[0];
+    }
+
+    public void BindWeapon(Weapon weapon)
+    {
+        _currentWeapon = weapon;
     }
 
     public bool GetDamageCheckDead(int damage)
@@ -73,7 +102,7 @@ public class ActorBase : MonoBehaviour
         _currentWeapon = weapon;
 
         // Test Code
-        _currentWeapon.WeaponDamage = 100;
+        _currentWeapon.WeaponDamage = 200;
         _currentWeapon.Type = WeaponAttackType.Strike;
         _currentWeapon.Tier = WeaponTier.Epic;
         _currentWeapon.Mechanic = SkillMechanism.Percentage;
@@ -91,7 +120,7 @@ public class ActorBase : MonoBehaviour
         damage += Status.Attack;
 
         // 2. 무기 공격력 합산
-        damage += CurrentWeapon.WeaponDamage;
+        ratio *= CurrentWeapon.WeaponDamage / 100;
 
         // 3. 무기 타입에 따른 배수
         ratio *= 1 + CurrentWeapon.Type switch

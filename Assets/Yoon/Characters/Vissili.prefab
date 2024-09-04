@@ -599,7 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7005001851989964756}
   - component: {fileID: 1423826290476012689}
-  - component: {fileID: 5079051170432471082}
+  - component: {fileID: 8954122596972036694}
   m_Layer: 0
   m_Name: Vissili
   m_TagString: Enemy
@@ -644,7 +644,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5079051170432471082
+--- !u!114 &8954122596972036694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 50
-  _attack: 10
+  _attack: 5
   _accuracy: 0
   _evade: 0
   _guard: 0
