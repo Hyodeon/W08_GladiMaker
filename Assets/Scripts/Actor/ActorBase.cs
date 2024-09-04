@@ -7,7 +7,7 @@ using Utils;
 
 public class ActorBase : MonoBehaviour
 {
-    private Status _status;
+    protected Status _status;
 
     public Status Status { get { return _status; } }
 
