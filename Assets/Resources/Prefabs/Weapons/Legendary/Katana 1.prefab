@@ -120,12 +120,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon:
-    WeaponDamage: 150
+    WeaponDamage: 200
     Tier: 3
     Type: 1
-    Mechanic: 2
-    Per_ActivationPercentage: 0
-    Per_DamageRatio: 0
+    Mechanic: 1
+    Per_ActivationPercentage: 10
+    Per_DamageRatio: 90
     Turn_TurnCount: 0
     Turn_DamageRatio: 0
   weaponStruct:

@@ -219,12 +219,8 @@ PrefabInstance:
       value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 8954122596972036694, guid: 4b2c4b3c7a8f29244b6a43454af817cd, type: 3}
-      propertyPath: _maxHp
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8954122596972036694, guid: 4b2c4b3c7a8f29244b6a43454af817cd, type: 3}
       propertyPath: _attack
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -364,42 +360,13 @@ PrefabInstance:
     - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
       propertyPath: _basicWeapon
       value: 
-      objectReference: {fileID: 2734593037357570150, guid: 8dd1418ca092256409025ecdfdc49b60, type: 3}
-    - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: _weaponSocket
-      value: 
-      objectReference: {fileID: 1490489351}
-    - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: _animators.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: _animators.Array.data[0]
-      value: 
-      objectReference: {fileID: 7400000, guid: 54efe21297d75f546b5e98f7af6df699, type: 2}
-    - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: _animators.Array.data[1]
-      value: 
-      objectReference: {fileID: 7400000, guid: c1154c8496ef1fc4bb617b7ac3dde6d7, type: 2}
-    - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: _animators.Array.data[2]
-      value: 
-      objectReference: {fileID: 7400000, guid: 542619a89ac7dfa4c8d040259dba5fdb, type: 2}
-    - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: _animators.Array.data[3]
-      value: 
-      objectReference: {fileID: 7400000, guid: 509707ae7eab77e438f8a68d8815f20d, type: 2}
-    - target: {fileID: 2727661383633404362, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: _animators.Array.data[9]
-      value: 
-      objectReference: {fileID: 7400000, guid: cefd27fbdc759da4aac47e914c1586bd, type: 2}
+      objectReference: {fileID: 7356299863472068446, guid: 187eb0726bda6524cbc2dac593a74f51, type: 3}
     - target: {fileID: 5133758504226401722, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 327531626666918903, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
@@ -434,11 +401,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1490489351 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6566774252601598642, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-  m_PrefabInstance: {fileID: 1203256133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1629152657
 GameObject:
   m_ObjectHideFlags: 0

@@ -2416,8 +2416,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-
-  - time: 0.31666666
+  - time: 0.4
     functionName: CallTakeDamage
 
   - time: 0.16666667
