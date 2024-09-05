@@ -14,7 +14,7 @@ public class Skill_Effect_Manager : MonoBehaviour
 
     [SerializeField] int weapon_idx = 0;
 
-    [Header("<color=red>ภ๛")]
+    [Header("<color=red>ร€รป")]
     public GameObject Current_Enemy;
 
     private void Start()
@@ -25,11 +25,13 @@ public class Skill_Effect_Manager : MonoBehaviour
 
     private void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.Tab)) {
             ChangeWeapon();
         }
 
         if (Input.GetKey(KeyCode.CapsLock)) GetComponent<Animator>().Play(GetComponent<Re_Attack>().My_Animations[Random.Range(0, GetComponent<Re_Attack>().My_Animations.Count)].AnimationName);
+
     }
 
     public void Spawn_Weapon_Trail()

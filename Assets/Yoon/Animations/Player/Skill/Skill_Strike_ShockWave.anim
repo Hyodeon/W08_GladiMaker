@@ -3368,6 +3368,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+
   - time: 0.41666666
     functionName: OnLoopStart
     data: 
@@ -3384,6 +3385,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.5833333
     functionName: Spawn_Weapon_Effect
+
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

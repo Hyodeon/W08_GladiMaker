@@ -58,6 +58,8 @@ public class Enemy_Visil : ActorBase
         Status.Ranged = _ranged;
         Status.Counter = _counter;
 
+        _currentWeapon.Mechanic = SkillMechanism.Monster;
+
         BindActions();
     }
 
@@ -74,7 +76,7 @@ public class Enemy_Visil : ActorBase
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 1f;
         skillInfo.PlayerDamage = CalculateDamage();
-        skillInfo.Clip = _animators[1];
+        skillInfo.Clip = _animators[0];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
@@ -85,9 +87,9 @@ public class Enemy_Visil : ActorBase
         Debug.Log($"{name} Skill");
 
         SkillInfo skillInfo = new SkillInfo();
-        skillInfo.DamageRatio = 2f;
+        skillInfo.DamageRatio = 1f;
         skillInfo.PlayerDamage = CalculateDamage();
-        skillInfo.Clip = _animators[1];
+        skillInfo.Clip = _animators[0];
         skillInfo.IsRepeated = false;
 
         return skillInfo;

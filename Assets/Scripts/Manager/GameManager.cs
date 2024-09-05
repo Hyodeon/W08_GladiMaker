@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     public void Initialize()
     {
+        _player = GameObject.Find("Player").GetComponent<ActorBase>();
+        _monster = GameObject.Find("Monster").GetComponent<ActorBase>();
 
         _playerStatus = new Status();
 
@@ -58,20 +60,20 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Intialized GameManager.cs {gameObject.GetInstanceID()}");
 
         // 테스트 코드 나중에 지워야됨
-        //BattleManager.Instance.InitializeActor(
-        //_player, _monster);
+        BattleManager.Instance.InitializeActor(
+        _player, _monster);
     }
 
     private void InitializePlayerStatus()
     {
-        _playerStatus.MaxHp = 100;
+        _playerStatus.MaxHp = 1000000;
         _playerStatus.Hp = _playerStatus.MaxHp;
-        _playerStatus.Attack = 10;
+        _playerStatus.Attack = 6000;
         _playerStatus.Accuracy = 1;
         _playerStatus.Evade = 1;
         _playerStatus.Guard = 1;
 
-        _playerStatus.Strike = 0;
+        _playerStatus.Strike = 1000;
         _playerStatus.Slash = 0;
         _playerStatus.Penetration = 0;
         _playerStatus.Ranged = 0;
@@ -89,52 +91,52 @@ public class GameManager : MonoBehaviour
 
     public void EditMaxHp(float hp)
     {
-        _playerStatus.MaxHp = hp;
+        _playerStatus.MaxHp += hp;
     }
 
     public void EditAttack(float attack)
     {
-        _playerStatus.Attack = attack;
+        _playerStatus.Attack += attack;
     }
 
     public void EditAccuracy(float accuracy)
     {
-        _playerStatus.Accuracy = accuracy;
+        _playerStatus.Accuracy += accuracy;
     }
 
     public void EditEvade(float evade)
     {
-        _playerStatus.Evade = evade;
+        _playerStatus.Evade += evade;
     }
 
     public void EditGuard(float guard)
     {
-        _playerStatus.Guard = guard;
+        _playerStatus.Guard += guard;
     }
 
     public void EditStrike(float strike)
     {
-        _playerStatus.Strike = strike;
+        _playerStatus.Strike += strike;
     }
 
     public void EditSlash(float slash)
     {
-        _playerStatus.Slash = slash;
+        _playerStatus.Slash += slash;
     }
 
     public void EditPenetration(float penetration)
     {
-        _playerStatus.Penetration = penetration;
+        _playerStatus.Penetration += penetration;
     }
 
     public void EditRanged(float ranged)
     {
-        _playerStatus.Ranged = ranged;
+        _playerStatus.Ranged += ranged;
     }
 
     public void EditCounter(float counter)
     {
-        _playerStatus.Counter = counter; 
+        _playerStatus.Counter += counter; 
     }
 
     #endregion

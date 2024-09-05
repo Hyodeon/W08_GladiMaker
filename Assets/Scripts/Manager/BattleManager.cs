@@ -20,6 +20,7 @@ public class BattleManager : MonoBehaviour
         }
     }
 
+
     private ActorBase _player;
     private ActorBase _enemy;
 
@@ -141,6 +142,7 @@ public class BattleManager : MonoBehaviour
         int currentDamage = Mathf.CeilToInt(_damageQueue.Dequeue());
 
         Debug.Log($"{currentDamage} 의 데미지를 주었습니다!");
+
 
         if (!_isPlayerTurn)
         {
