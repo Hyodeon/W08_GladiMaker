@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Continuous_Attack_Through
+  m_Name: Skill_Penetrate_Continuous
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -8334,6 +8334,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 1.1666666
+    functionName: OnLoopStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.25
     functionName: StartMiniCameraShake
     data: 
@@ -8357,6 +8364,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1.8333334
     functionName: StartMiniCameraShake
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2
+    functionName: OnLoopEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

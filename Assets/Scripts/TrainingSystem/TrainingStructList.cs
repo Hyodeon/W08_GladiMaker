@@ -77,6 +77,7 @@ public class TrainingStructList : MonoBehaviour
             var randomValue = UnityEngine.Random.Range(0, 101);
             if (failChk)
             {
+                unit.transform.GetChild(1).GetComponent<Animator>().Play("Training_Fail");
                 unit.SetColor(Color.black);
             }
             else if (randomValue <= _percentage)
@@ -93,11 +94,9 @@ public class TrainingStructList : MonoBehaviour
                 string comboTextInfo = $"Combo {(++combo).ToString()}!\nx{trainingRate}(+{addStatValue})";
                 comboText.GetComponent<ComboTxt>().Set(comboTextInfo,Color.white);
 
-
-
                 // UI
                 unit.SetColor(Color.green);
-
+                unit.transform.GetChild(1).GetComponent<Animator>().Play("Training_Success");
                 // train result
 
                 if (trainResult.ContainsKey(unit._name))
@@ -116,6 +115,7 @@ public class TrainingStructList : MonoBehaviour
             else
             {   
                 failChk = true;
+                unit.transform.GetChild(1).GetComponent<Animator>().Play("Training_Fail");
                 unit.SetColor(Color.black);
             }
         }
