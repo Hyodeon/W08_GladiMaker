@@ -36,10 +36,10 @@ public class Player : ActorBase
             Debug.Log("[Player.cs] Player Status Initialize Error!");
         }
 
-        //myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
-        //myHealthBar.player = this;
-        //myHealthBar.max_HP = _maxHp;
-        //myHealthBar.Initialize();
+        myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
+        myHealthBar.player = this;
+        myHealthBar.max_HP = _status.MaxHp;
+        myHealthBar.Initialize();
 
         SwitchWeapon(_basicWeapon.GetComponent<WeaponObj>());
 

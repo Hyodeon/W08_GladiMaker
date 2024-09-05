@@ -939,10 +939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3740660563180528101}
   - component: {fileID: 8916958802939536548}
-
-  - component: {fileID: 9108007277763595644}
   - component: {fileID: 19401725842428925}
-
+  - component: {fileID: -7547954587978584568}
   m_Layer: 0
   m_Name: Tiger
   m_TagString: Enemy
@@ -987,34 +985,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-7547954587978584568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115833814307071957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8921a195c9ed6ec41b6f3490f5dbe91d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
-  _maxHp: 15000
-  _attack: 30
-  _accuracy: 0
-  _evade: 0
-  _guard: 0
-  _strike: 0
-  _slash: 0
-  _penetration: 0
-  _ranged: 0
-  _counter: 0
-
-  _animators: []
-  myHealthBar: {fileID: 0}
 --- !u!114 &19401725842428925
-
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1027,6 +998,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TigerSkill: {fileID: 3465373890414754194, guid: 0de14bfc7fb3b634c84e71e337f54d06, type: 3}
+--- !u!114 &-7547954587978584568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115833814307071957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8921a195c9ed6ec41b6f3490f5dbe91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NormalWeapons:
+  - {fileID: 3103068902690859453, guid: badf27a4cef070b40bcf0bfa2aa80bf7, type: 3}
+  - {fileID: 1968983242873684830, guid: 0e2f966455e66a54490a527346b3b29c, type: 3}
+  - {fileID: 5765471426511432247, guid: b358c57b027a7a540b7f672fd0859709, type: 3}
+  RareWeapons:
+  - {fileID: 7066655656619843785, guid: 49bb223a54a679842937edcf0711d71d, type: 3}
+  - {fileID: 3990997432287808900, guid: 536b614981ce4f345ae14db37660e4e0, type: 3}
+  EpicWeapons:
+  - {fileID: 1968983242873684830, guid: 3a98ca214e6e0cb45a08a7c3564f89a3, type: 3}
+  - {fileID: 2734593037357570150, guid: 8dd1418ca092256409025ecdfdc49b60, type: 3}
+  - {fileID: 1032091224442615824, guid: 7329c776ca1ba3841a9d58b94a2c320f, type: 3}
+  LegendaryWeapons:
+  - {fileID: 7356299863472068446, guid: 187eb0726bda6524cbc2dac593a74f51, type: 3}
+  - {fileID: 5765471426511432247, guid: 75ba26fdd6056984284befc5a50b0589, type: 3}
+  - {fileID: 6695750815749917860, guid: d8949d7898fa0ec4f90d2933a14a0294, type: 3}
+  DropWeapon: {fileID: 0}
+  _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
+  _maxHp: 15000
+  _attack: 30
+  _accuracy: 0
+  _evade: 0
+  _guard: 0
+  _strike: 0
+  _slash: 0
+  _penetration: 0
+  _ranged: 0
+  _counter: 0
+  _animators: []
 --- !u!1 &7119125325927734266
 GameObject:
   m_ObjectHideFlags: 0

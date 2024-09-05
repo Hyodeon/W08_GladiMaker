@@ -42,6 +42,8 @@ public class BattleManager : MonoBehaviour
     private int _playerAttackCount;
     private int _criticalAttackCount;
 
+    [SerializeField] GameObject ClearMenu;
+
     public void InitializeActor(ActorBase player, ActorBase enemy)
     {
 
@@ -188,6 +190,7 @@ public class BattleManager : MonoBehaviour
             _enemy.PlayAnimationClip("Die");
         }
 
+
         float goldWeight = 1f;
 
         float attackRate;
@@ -208,5 +211,8 @@ public class BattleManager : MonoBehaviour
         criticalRate = 1f + _criticalAttackCount / 10;
 
         goldWeight *= attackRate * overKillRate * lowHpRate * criticalRate;
+
+        GameObject.FindAnyObjectByType<ShowClearPanel>().ConnectUI(goldWeight, attackRate, overKillRate, lowHpRate, criticalRate, _enemy.DropWeapon.GetComponent<WeaponObj>());
+
     }
 }
