@@ -33,19 +33,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2173738534090685948}
-    m_Position: {x: 220, y: 120, z: 0}
+    m_Position: {x: 60, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6591723645711217205}
     m_Position: {x: 470, y: 780, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9046387792873252226}
-    m_Position: {x: 470, y: -20, z: 0}
+    m_Position: {x: 470, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4040880951706822143}
-    m_Position: {x: 470, y: 30, z: 0}
+    m_Position: {x: 470, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3860569696381644895}
-    m_Position: {x: 470, y: 80, z: 0}
+    m_Position: {x: 470, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4947243594193092912}
     m_Position: {x: 470, y: -70, z: 0}
@@ -138,7 +138,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skil_Slash_Bleeding
+  m_Name: Skill_Slash_Bleeding
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

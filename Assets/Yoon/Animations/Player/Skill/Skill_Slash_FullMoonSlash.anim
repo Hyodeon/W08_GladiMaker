@@ -3665,6 +3665,15 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+
+  - time: 1.4166666
+    functionName: OnLoopStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+
   - time: 1.5333333
     functionName: StartMiniCameraShake
     data: 
@@ -3672,6 +3681,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+
+  - time: 1.75
+    functionName: OnLoopEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+
   - time: 1.9
     functionName: CallTakeDamage
     data: 
