@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour
 
     public void Initialize()
     {
-        _player = GameObject.Find("Player").GetComponent<ActorBase>();
-        _monster = GameObject.Find("Monster").GetComponent<ActorBase>();
 
         _playerStatus = new Status();
 
@@ -60,8 +58,8 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Intialized GameManager.cs {gameObject.GetInstanceID()}");
 
         // 테스트 코드 나중에 지워야됨
-        BattleManager.Instance.InitializeActor(
-        _player, _monster);
+        //BattleManager.Instance.InitializeActor(
+        //_player, _monster);
     }
 
     private void InitializePlayerStatus()
