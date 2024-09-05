@@ -2418,6 +2418,24 @@ AnimationClip:
   m_Events:
   - time: 0.4
     functionName: CallTakeDamage
+
+  - time: 0.16666667
+    functionName: OnLoopStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.3
+    functionName: Spawn_Weapon_Trail
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: OnLoopEnd
+
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

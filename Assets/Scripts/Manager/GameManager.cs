@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         }
         else if (_instance != this)
         {
-            Destroy(gameObject); // ÀÌ¹Ì ÀÎ½ºÅÏ½º°¡ ÀÖÀ¸¸é »õ·Î »ý¼ºµÈ ¿ÀºêÁ§Æ®´Â »èÁ¦
+            Destroy(gameObject); // ï¿½Ì¹ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             return;
         }
 
@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     {
         _player = GameObject.Find("Player").GetComponent<ActorBase>();
         _monster = GameObject.Find("Monster").GetComponent<ActorBase>();
-
 
         _playerStatus = new Status();
 
@@ -60,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log($"Intialized GameManager.cs {gameObject.GetInstanceID()}");
 
+        // ï¿½×½ï¿½Æ® ï¿½Úµï¿½ ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½
         BattleManager.Instance.InitializeActor(
         _player, _monster);
     }
@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
         _playerStatus.Evade = 1;
         _playerStatus.Guard = 1;
 
-        _playerStatus.Strike = 0;
+        _playerStatus.Strike = 1000;
         _playerStatus.Slash = 0;
         _playerStatus.Penetration = 0;
         _playerStatus.Ranged = 0;

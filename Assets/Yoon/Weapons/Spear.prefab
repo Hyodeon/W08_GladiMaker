@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1983798285
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 54be53f38e2a8fb448bed50adb8a86a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,7 +102,7 @@ MonoBehaviour:
   weaponOffsetScale: {x: 0.7, y: 0.7, z: 1}
   Enemy: {fileID: 0}
   my_WeaponType: 2
-  Weapon_Trail: {fileID: 0}
+  Weapon_Trail: {fileID: 6476932186148529177, guid: 9958ee13673f9bd4aa5db382eba269f7, type: 3}
   Weapon_Effect: {fileID: 0}
   Hit_Effect: {fileID: 3542004156341354139, guid: 82aadd2add482b049b80fcf1f1d539d5, type: 3}
   Player: {fileID: 0}

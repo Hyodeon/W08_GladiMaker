@@ -87,11 +87,11 @@ MonoBehaviour:
   list:
   - color: {r: 1, g: 0, b: 0, a: 1}
     trainingRate: 5
-    percentWeight: 100
+    percentWeight: 150
     isSpecial: 1
   - color: {r: 1, g: 0.50675887, b: 0, a: 1}
     trainingRate: 5
-    percentWeight: 100
+    percentWeight: 150
     isSpecial: 0
   - color: {r: 0, g: 0.36312842, b: 1, a: 1}
     trainingRate: 2

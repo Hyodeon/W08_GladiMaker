@@ -40,12 +40,6 @@ public class Weapon_Skill : MonoBehaviour
         transform.localScale = weaponOffsetScale;
     }
 
-    public void PlaySkillAnimation()
-    {
-        anim.SetFloat("idx", (float)Random.Range(0, getNumOfBlendTreeMotion())/ (getNumOfBlendTreeMotion()-1));
-        anim.SetTrigger(my_WeaponType.ToString());
-    }
-
     //타격
 
     //참격
