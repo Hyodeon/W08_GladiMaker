@@ -5,38 +5,38 @@ using Utils;
 
 public class Enemy_Boss : ActorBase
 {
-    [Header("<color=yellow>±âº» ½ºÅÈ")]
+    [Header("<color=yellow>ï¿½âº» ï¿½ï¿½ï¿½ï¿½")]
     [Space]
-    [Header("ÃÖ´ë Ã¼·Â <color=yellow>(°ª)")]
+    [Header("ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ <color=yellow>(ï¿½ï¿½)")]
     [SerializeField] private float _maxHp;
-    [Header("°ø°Ý·Â <color=yellow>(°ª)")]
+    [Header("ï¿½ï¿½ï¿½Ý·ï¿½ <color=yellow>(ï¿½ï¿½)")]
     [SerializeField] private float _attack;
-    [Header("Á¤È®µµ <color=purple>(%)")]
+    [Header("ï¿½ï¿½È®ï¿½ï¿½ <color=purple>(%)")]
     [SerializeField] private float _accuracy;
-    [Header("È¸ÇÇÀ² <color=purple>(%)")]
+    [Header("È¸ï¿½ï¿½ï¿½ï¿½ <color=purple>(%)")]
     [SerializeField] private float _evade;
-    [Header("¹æ¾îµµ <color=yellow>(°ª)")]
+    [Header("ï¿½ï¿½îµµ <color=yellow>(ï¿½ï¿½)")]
     [SerializeField] private float _guard;
 
     [Space]
 
-    [Header("<color=red>Æ¯¼ö ½ºÅÈ")]
+    [Header("<color=red>Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     [Space]
-    [Header("Å¸°Ý <color=purple>(%)")]
+    [Header("Å¸ï¿½ï¿½ <color=purple>(%)")]
     [SerializeField] private float _strike;
-    [Header("Âü°Ý <color=purple>(%)")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ <color=purple>(%)")]
     [SerializeField] private float _slash;
-    [Header("°üÅë <color=purple>(%)")]
+    [Header("ï¿½ï¿½ï¿½ï¿½ <color=purple>(%)")]
     [SerializeField] private float _penetration;
-    [Header("ÅõÃ´ <color=purple>(%)")]
+    [Header("ï¿½ï¿½Ã´ <color=purple>(%)")]
     [SerializeField] private float _ranged;
-    [Header("¹Ý°Ý <color=purple>(%)")]
+    [Header("ï¿½Ý°ï¿½ <color=purple>(%)")]
     [SerializeField] private float _counter;
 
     [Space]
     [Space]
 
-    [Header("<color=green>Çàµ¿ ¾Ö´Ï¸ÞÀÌ¼Ç Å¬¸³")]
+    [Header("<color=green>ï¿½àµ¿ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ Å¬ï¿½ï¿½")]
     [SerializeField]
     private List<AnimationClip> _animators = new List<AnimationClip>();
 
@@ -44,6 +44,7 @@ public class Enemy_Boss : ActorBase
     public override void Intialize()
     {
         base.Intialize();
+        DropWeapon = SetRandomDropItem();
 
         Status.MaxHp = _maxHp;
         Status.Hp = _maxHp;
@@ -62,11 +63,22 @@ public class Enemy_Boss : ActorBase
         ConnectHealthBar();
         BindActions();
     }
+
     void ConnectHealthBar()
     {
         HealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
+        HealthBar.Enemy = gameObject;
         HealthBar.max_HP = _maxHp;
         HealthBar.Initialize();
+    }
+
+    GameObject SetRandomDropItem()
+    {
+        float rand = Random.Range(0, 101);
+        if (rand <= 10) return LegendaryWeapons[Random.Range(0, LegendaryWeapons.Count)];
+        else if (rand <= 25) return RareWeapons[Random.Range(0, RareWeapons.Count)];
+        else if (rand <= 50) return EpicWeapons[Random.Range(0, EpicWeapons.Count)];
+        else return NormalWeapons[Random.Range(0, NormalWeapons.Count)];
     }
     public void BindActions()
     {

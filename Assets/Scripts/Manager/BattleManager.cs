@@ -39,6 +39,7 @@ public class BattleManager : MonoBehaviour
             _instance = this;
         }
     }
+    [SerializeField] GameObject ClearMenu;
 
     public void InitializeActor(ActorBase player, ActorBase enemy)
     {
@@ -140,14 +141,14 @@ public class BattleManager : MonoBehaviour
     {
         int currentDamage = Mathf.CeilToInt(_damageQueue.Dequeue());
 
-        Debug.Log($"{currentDamage} ÀÇ µ¥¹ÌÁö¸¦ ÁÖ¾ú½À´Ï´Ù!");
+        Debug.Log($"{currentDamage} ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!");
 
 
         if (!_isPlayerTurn)
         {
             if (_player.GetDamageCheckDead(currentDamage))
             {
-                // TODO : °ÔÀÓ ¿À¹ö
+                // TODO : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 Debug.Log("Game Over");
                 EndBattle();
             }
@@ -161,7 +162,7 @@ public class BattleManager : MonoBehaviour
 
             if (_enemy.GetDamageCheckDead(currentDamage))
             {
-                // TODO : °á°ú Áý°è
+                // TODO : ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 Debug.Log("Killed Enemy");
                 EndBattle();
             }
@@ -170,7 +171,7 @@ public class BattleManager : MonoBehaviour
 
     private IEnumerator StartBattleInTime(float time)
     {
-        // TODO : ÀüÅõ ½ÃÀÛ ÀÌÆåÆ® Àû¿ë
+        // TODO : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 
         yield return new WaitForSeconds(time);
 
@@ -187,6 +188,7 @@ public class BattleManager : MonoBehaviour
             _enemy.PlayAnimationClip("Die");
         }
 
+
         float goldWeight = 1f;
 
         float attackRate;
@@ -194,22 +196,24 @@ public class BattleManager : MonoBehaviour
         float lowHpRate;
         float criticalRate;
 
-        // 1. ÇÃ·¹ÀÌ¾î °ø°Ý È½¼ö
+        // 1. ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½
         attackRate = 1f + _playerAttackCount / 100;
 
-        // 2. ¿À¹öÅ³ ·¹ÀÌÆ®
+        // 2. ï¿½ï¿½ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½Æ®
         overKillRate = 1f + Mathf.Abs(_enemy.Status.Hp / _enemy.Status.MaxHp) * 6;
 
-        // 3. ÇÃ·¹ÀÌ¾î Ã¼·Â ³·À½
+        // 3. ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         lowHpRate = 1f;
 
-        // 4. °­·ÂÇÑ °ø°Ý
+        // 4. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         criticalRate = 1f + _criticalAttackCount / 10;
 
         goldWeight *= attackRate * overKillRate * lowHpRate * criticalRate;
 
-        // TODO : °ñµå Ãß°¡
+        // TODO : ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 
         GameManager.Instance.SwitchScene("TrainingScene");
+        GameObject.FindAnyObjectByType<ShowClearPanel>().ConnectUI(goldWeight, attackRate, overKillRate, lowHpRate, criticalRate, _enemy.DropWeapon.GetComponent<WeaponObj>());
+
     }
 }

@@ -45,6 +45,8 @@ public class Enemy_Visil : ActorBase
     {
         base.Intialize();
 
+        DropWeapon = SetRandomDropItem();
+
         Status.MaxHp = _maxHp;
         Status.Hp = _maxHp;
         Status.Attack = _attack;
@@ -67,6 +69,23 @@ public class Enemy_Visil : ActorBase
         HealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
         HealthBar.max_HP = _maxHp;
         HealthBar.Initialize();
+    }
+
+    void ConnectHealthBar()
+    {
+        HealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
+        HealthBar.Enemy = gameObject;
+        HealthBar.max_HP = _maxHp;
+        HealthBar.Initialize();
+    }
+
+    GameObject SetRandomDropItem()
+    {
+        float rand = Random.Range(0, 101);
+        if (rand <= 10) return LegendaryWeapons[Random.Range(0, LegendaryWeapons.Count)];
+        else if (rand <= 25) return RareWeapons[Random.Range(0, RareWeapons.Count)];
+        else if (rand <= 50) return EpicWeapons[Random.Range(0, EpicWeapons.Count)];
+        else return NormalWeapons[Random.Range(0, NormalWeapons.Count)];
     }
 
     public void BindActions()

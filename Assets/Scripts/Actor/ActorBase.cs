@@ -7,6 +7,18 @@ using Utils;
 
 public class ActorBase : MonoBehaviour
 {
+
+    [Header("드랍 아이템")]
+    public List<GameObject> NormalWeapons;
+    public List<GameObject> RareWeapons;
+    public List<GameObject> EpicWeapons;
+    public List<GameObject> LegendaryWeapons;
+
+    public GameObject DropWeapon;
+
+    [Header("체력바")]
+    public HealthBar HealthBar;
+
     protected Status _status;
 
     public Status Status { get { return _status; } }
@@ -89,6 +101,7 @@ public class ActorBase : MonoBehaviour
 
         Status.Hp -= damage;
         Debug.Log($"{name}: {damage} 만큼의 피해를 입었습니다! (현재 체력: {Status.Hp}");
+        HealthBar.current_HP = Status.Hp;
         var damageText = Instantiate(_damageTextPrefab, this.transform);
         damageText.GetComponent<RectTransform>().anchoredPosition = damageText.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 200f;
         damageText.GetComponent<TMPro.TMP_Text>().text = damage.ToString();
