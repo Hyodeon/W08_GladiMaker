@@ -604,7 +604,7 @@ MonoBehaviour:
   - AnimationName: Skill_Throw_SuperThrow
     LoopStartTime: 0.25
   AnimationName: 
-  canRepeat: 1
+  canRepeat: 0
 --- !u!1 &5831660895411714674
 GameObject:
   m_ObjectHideFlags: 0

@@ -276,10 +276,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9145978135661076122, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
-      propertyPath: AnimationName
-      value: Skill_Slash_Bleeding
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
