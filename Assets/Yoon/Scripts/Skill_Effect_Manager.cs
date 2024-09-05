@@ -14,7 +14,7 @@ public class Skill_Effect_Manager : MonoBehaviour
 
     [SerializeField] int weapon_idx = 0;
 
-    [Header("<color=red>ภ๛")]
+    [Header("<color=red>ร€รป")]
     public GameObject Current_Enemy;
 
     private void Start()
@@ -25,7 +25,13 @@ public class Skill_Effect_Manager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.CapsLock)) Current_Weapon.GetComponent<Weapon_Skill>().PlaySkillAnimation();
+
+        if(Input.GetKeyDown(KeyCode.Tab)) {
+            ChangeWeapon();
+        }
+
+        if (Input.GetKey(KeyCode.CapsLock)) GetComponent<Animator>().Play(GetComponent<Re_Attack>().My_Animations[Random.Range(0, GetComponent<Re_Attack>().My_Animations.Count)].AnimationName);
+
     }
 
     public void Spawn_Weapon_Trail()
@@ -62,7 +68,7 @@ public class Skill_Effect_Manager : MonoBehaviour
     void ChangeWeapon()
     {
         weapon_idx = weapon_idx + 1 > L_WeaponList.Count - 1 ? 0 : weapon_idx + 1;
-        Destroy(Current_Weapon);
+        if(Current_Weapon != null) Destroy(Current_Weapon);
         Current_Weapon = Instantiate(L_WeaponList[weapon_idx], Vector3.zero, Quaternion.identity);
         Current_Weapon.GetComponent<Weapon_Skill>().Player = gameObject;
         Current_Weapon.transform.SetParent(Right_Hand_Socket.transform.GetChild(0));

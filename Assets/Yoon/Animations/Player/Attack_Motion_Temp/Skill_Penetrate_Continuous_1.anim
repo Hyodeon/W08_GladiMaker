@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skill_Penetrate_Continuous
+  m_Name: Skill_Penetrate_Continuous_1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -8334,7 +8334,6 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-
   - time: 1.1666666
     functionName: OnLoopStart
     data: 
@@ -8342,7 +8341,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-
   - time: 1.2
     functionName: Spawn_Weapon_Trail
     data: 
@@ -8350,7 +8348,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-
   - time: 1.25
     functionName: StartMiniCameraShake
     data: 
@@ -8400,7 +8397,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-
   - time: 2
     functionName: OnLoopEnd
     data: 
@@ -8408,7 +8404,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-
   - time: 2.1
     functionName: 
     data: 

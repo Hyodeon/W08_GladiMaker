@@ -939,8 +939,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3740660563180528101}
   - component: {fileID: 8916958802939536548}
-  - component: {fileID: -7547954587978584568}
-  - component: {fileID: 1429372411875054694}
+
+  - component: {fileID: 9108007277763595644}
+  - component: {fileID: 19401725842428925}
+
   m_Layer: 0
   m_Name: Tiger
   m_TagString: Enemy
@@ -1008,9 +1010,11 @@ MonoBehaviour:
   _penetration: 0
   _ranged: 0
   _counter: 0
-  _animators:
-  - {fileID: 7400000, guid: 1097531d13615b84193716bc9de5a6cc, type: 2}
---- !u!114 &1429372411875054694
+
+  _animators: []
+  myHealthBar: {fileID: 0}
+--- !u!114 &19401725842428925
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

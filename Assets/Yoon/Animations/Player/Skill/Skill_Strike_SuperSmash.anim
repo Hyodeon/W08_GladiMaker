@@ -5144,6 +5144,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+
   - time: 1.5833334
     functionName: StartCameraShake
     data: 

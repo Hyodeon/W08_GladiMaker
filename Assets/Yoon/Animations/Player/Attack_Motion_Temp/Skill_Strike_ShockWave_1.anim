@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skill_Strike_ShockWave
+  m_Name: Skill_Strike_ShockWave_1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -3368,7 +3368,6 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-
   - time: 0.41666666
     functionName: OnLoopStart
     data: 
@@ -3385,7 +3384,6 @@ AnimationClip:
     messageOptions: 0
   - time: 0.5833333
     functionName: Spawn_Weapon_Effect
-
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
