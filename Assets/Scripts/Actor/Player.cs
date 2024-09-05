@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Utils;
 
@@ -66,6 +67,7 @@ public class Player : ActorBase
         _currentWeapon = weapon.weapon;
 
         _weaponObject.gameObject.GetComponent<Weapon_Skill>().Weapon_Initialize();
+        GetComponent<Skill_Effect_Manager>().Current_Weapon = _weaponObject.gameObject;
         
     }
 
@@ -82,6 +84,22 @@ public class Player : ActorBase
         return skillInfo;
     }
 
+    public int SkillIndexConverter(string skillName)
+    {
+        return skillName switch
+        {
+            "Skill_Strike_ShockWave" => 4,
+            "Skill_Strike_SuperSmash" => 5,
+            "Skill_Slash_FullMoonSlash" => 6,
+            "Skill_Slash_Bleeding" => 7,
+            "Skill_Slash_Critical" => 8,
+            "Skill_Penetrate_Execution" => 9,
+            "Skill_Penetrate_Continuous" => 10,
+            "Skill_Throw_SuperThrow" => 11,
+            _ => -1
+        };
+    }
+
     public SkillInfo Action_Skill()
     {
         Debug.Log($"{name} Skill");
@@ -91,7 +109,7 @@ public class Player : ActorBase
             CurrentWeapon.Mechanic == SkillMechanism.TurnBased ?
             CurrentWeapon.Turn_DamageRatio : CurrentWeapon.Per_DamageRatio;
         skillInfo.PlayerDamage = CalculateDamage();
-        skillInfo.Clip = _animators[6];
+        skillInfo.Clip = _animators[SkillIndexConverter(_weaponObject.weaponStruct._skillName)];
         skillInfo.IsRepeated = false;
 
         return skillInfo;

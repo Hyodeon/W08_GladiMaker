@@ -88,6 +88,7 @@ public class BattleManager : MonoBehaviour
         if (_isPlayerTurn)
         {
             StartCoroutine(AttackRoutine(_player.Attack(_playerTurnCount)));
+            _playerTurnCount++;
             _playerAttackCount++;
         }
         else
