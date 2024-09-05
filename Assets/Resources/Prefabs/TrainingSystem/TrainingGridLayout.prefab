@@ -95,7 +95,7 @@ MonoBehaviour:
     isSpecial: 0
   - color: {r: 0, g: 0.36312842, b: 1, a: 1}
     trainingRate: 2
-    percentWeight: 20
+    percentWeight: 30
     isSpecial: 0
   - color: {r: 0.5707547, g: 0.727303, b: 1, a: 1}
     trainingRate: 1
