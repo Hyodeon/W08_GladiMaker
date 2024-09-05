@@ -656,8 +656,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518318f82183be14b97e3f5c6bb2b241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 500
-  _attack: 2
+  HealthBar: {fileID: 0}
+  _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
+  _maxHp: 30
+  _attack: 10
   _accuracy: 0
   _evade: 0
   _guard: 0

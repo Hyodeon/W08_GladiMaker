@@ -25,6 +25,9 @@ public class ActorBase : MonoBehaviour
 
     public Animator Animator { get { return _animator; } }
 
+    [Header("Ã¼·Â¹Ù")]
+    public HealthBar HealthBar;
+
     [SerializeField] GameObject _damageTextPrefab;
 
     public virtual void Intialize()
@@ -89,6 +92,10 @@ public class ActorBase : MonoBehaviour
         var damageText = Instantiate(_damageTextPrefab, this.transform);
         damageText.GetComponent<RectTransform>().anchoredPosition = damageText.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 200f;
         damageText.GetComponent<TMPro.TMP_Text>().text = damage.ToString();
+
+
+        HealthBar.current_HP = Status.Hp;
+
 
         if (Status.Hp < 0)
         {

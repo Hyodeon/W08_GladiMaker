@@ -105,4 +105,14 @@ namespace Utils
     {
         TurnBased, Percentage, Special, Non_Skill, Monster
     }
+
+    [System.Serializable]
+    public struct StageInfo
+    {
+        public GameObject EnemyPrefab;
+
+        public int nextTurnCount;
+
+        public int gold;
+    }
 }

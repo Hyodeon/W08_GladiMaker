@@ -59,10 +59,15 @@ public class Enemy_TIger : ActorBase
         Status.Counter = _counter;
 
         _currentWeapon.Mechanic = SkillMechanism.Monster;
-
+        ConnectHealthBar();
         BindActions();
     }
-
+    void ConnectHealthBar()
+    {
+        HealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
+        HealthBar.max_HP = _maxHp;
+        HealthBar.Initialize();
+    }
     public void BindActions()
     {
         Actions.Add(Action_Attack);

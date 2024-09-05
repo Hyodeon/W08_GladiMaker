@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 19401725842428925}
   - component: {fileID: -7547954587978584568}
   m_Layer: 0
-  m_Name: Tiger
+  m_Name: WeakTiger
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1011,8 +1011,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
-  _maxHp: 15000
-  _attack: 30
+  _maxHp: 1300
+  _attack: 15
   _accuracy: 0
   _evade: 0
   _guard: 0

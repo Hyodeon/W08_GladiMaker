@@ -28,7 +28,7 @@ public class BuildManager : MonoBehaviour
     public PlayerBuildProperty _playerBuildProperty;
 
     [Header("Attributes")]
-    [SerializeField] int leftTurn;
+    public int LeftTurn;
 
     BuildState currentState;
 
@@ -50,11 +50,13 @@ public class BuildManager : MonoBehaviour
         canvasChildrens = CharacterBuildObj.transform.Cast<Transform>().Select(t => t.gameObject).ToArray();
         _playerBuildProperty = this.GetComponent<PlayerBuildProperty>();
     }
+
     private void Start()
     {
-        leftTurn = 5;
+        Debug.Log("ÀÌ¾Æ¿¬");
         ChangeUI(BuildState.Train);
     }
+
     private void Update()
     {
         TextUpdate();
@@ -77,9 +79,14 @@ public class BuildManager : MonoBehaviour
             case BuildState.Battle:
                 break;
             case BuildState.TurnEnd:
-                leftTurn--;
+                LeftTurn--;
                 ChangeUI(BuildState.Train);
                 break;
+        }
+
+        if (LeftTurn == 0)
+        {
+            GameManager.Instance.SwitchScene("BattleScene");
         }
     }
 
@@ -94,7 +101,7 @@ public class BuildManager : MonoBehaviour
 
     void TextUpdate()
     {
-        LeftTurnUIObj.GetComponentInChildren<TMP_Text>().text = $"Left Turn : {leftTurn.ToString()}";
+        LeftTurnUIObj.GetComponentInChildren<TMP_Text>().text = $"Left Turn : {LeftTurn.ToString()}";
         BuildingStatUIObj.GetComponentInChildren<TMP_Text>().text = "" +
             $"Money : {_playerBuildProperty._money}\n" +
             $"ComboRate : {_playerBuildProperty._trainingRate}" +

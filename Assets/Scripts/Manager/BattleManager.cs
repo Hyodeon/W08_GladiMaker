@@ -2,23 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utils;
 
 public class BattleManager : MonoBehaviour
 {
     private static BattleManager _instance;
-    public static BattleManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                GameObject battleManagerObject = new GameObject("BattleManager");
-                _instance = battleManagerObject.AddComponent<BattleManager>();
-            }
-            return _instance;
-        }
-    }
+    public static BattleManager Instance => _instance;
 
 
     private ActorBase _player;
@@ -41,6 +31,14 @@ public class BattleManager : MonoBehaviour
 
     private int _playerAttackCount;
     private int _criticalAttackCount;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+    }
 
     public void InitializeActor(ActorBase player, ActorBase enemy)
     {
@@ -209,5 +207,9 @@ public class BattleManager : MonoBehaviour
         criticalRate = 1f + _criticalAttackCount / 10;
 
         goldWeight *= attackRate * overKillRate * lowHpRate * criticalRate;
+
+        // TODO : °ñµå Ãß°¡
+
+        GameManager.Instance.SwitchScene("TrainingScene");
     }
 }

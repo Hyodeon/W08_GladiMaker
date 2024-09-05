@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utils;
 
 public class GameManager : MonoBehaviour
@@ -20,12 +21,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [SerializeField] ActorBase _player;
-    [SerializeField] ActorBase _monster;
-
     private Status _playerStatus;
 
-    public Status PlayerStatus { get { return _playerStatus; } } 
+    public Status PlayerStatus { get { return _playerStatus; } }
+
+    [SerializeField] private GameObject _playerPrefab;
+
+    private int _currentStage = 0;
+
+    public int CurrentStage { get { return _currentStage; } }
+
+    [SerializeField] private List<StageInfo> _stages;
 
     private void Start()
     {
@@ -34,46 +40,86 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
-        else if (_instance != this)
-        {
-            Destroy(gameObject); // �̹� �ν��Ͻ��� ������ ���� ������ ������Ʈ�� ����
-            return;
-        }
 
-        Initialize();
-    }
-
-    public void Initialize()
-    {
-        _player = GameObject.Find("Player").GetComponent<ActorBase>();
-        _monster = GameObject.Find("Monster").GetComponent<ActorBase>();
+        _currentStage = 0;
 
         _playerStatus = new Status();
+        InitializePlayerStatus();
+    }
+
+    public void SwitchScene(string name)
+    {
+
+        SceneManager.LoadScene(name);
+    }
+    
+    // 일반 씬 초기화
+    public void Initialize()
+    {
+        _currentStage++;
+
+        Debug.Log($"현재 스테이지가 {_currentStage}이 됩니다.");
+
+        BuildManager.Instance.LeftTurn = _stages[_currentStage].nextTurnCount;
+
+    }
+
+
+    public void InitializeBattle()
+    {
+        GameObject playerSpawnPosition = GameObject.Find("PlayerSpawnPoint");
+        GameObject enemySpawnPosition = GameObject.Find("EnemySpawnPoint");
+
+        ActorBase player = Instantiate(_playerPrefab, playerSpawnPosition.transform.position, Quaternion.identity)
+            .GetComponent<ActorBase>();
+        
+        ActorBase monster = Instantiate(_stages[_currentStage].EnemyPrefab, enemySpawnPosition.transform.position, Quaternion.identity)
+            .GetComponent<ActorBase>();
+
+        Debug.Log($"{_stages[_currentStage].EnemyPrefab.name} 을 소환해!!!!!!!!!!!!!!!!!!!!!!!!");
 
         if (_playerStatus == null)
         {
             Debug.Log("[GameManager.cs] Player Status Initialize Error!");
         }
 
-        InitializePlayerStatus();
+        Debug.Log($"Intialized GameManager.cs {gameObject.GetInstanceID()}");
+
+        BattleManager.Instance.InitializeActor(player, monster);
+
+    }
+
+    public void InitializeBattle_OneTime()
+    {
+        GameObject playerSpawnPosition = GameObject.Find("PlayerSpawnPoint");
+        GameObject enemySpawnPosition = GameObject.Find("EnemySpawnPoint");
+
+        ActorBase player = Instantiate(_playerPrefab, playerSpawnPosition.transform.position, Quaternion.identity)
+            .GetComponent<ActorBase>();
+        ActorBase monster = Instantiate(_stages[CurrentStage].EnemyPrefab, enemySpawnPosition.transform.position, Quaternion.identity)
+            .GetComponent<ActorBase>();
+
+        if (_playerStatus == null)
+        {
+            Debug.Log("[GameManager.cs] Player Status Initialize Error!");
+        }
 
         Debug.Log($"Intialized GameManager.cs {gameObject.GetInstanceID()}");
 
-        // �׽�Ʈ �ڵ� ���߿� �����ߵ�
-        BattleManager.Instance.InitializeActor(
-        _player, _monster);
+        BattleManager.Instance.InitializeActor(player, monster);
     }
+
 
     private void InitializePlayerStatus()
     {
         _playerStatus.MaxHp = 200;
         _playerStatus.Hp = _playerStatus.MaxHp;
-        _playerStatus.Attack = 5;
+        _playerStatus.Attack = 10;
         _playerStatus.Accuracy = 1;
         _playerStatus.Evade = 1;
         _playerStatus.Guard = 1;
 
-        _playerStatus.Strike = 1000;
+        _playerStatus.Strike = 0;
         _playerStatus.Slash = 0;
         _playerStatus.Penetration = 0;
         _playerStatus.Ranged = 0;

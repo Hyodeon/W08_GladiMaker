@@ -24,16 +24,12 @@ public class HealthBar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift)) current_HP = max_HP;
 
+
         float target = Mathf.Lerp(HP.fillAmount, current_HP / max_HP, speed * Time.deltaTime);
         float targetEffect = Mathf.Lerp(HP_Effect.fillAmount, current_HP / max_HP, speedEffect * Time.deltaTime);
 
         HP.fillAmount = target;
         HP_Effect.fillAmount = targetEffect;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        current_HP -= damage;
     }
 
 }

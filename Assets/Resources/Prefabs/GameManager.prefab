@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3293751333319774408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1574396903251131826}
+  - component: {fileID: 6557057687422233214}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574396903251131826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3293751333319774408}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.476902, y: 0.65257716, z: 0.04457707}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6557057687422233214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3293751333319774408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391f63b148c1ee649885f7b75cd5d18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerPrefab: {fileID: 5133758504226401722, guid: 5a62c2f6b7127db438b1f31fb869fd79, type: 3}
+  _stages:
+  - EnemyPrefab: {fileID: 7444808472329751549, guid: 4b2c4b3c7a8f29244b6a43454af817cd, type: 3}
+    nextTurnCount: 0
+    gold: 500
+  - EnemyPrefab: {fileID: 7115833814307071957, guid: 2792ab5b501eb304ab6071e09169c5a5, type: 3}
+    nextTurnCount: 5
+    gold: 1000
+  - EnemyPrefab: {fileID: 7115833814307071957, guid: c95f02316f37c56459989c760c01cfce, type: 3}
+    nextTurnCount: 10
+    gold: 10000
+  - EnemyPrefab: {fileID: 517747543588006500, guid: ebb613c76d6ef534e85b327b17900e9d, type: 3}
+    nextTurnCount: 5
+    gold: 50000
+  - EnemyPrefab: {fileID: 8641383721977486893, guid: df82dffc1a61ca147ad7f4defc3f3763, type: 3}
+    nextTurnCount: 5
+    gold: 100000
+  - EnemyPrefab: {fileID: 7115833814307071957, guid: e1979fd1d7a62c94ea16cf4839a31f7b, type: 3}
+    nextTurnCount: 5
+    gold: 500000
+  - EnemyPrefab: {fileID: 517747543588006500, guid: ef9ad7e1982fdb246b8266257df031b1, type: 3}
+    nextTurnCount: 10
+    gold: 1000000
+  - EnemyPrefab: {fileID: 8641383721977486893, guid: d4328cc4720340f4c97d0dae493f2b45, type: 3}
+    nextTurnCount: 10
+    gold: 1500000
+  - EnemyPrefab: {fileID: 6736178563122481299, guid: 8f19dc4fba81d3947bed88f4baf00c65, type: 3}
+    nextTurnCount: 10
+    gold: 5000000
+  - EnemyPrefab: {fileID: 2135795797453947273, guid: 05b008c1ca8a5b2459019b0e56a3b6fa, type: 3}
+    nextTurnCount: 5
+    gold: 10000000
+  - EnemyPrefab: {fileID: 0}
+    nextTurnCount: 5
+    gold: 0
+  - EnemyPrefab: {fileID: 0}
+    nextTurnCount: 5
+    gold: 0
+  - EnemyPrefab: {fileID: 0}
+    nextTurnCount: 5
+    gold: 0
+  - EnemyPrefab: {fileID: 0}
+    nextTurnCount: 5
+    gold: 0
+  - EnemyPrefab: {fileID: 0}
+    nextTurnCount: 5
+    gold: 0

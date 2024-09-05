@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -41,32 +40,4 @@ public class Weapon_Skill : MonoBehaviour
     }
 
     //타격
-
-    //참격
-
-    //관통
-
-    //투척
-
-    int getNumOfBlendTreeMotion()
-    {
-        var animatorController = anim.runtimeAnimatorController as AnimatorController;
-
-        foreach (var layer in animatorController.layers)
-        {
-            foreach (var state in layer.stateMachine.states)
-            {
-                if (state.state.name == my_WeaponType.ToString())
-                {
-                    var blendTree = state.state.motion as BlendTree;
-                    if (blendTree != null)
-                    {
-                        return blendTree.children.Length;
-                    }
-                    return 0; 
-                }
-            }
-        }
-        return 0;
-    }
 }

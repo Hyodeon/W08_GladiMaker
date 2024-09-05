@@ -321,7 +321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fff3ab638835f43855a2aa84eaec02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 0
+  _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
+  _maxHp: 300000000
   _attack: 0
   _accuracy: 0
   _evade: 0
@@ -331,6 +332,7 @@ MonoBehaviour:
   _penetration: 0
   _ranged: 0
   _counter: 0
+  _animators: []
   myHealthBar: {fileID: 0}
 --- !u!1 &5168490781479558123
 GameObject:

@@ -554,6 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e14fc1b6e3dbc64ab6933aacba9e6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
   myHealthBar: {fileID: 0}
   _animators:
   - {fileID: 7400000, guid: 54efe21297d75f546b5e98f7af6df699, type: 2}
