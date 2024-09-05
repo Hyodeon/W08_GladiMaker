@@ -130,6 +130,6 @@ MonoBehaviour:
     Turn_DamageRatio: 3
   weaponStruct:
     _name: "\uC9F1\uB3CC"
-    _skillName: 
+    _skillName: Skill_Throw_SuperThrow
     _skillInfo: "5\uD134\uC5D0 \uD55C \uBC88 \uC9F1\uB3CC\uC744 \uAC15\uD558\uAC8C
       \uB358\uC9D1\uB2C8\uB2E4."

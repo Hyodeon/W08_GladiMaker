@@ -16,6 +16,13 @@ public class Player : ActorBase
     [SerializeField]
     private List<AnimationClip> _animators = new List<AnimationClip>();
 
+    [Header("<color=red>기본 무기")]
+    [SerializeField]
+    private GameObject _basicWeapon;
+
+    [SerializeField]
+    private GameObject _weaponSocket;
+
 
     public override void Intialize()
     {
@@ -23,7 +30,6 @@ public class Player : ActorBase
 
         _status = GameManager.Instance.PlayerStatus;
 
-        Debug.Log($"{gameObject.GetInstanceID()}");
 
         if (_status == null)
         {
@@ -35,6 +41,8 @@ public class Player : ActorBase
         //myHealthBar.max_HP = _maxHp;
         //myHealthBar.Initialize();
 
+        SwitchWeapon(_basicWeapon.GetComponent<WeaponObj>());
+
         BindActions();
     }
 
@@ -42,7 +50,23 @@ public class Player : ActorBase
     {
         Actions.Add(Action_Attack);
         Actions.Add(Action_Skill);
-        Actions.Add(TestRepeatedSkill);
+    }
+
+    public override void SwitchWeapon(WeaponObj weapon)
+    {
+
+        if (_weaponObject != null)
+        {
+            Destroy(_weaponObject.gameObject);
+        }
+
+        _weaponObject = 
+            Instantiate(weapon.gameObject, Vector3.zero, Quaternion.identity).GetComponent<WeaponObj>();
+        _weaponObject.transform.SetParent(_weaponSocket.transform);
+        _currentWeapon = weapon.weapon;
+
+        _weaponObject.gameObject.GetComponent<Weapon_Skill>().Weapon_Initialize();
+        
     }
 
     public SkillInfo Action_Attack()
@@ -52,7 +76,7 @@ public class Player : ActorBase
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 1f;
         skillInfo.PlayerDamage = CalculateDamage();
-        skillInfo.Clip = _animators[0];
+        skillInfo.Clip = _animators[(int)CurrentWeapon.Type];
         skillInfo.IsRepeated = false;
 
         return skillInfo;
@@ -63,25 +87,12 @@ public class Player : ActorBase
         Debug.Log($"{name} Skill");
 
         SkillInfo skillInfo = new SkillInfo();
-        skillInfo.DamageRatio = 2f;
+        skillInfo.DamageRatio =
+            CurrentWeapon.Mechanic == SkillMechanism.TurnBased ?
+            CurrentWeapon.Turn_DamageRatio : CurrentWeapon.Per_DamageRatio;
         skillInfo.PlayerDamage = CalculateDamage();
-        skillInfo.Clip = _animators[1];
+        skillInfo.Clip = _animators[6];
         skillInfo.IsRepeated = false;
-
-        return skillInfo;
-    }
-
-    public SkillInfo TestRepeatedSkill()
-    {
-        Debug.Log($"{name} Repeated Skill!!!!");
-
-        // 최대 5회 반복, 50퍼센트 확률로 여러번 발동
-        SkillInfo skillInfo = new SkillInfo();
-        skillInfo.DamageRatio = 2f;
-        skillInfo.Clip = _animators[2];
-        skillInfo.IsRepeated = true;
-        skillInfo.RepeatProbability = 0.9f;
-        skillInfo.MaxRepeatCount = 5;
 
         return skillInfo;
     }

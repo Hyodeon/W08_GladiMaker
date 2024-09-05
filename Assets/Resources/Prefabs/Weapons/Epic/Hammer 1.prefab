@@ -120,16 +120,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon:
-    WeaponDamage: 100
+    WeaponDamage: 125
     Tier: 2
     Type: 0
-    Mechanic: 0
+    Mechanic: 1
     Per_ActivationPercentage: 15
     Per_DamageRatio: 3
     Turn_TurnCount: 0
     Turn_DamageRatio: 0
   weaponStruct:
     _name: "\uC1E0\uB9DD\uCE58"
-    _skillName: 
+    _skillName: Skill_Strike_ShockWave
     _skillInfo: "\uACF5\uACA9 \uC2DC, \uC77C\uC815 \uD655\uB960\uB85C \uCDA9\uACA9\uD30C\uB97C
       \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
