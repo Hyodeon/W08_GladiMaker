@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Player player;
-    public EnemySample Enemy;
+    public GameObject Enemy;
 
     public float max_HP;
     public float current_HP;
