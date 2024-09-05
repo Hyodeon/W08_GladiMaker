@@ -722,7 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7695559643836051154}
   - component: {fileID: 2802121562975577640}
-  - component: {fileID: 506887686042687845}
+  - component: {fileID: 1092144042426922653}
   m_Layer: 0
   m_Name: DooBur
   m_TagString: Enemy
@@ -767,7 +767,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &506887686042687845
+--- !u!114 &1092144042426922653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -776,11 +776,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6736178563122481299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fff3ab638835f43855a2aa84eaec02, type: 3}
+  m_Script: {fileID: 11500000, guid: 598d501bebc5f154baf52fb5ed740c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 0
-  _attack: 0
+  _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
+  _maxHp: 100000000
+  _attack: 40000
   _accuracy: 0
   _evade: 0
   _guard: 0
@@ -789,7 +790,9 @@ MonoBehaviour:
   _penetration: 0
   _ranged: 0
   _counter: 0
-  myHealthBar: {fileID: 0}
+  _animators:
+  - {fileID: 7400000, guid: 476686820584c114ba5de25544ec1447, type: 2}
+  - {fileID: 7400000, guid: 476686820584c114ba5de25544ec1447, type: 2}
 --- !u!1 &7600343826771391105
 GameObject:
   m_ObjectHideFlags: 0

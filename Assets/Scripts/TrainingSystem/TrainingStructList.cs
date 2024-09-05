@@ -72,6 +72,7 @@ public class TrainingStructList : MonoBehaviour
     {
         Dictionary<string, int> trainResult = new Dictionary<string, int>();
         int combo = 0;
+        float trainingRate = 1;
         bool failChk = false;
         
         foreach (TrainingUnit unit in units)
@@ -85,7 +86,8 @@ public class TrainingStructList : MonoBehaviour
             else if (randomValue <= _percentage)
             {
                 // rate as combo
-                var trainingRate =((1+(BuildManager.Instance.gameObject.GetComponent<PlayerBuildProperty>()._trainingRate)*combo));
+                trainingRate *= ((1+(BuildManager.Instance.gameObject.GetComponent<PlayerBuildProperty>()._trainingRate*combo)));
+                trainingRate = (float)System.Math.Round(trainingRate,2);
                 var addStatValue = (int)(trainingRate * unit._trainingRate);
 
                 // create Combo Text

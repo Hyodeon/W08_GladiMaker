@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 5661730944130175494}
   - component: {fileID: 9199633626166590756}
   - component: {fileID: 6178857709388491146}
-  - component: {fileID: 2851333557781900744}
+  - component: {fileID: -2967512462925752133}
   m_Layer: 0
   m_Name: WangKalMan
   m_TagString: Enemy
@@ -908,7 +908,7 @@ MonoBehaviour:
   - {fileID: 8328966078435386943}
   SmashEffect: {fileID: 7687088914008276269, guid: 7222bee1c080e9740ab3704ffd4d787b, type: 3}
   spawnDelay: 0.2
---- !u!114 &2851333557781900744
+--- !u!114 &-2967512462925752133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -917,17 +917,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8641383721977486893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fff3ab638835f43855a2aa84eaec02, type: 3}
+  m_Script: {fileID: 11500000, guid: f6edceabf3d16a543982a54d0d7fa33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 0
-  _attack: 0
-  _accuracy: 0
-  _evade: 0
-  _guard: 0
+  _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
+  _maxHp: 130000
+  _attack: 250
+  _accuracy: 100
+  _evade: 100
+  _guard: 100
   _strike: 0
   _slash: 0
   _penetration: 0
   _ranged: 0
   _counter: 0
-  myHealthBar: {fileID: 0}
+  _animators:
+  - {fileID: 7400000, guid: 9a2e2d1b77162f84c8b0450137c56936, type: 2}
+  - {fileID: 7400000, guid: a1ea55362f6878f4cba1ab74e8d971f9, type: 2}

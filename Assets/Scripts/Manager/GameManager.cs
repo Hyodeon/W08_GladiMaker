@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     public void Initialize()
     {
+        _player = GameObject.Find("Player").GetComponent<ActorBase>();
+        _monster = GameObject.Find("Monster").GetComponent<ActorBase>();
 
         _playerStatus = new Status();
 
@@ -58,20 +60,20 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Intialized GameManager.cs {gameObject.GetInstanceID()}");
 
         // 테스트 코드 나중에 지워야됨
-        //BattleManager.Instance.InitializeActor(
-        //_player, _monster);
+        BattleManager.Instance.InitializeActor(
+        _player, _monster);
     }
 
     private void InitializePlayerStatus()
     {
-        _playerStatus.MaxHp = 100;
+        _playerStatus.MaxHp = 1000000;
         _playerStatus.Hp = _playerStatus.MaxHp;
-        _playerStatus.Attack = 20;
+        _playerStatus.Attack = 6000;
         _playerStatus.Accuracy = 1;
         _playerStatus.Evade = 1;
         _playerStatus.Guard = 1;
 
-        _playerStatus.Strike = 0;
+        _playerStatus.Strike = 1000;
         _playerStatus.Slash = 0;
         _playerStatus.Penetration = 0;
         _playerStatus.Ranged = 0;
