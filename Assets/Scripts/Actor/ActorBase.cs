@@ -17,7 +17,9 @@ public class ActorBase : MonoBehaviour
 
     protected Animator _animator;
 
-    private Weapon _currentWeapon;
+    protected WeaponObj _weaponObject;
+
+    protected Weapon _currentWeapon;
 
     public Weapon CurrentWeapon { get { return _currentWeapon; } }
 
@@ -33,8 +35,6 @@ public class ActorBase : MonoBehaviour
         _animator.Play("Idle");
 
         _currentWeapon = new Weapon();
-
-        SwitchWeapon(new Weapon());
 
         Debug.Log($"Initialized {name}");
     }
@@ -63,14 +63,20 @@ public class ActorBase : MonoBehaviour
 
                 return Actions[result];
 
+            case SkillMechanism.Non_Skill:
+
+                return Actions[0];
+
+            case SkillMechanism.Monster:
+                int result2 = UnityEngine.Random.value
+                    < 0.2f
+                    ? 1 : 0;
+
+                return Actions[result2];
+
         }
 
         return Actions[0];
-    }
-
-    public void BindWeapon(Weapon weapon)
-    {
-        _currentWeapon = weapon;
     }
 
     public bool GetDamageCheckDead(int damage)
@@ -97,17 +103,10 @@ public class ActorBase : MonoBehaviour
         _animator.StopPlayback();
     }
 
-    public void SwitchWeapon(Weapon weapon)
+    public virtual void SwitchWeapon(WeaponObj weapon)
     {
-        _currentWeapon = weapon;
-
-        // Test Code
-        _currentWeapon.WeaponDamage = 200;
-        _currentWeapon.Type = WeaponAttackType.Strike;
-        _currentWeapon.Tier = WeaponTier.Epic;
-        _currentWeapon.Mechanic = SkillMechanism.Percentage;
-        _currentWeapon.Per_DamageRatio = 1.5f;
-        _currentWeapon.Per_ActivationPercentage = 50;
+        if (weapon == null) _currentWeapon = new Weapon();
+        _currentWeapon = weapon.weapon;
     }
 
     protected float CalculateDamage()
@@ -120,7 +119,8 @@ public class ActorBase : MonoBehaviour
         damage += Status.Attack;
 
         // 2. 무기 공격력 합산
-        ratio *= CurrentWeapon.WeaponDamage / 100;
+        if (gameObject.tag == "Player")
+            ratio *= CurrentWeapon.WeaponDamage / 100;
 
         // 3. 무기 타입에 따른 배수
         ratio *= 1 + CurrentWeapon.Type switch
@@ -131,6 +131,12 @@ public class ActorBase : MonoBehaviour
             WeaponAttackType.Penetration => Status.Penetration / 100,
             _ => 0f
         };
+
+        float randum = UnityEngine.Random.Range(0.8f, 1.2f);
+
+        Debug.Log($"란듐 {randum}");
+
+        ratio *= randum;
 
         return ratio * damage;
     }

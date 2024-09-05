@@ -122,8 +122,8 @@ MonoBehaviour:
   weapon:
     WeaponDamage: 350
     Tier: 3
-    Type: 0
-    Mechanic: 0
+    Type: 3
+    Mechanic: 3
     Per_ActivationPercentage: 0
     Per_DamageRatio: 0
     Turn_TurnCount: 0

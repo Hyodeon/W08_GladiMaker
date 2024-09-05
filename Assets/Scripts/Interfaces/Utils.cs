@@ -93,7 +93,7 @@ namespace Utils
 
     public enum WeaponAttackType
     {
-        Strike, Slash, Penetration, Ranged
+        Strike = 0, Slash = 1, Penetration = 2, Ranged = 3
     }
 
     public enum WeaponTier
@@ -103,6 +103,6 @@ namespace Utils
 
     public enum SkillMechanism
     {
-        TurnBased, Percentage, Special
+        TurnBased, Percentage, Special, Non_Skill, Monster
     }
 }

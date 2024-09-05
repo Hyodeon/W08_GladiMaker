@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         _playerStatus.MaxHp = 100;
         _playerStatus.Hp = _playerStatus.MaxHp;
-        _playerStatus.Attack = 10;
+        _playerStatus.Attack = 20;
         _playerStatus.Accuracy = 1;
         _playerStatus.Evade = 1;
         _playerStatus.Guard = 1;
@@ -89,52 +89,52 @@ public class GameManager : MonoBehaviour
 
     public void EditMaxHp(float hp)
     {
-        _playerStatus.MaxHp = hp;
+        _playerStatus.MaxHp += hp;
     }
 
     public void EditAttack(float attack)
     {
-        _playerStatus.Attack = attack;
+        _playerStatus.Attack += attack;
     }
 
     public void EditAccuracy(float accuracy)
     {
-        _playerStatus.Accuracy = accuracy;
+        _playerStatus.Accuracy += accuracy;
     }
 
     public void EditEvade(float evade)
     {
-        _playerStatus.Evade = evade;
+        _playerStatus.Evade += evade;
     }
 
     public void EditGuard(float guard)
     {
-        _playerStatus.Guard = guard;
+        _playerStatus.Guard += guard;
     }
 
     public void EditStrike(float strike)
     {
-        _playerStatus.Strike = strike;
+        _playerStatus.Strike += strike;
     }
 
     public void EditSlash(float slash)
     {
-        _playerStatus.Slash = slash;
+        _playerStatus.Slash += slash;
     }
 
     public void EditPenetration(float penetration)
     {
-        _playerStatus.Penetration = penetration;
+        _playerStatus.Penetration += penetration;
     }
 
     public void EditRanged(float ranged)
     {
-        _playerStatus.Ranged = ranged;
+        _playerStatus.Ranged += ranged;
     }
 
     public void EditCounter(float counter)
     {
-        _playerStatus.Counter = counter; 
+        _playerStatus.Counter += counter; 
     }
 
     #endregion

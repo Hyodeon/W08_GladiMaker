@@ -3368,6 +3368,7 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+
   - time: 0.41666666
     functionName: OnLoopStart
     data: 
@@ -3382,6 +3383,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+
   - time: 0.5833333
     functionName: Spawn_Weapon_Effect
     data: 
@@ -3390,6 +3392,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.73333335
+
     functionName: 
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -3397,6 +3400,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.73333335
+
     functionName: CallTakeDamage
     data: 
     objectReferenceParameter: {fileID: 0}

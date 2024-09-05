@@ -25,10 +25,6 @@ public class Skill_Effect_Manager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab)) {
-            ChangeWeapon();
-        }
-
         if (Input.GetKey(KeyCode.CapsLock)) Current_Weapon.GetComponent<Weapon_Skill>().PlaySkillAnimation();
     }
 
