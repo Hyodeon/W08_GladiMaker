@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ShowClearPanel : MonoBehaviour
@@ -9,6 +10,11 @@ public class ShowClearPanel : MonoBehaviour
     public GameObject ClearPanel;
 
     public float gold, attackRate, overKillRate, LowHPRate, CriticalRate;
+
+    private bool _isUpdateGold = false;
+
+    private int _targetGold;
+    private int _currentGold;
 
     [Header("Àû ÀÌ¸§")]
     [SerializeField] TMP_Text EnemyNameText;
@@ -54,13 +60,16 @@ public class ShowClearPanel : MonoBehaviour
         CriticalRate = crit;
         weapon = weap;
 
-        Gold.text = $"X{gold.ToString("N2")}";
-        Bonus1.text = $"X{atk.ToString("N2")}";
-        Bonus2.text = $"X{ok.ToString("N2")}";
-        Bonus3.text = $"X{lo.ToString("N2")}";
-        Bonus4.text = $"X{crit.ToString("N2")}";
+        _currentGold = GameManager.Instance.CurrentStageInfo.gold;
+        _targetGold = Mathf.CeilToInt(_currentGold * gold);
 
-        var weaponItemUI = WeaponName.transform.parent.GetComponent<WeaponUI>();    
+        Gold.text = $"{_currentGold}";
+        Bonus1.text = $"X{attackRate.ToString("N2")}";
+        Bonus2.text = $"X{overKillRate.ToString("N2")}";
+        Bonus3.text = $"X{LowHPRate.ToString("N2")}";
+        Bonus4.text = $"X{CriticalRate.ToString("N2")}";
+
+        var weaponItemUI = WeaponName.transform.parent.GetComponent<WeaponUI>();
         Icon.sprite = weap.GetComponent<SpriteRenderer>().sprite;
         WeaponName.text = "<color=black>" + weap.weaponStruct._name;
 
@@ -69,6 +78,28 @@ public class ShowClearPanel : MonoBehaviour
 
         WeaponStat.text = "<color=black>Att +" + weap.weapon.WeaponDamage;
         WeaponInfo.text = "<color=orange>" + weap.weaponStruct._skillInfo;
+    }
+
+    private IEnumerator UpdateGold()
+    {
+        yield return null;
+
+        while (_currentGold < _targetGold)
+        {
+            yield return null;
+            _currentGold += (int)Mathf.Max(1, Mathf.CeilToInt((_targetGold - _currentGold) / 50));
+            Gold.text = _currentGold.ToString();
+        }
+
+        _currentGold = _targetGold;
+        Gold.text = _currentGold.ToString();
+
+        GameManager.Instance.EditGold(_targetGold);
+    }
+
+    public void StartUpdateGold()
+    {
+        StartCoroutine(UpdateGold());
     }
 
     public void SetCubeResult() => StartCoroutine(Set_Cube_Result_Sequencely());
@@ -82,8 +113,13 @@ public class ShowClearPanel : MonoBehaviour
         }
     }
 
-    public void SwitchScene()
+    public void ChangeScene()
     {
-        GameManager.Instance.SwitchScene("TrainingScene");
+        SceneManager.LoadScene("TrainingScene");
+    }
+
+    public void SwapWeapon()
+    {
+        GameManager.Instance.SwapWeapon(weapon);
     }
 }

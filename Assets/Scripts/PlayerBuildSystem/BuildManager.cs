@@ -91,10 +91,7 @@ public class BuildManager : MonoBehaviour
 
         if (LeftTurn == 0)
         {
-            GameObject.FindAnyObjectByType<Battle_Load_UI>().StartLoading();
-
-
-            //GameManager.Instance.SwitchScene("BattleScene");
+            FindAnyObjectByType<Battle_Load_UI>().StartLoading();
         }
     }
 

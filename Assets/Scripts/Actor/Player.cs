@@ -41,7 +41,7 @@ public class Player : ActorBase
         HealthBar.max_HP = _status.MaxHp;
         HealthBar.Initialize();
 
-        SwitchWeapon(_basicWeapon.GetComponent<WeaponObj>());
+        SwitchWeapon(GameManager.Instance.CurrentWeapon);
 
         BindActions();
     }
@@ -72,8 +72,6 @@ public class Player : ActorBase
 
     public SkillInfo Action_Attack()
     {
-        Debug.Log($"{name} Attack");
-
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio = 1f;
         skillInfo.PlayerDamage = CalculateDamage();
@@ -101,8 +99,6 @@ public class Player : ActorBase
 
     public SkillInfo Action_Skill()
     {
-        Debug.Log($"{name} Skill");
-
         SkillInfo skillInfo = new SkillInfo();
         skillInfo.DamageRatio =
             CurrentWeapon.Mechanic == SkillMechanism.TurnBased ?

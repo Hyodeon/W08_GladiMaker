@@ -99,19 +99,22 @@ public class ActorBase : MonoBehaviour
     public bool GetDamageCheckDead(int damage)
     {
 
+        // 데미지 적용
         Status.Hp -= damage;
         Debug.Log($"{name}: {damage} 만큼의 피해를 입었습니다! (현재 체력: {Status.Hp}");
+        
+        // 체력바 적용
         HealthBar.current_HP = Status.Hp;
         HealthBar.GetComponent<Animator>().Play("Damaged");
+
+        // 데미지 텍스트 적용
         var damageText = Instantiate(_damageTextPrefab, this.transform);
         damageText.GetComponent<RectTransform>().anchoredPosition = damageText.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 200f;
         damageText.GetComponent<TMPro.TMP_Text>().text = damage.ToString();
 
-
         HealthBar.current_HP = Status.Hp;
 
-
-        if (Status.Hp < 0)
+        if (Status.Hp <= 0f)
         {
             return true;
         }
@@ -159,8 +162,6 @@ public class ActorBase : MonoBehaviour
         };
 
         float randum = UnityEngine.Random.Range(0.8f, 1.2f);
-
-        Debug.Log($"란듐 {randum}");
 
         ratio *= randum;
 

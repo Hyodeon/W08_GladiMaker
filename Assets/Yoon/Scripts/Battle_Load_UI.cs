@@ -18,24 +18,14 @@ public class Battle_Load_UI : MonoBehaviour
 
     public void Get_Enemy_Info()
     {
-        my_Enemy.sprite = GameManager.Instance.Stages[GameManager.Instance.CurrentStage].EnemyPrefab.GetComponent<ActorBase>().EnemyAvatar;
-        Enemy_Name.text = GameManager.Instance.Stages[GameManager.Instance.CurrentStage].EnemyPrefab.GetComponent<ActorBase>().Name;
+        my_Enemy.sprite = GameManager.Instance.CurrentStageInfo.EnemyPrefab.GetComponent<ActorBase>().EnemyAvatar;
+        Enemy_Name.text = GameManager.Instance.CurrentStageInfo.EnemyPrefab.GetComponent<ActorBase>().Name;
     }
 
     public void LoadScene()
     {
         SceneManager.LoadScene("BattleScene");
 
-        /*
-        if (GameManager.Instance.CurrentStage == 0)
-        {
-            GameManager.Instance.InitializeBattle_OneTime();
-        }
-        else
-        {
-            GameManager.Instance.InitializeBattle();
-        }
-        */
         GetComponent<Animator>().Play("Battle_Loading_End");
     }
 }
