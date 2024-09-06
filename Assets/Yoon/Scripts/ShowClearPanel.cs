@@ -29,6 +29,9 @@ public class ShowClearPanel : MonoBehaviour
     [SerializeField] TMP_Text WeaponStat;
     [SerializeField] TMP_Text WeaponInfo;
 
+    [Header("Å¥ºêÄ­")]
+    [SerializeField] CubePanel[] CubePanels;
+
     private void Start()
     {
         StartCoroutine(FindEnemyName());
@@ -57,11 +60,26 @@ public class ShowClearPanel : MonoBehaviour
         Bonus3.text = $"X{lo.ToString("N2")}";
         Bonus4.text = $"X{crit.ToString("N2")}";
 
+        var weaponItemUI = WeaponName.transform.parent.GetComponent<WeaponUI>();    
         Icon.sprite = weap.GetComponent<SpriteRenderer>().sprite;
         WeaponName.text = "<color=black>" + weap.weaponStruct._name;
-        WeaponGradeType.text = $"<color=red>{weap.weapon.Tier} | {weap.weapon.Type}";
+
+        WeaponGradeType.color = weaponItemUI.tierColor(weap.weapon.Tier);
+        WeaponGradeType.text = $"{weap.weapon.Tier} | {weap.weapon.Type}";
+
         WeaponStat.text = "<color=black>Att +" + weap.weapon.WeaponDamage;
         WeaponInfo.text = "<color=orange>" + weap.weaponStruct._skillInfo;
+    }
+
+    public void SetCubeResult() => StartCoroutine(Set_Cube_Result_Sequencely());
+
+    IEnumerator Set_Cube_Result_Sequencely()
+    {
+        foreach (var x in CubePanels)
+        {
+            x.SetMyResult();
+            yield return new WaitForSeconds(.5f);
+        }
     }
 
     public void SwitchScene()
