@@ -5,8 +5,10 @@ using System.Linq;
 using System.Xml.Serialization;
 using DG.Tweening.Core.Easing;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Rendering;
 
-public enum BuildState{ Event, Train, Battle, TurnEnd}
+public enum BuildState{ Event, Train,isTraining, Battle, TurnEnd}
 public class BuildManager : MonoBehaviour
 {
     private static BuildManager _instance;
@@ -73,7 +75,11 @@ public class BuildManager : MonoBehaviour
                 break;
             case BuildState.Train:
                 ItemShopUIObj.SetActive(true);
+                EnableTrainButton(true);
                 EnableUI(TrainUIObj);   
+                break;
+            case BuildState.isTraining:
+                EnableTrainButton(false);
                 break;
             case BuildState.Battle:
                 break;
@@ -99,6 +105,15 @@ public class BuildManager : MonoBehaviour
             child.SetActive(false);
         }
         obj.SetActive(true);
+    }
+
+    void EnableTrainButton(bool enableBtn)
+    {
+        var btns = TrainUIObj.GetComponentsInChildren<Button>();
+        foreach(var btn in btns)
+        {
+            btn.enabled = enableBtn;
+        }
     }
 
     void TextUpdate()
