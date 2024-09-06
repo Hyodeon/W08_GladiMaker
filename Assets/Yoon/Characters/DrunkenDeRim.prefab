@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aeec16cd66a2a4469fc2135ed7bca23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\uBA38\uACE0"
+  Name: "\uC88B\uC740\uB370\uB9BC"
+  EnemyAvatar: {fileID: 21300000, guid: 412c4736aeb004844a5acf8bc6035bb3, type: 3}
   NormalWeapons:
   - {fileID: 3103068902690859453, guid: badf27a4cef070b40bcf0bfa2aa80bf7, type: 3}
   - {fileID: 1968983242873684830, guid: 0e2f966455e66a54490a527346b3b29c, type: 3}

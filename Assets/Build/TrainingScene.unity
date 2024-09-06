@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4257683436165602640, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
+      propertyPath: _trainDelayTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4262039721719074107, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1163,6 +1167,10 @@ PrefabInstance:
     - target: {fileID: 1505547049702583740, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257683436165602640, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
+      propertyPath: _trainDelayTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4262039721719074107, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2786,6 +2794,10 @@ PrefabInstance:
     - target: {fileID: 1505547049702583740, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257683436165602640, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
+      propertyPath: _trainDelayTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4262039721719074107, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5346,6 +5358,10 @@ PrefabInstance:
     - target: {fileID: 1505547049702583740, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257683436165602640, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
+      propertyPath: _trainDelayTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4257683436165602640, guid: c7136a410288b4f48b6d246d98b9ac0e, type: 3}
       propertyPath: _comboTextPrefab

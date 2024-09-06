@@ -920,7 +920,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6edceabf3d16a543982a54d0d7fa33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\uBE68\uCE7C\uB9E8"
+  Name: "</color=red>\uC655\uCE7C\uB9E8 \uB4DC \uB808\uB4DC"
+  EnemyAvatar: {fileID: 21300000, guid: 1caa9508b92ba9a479b87c88773c5c04, type: 3}
   NormalWeapons:
   - {fileID: 3103068902690859453, guid: badf27a4cef070b40bcf0bfa2aa80bf7, type: 3}
   - {fileID: 1968983242873684830, guid: 0e2f966455e66a54490a527346b3b29c, type: 3}

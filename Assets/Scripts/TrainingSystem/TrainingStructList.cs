@@ -17,7 +17,7 @@ public class TrainingStructList : MonoBehaviour
 
     [Header("Variables")]
     public int _percentage;
-    public int _trainDelayTime;
+    public float _trainDelayTime;
     public bool isUsingItem = false;
 
     int percentChkMinScore;

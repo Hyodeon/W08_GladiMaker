@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public int CurrentStage { get { return _currentStage; } }
 
     [SerializeField] private List<StageInfo> _stages;
+    public List<StageInfo> Stages { get { return _stages; } }
 
     private void Start()
     {

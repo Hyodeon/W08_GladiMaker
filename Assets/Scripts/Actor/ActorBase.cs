@@ -9,6 +9,7 @@ public class ActorBase : MonoBehaviour
 {
 
     public string Name;
+    public Sprite EnemyAvatar;
 
     [Header("드랍 아이템")]
     public List<GameObject> NormalWeapons;
