@@ -70,6 +70,8 @@ public class TrainingStructList : MonoBehaviour
 
     IEnumerator TrainUnitRoutine(TrainingUnit[] units)
     {
+        BuildManager.Instance.ChangeUI(BuildState.isTraining);
+
         Dictionary<string, int> trainResult = new Dictionary<string, int>();
         int combo = 0;
         float trainingRate = 1;

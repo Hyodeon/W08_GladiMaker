@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2681452657246024505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2149186890064407362}
+  - component: {fileID: 7233056388696549688}
+  - component: {fileID: 1649789679048031837}
+  m_Layer: 0
+  m_Name: BuildManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2149186890064407362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681452657246024505}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 788.74585, y: 584.5435, z: 1.7567585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7233056388696549688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681452657246024505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac082a5f01195f42928d629926d3b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterBuildObj: {fileID: 0}
+  TrainUIObj: {fileID: 0}
+  EventUIObj: {fileID: 0}
+  LeftTurnUIObj: {fileID: 0}
+  BuildingStatUIObj: {fileID: 0}
+  ItemShopUIObj: {fileID: 0}
+  WeaponUIPrefab: {fileID: 0}
+  WeaponTest: {fileID: 0}
+  _playerBuildProperty: {fileID: 0}
+  LeftTurn: 0
+--- !u!114 &1649789679048031837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2681452657246024505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c990cab03a4844c9d4893606007aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money: 0
+  _trainingRate: 0.2
