@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ public class HealthBar : MonoBehaviour
     public Image HP;
     public Image HP_Effect;
 
+    public TMP_Text HP_Amount_Text;
+
     public void Initialize() => current_HP = max_HP;
 
 
@@ -27,6 +30,8 @@ public class HealthBar : MonoBehaviour
 
         HP.fillAmount = target;
         HP_Effect.fillAmount = targetEffect;
+
+        HP_Amount_Text.text = $"{Mathf.CeilToInt(target * max_HP)} / {Mathf.CeilToInt(max_HP)}";
     }
 
 }
