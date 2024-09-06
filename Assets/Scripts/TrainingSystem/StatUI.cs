@@ -13,15 +13,16 @@ public class StatUI : MonoBehaviour
 
     void TextUpdate()
     {
-        statTextList[0].text = "체력 : "+ GameManager.Instance.PlayerStatus.MaxHp.ToString();
-        statTextList[1].text = "공격 : " + GameManager.Instance.PlayerStatus.Attack.ToString();
-        statTextList[2].text = "방어 : " + GameManager.Instance.PlayerStatus.Guard.ToString();
-        statTextList[3].text = "명중 : " + GameManager.Instance.PlayerStatus.Accuracy.ToString();
-        statTextList[4].text = "회피 : " + GameManager.Instance.PlayerStatus.Evade.ToString();
 
-        statTextList[5].text = "참격 : " + GameManager.Instance.PlayerStatus.Slash.ToString();
-        statTextList[6].text = "타격 : " + GameManager.Instance.PlayerStatus.Strike.ToString();
-        statTextList[7].text = "관통 : " + GameManager.Instance.PlayerStatus.Penetration.ToString();
-        statTextList[8].text = "투척 : " + GameManager.Instance.PlayerStatus.Ranged.ToString();
+        statTextList[0].text = "체력 : " + System.Math.Round(GameManager.Instance.PlayerStatus.MaxHp, 1).ToString();
+        statTextList[1].text = "공격 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Attack, 1).ToString();
+        statTextList[2].text = "방어 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Guard, 1).ToString();
+        statTextList[3].text = "명중 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Accuracy, 1).ToString();
+        statTextList[4].text = "회피 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Evade, 1).ToString();
+
+        statTextList[5].text = "참격 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Slash, 1).ToString();
+        statTextList[6].text = "타격 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Strike, 1).ToString();
+        statTextList[7].text = "관통 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Penetration, 1).ToString();
+        statTextList[8].text = "투척 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Ranged, 1).ToString();
     }
 }

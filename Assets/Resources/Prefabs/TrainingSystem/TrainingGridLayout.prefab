@@ -102,16 +102,16 @@ MonoBehaviour:
     percentWeight: 10
     isSpecial: 0
   _normalStat:
-  - Hp
-  - Att
-  - Def
-  - Acc
-  - Eva
+  - "\uCCB4\uB825"
+  - "\uACF5\uACA9"
+  - "\uBC29\uC5B4"
+  - "\uBA85\uC911"
+  - "\uD68C\uD53C"
   _specialStat:
-  - Stk
-  - Sla
-  - Pen
-  - Ran
+  - "\uD0C0\uACA9"
+  - "\uCC38\uACA9"
+  - "\uAD00\uD1B5"
+  - "\uD22C\uCC99"
   _percentage: 0
   _trainDelayTime: 1
   isUsingItem: 0
