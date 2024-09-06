@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 311678071282410186}
   m_Layer: 0
   m_Name: DeRim
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aeec16cd66a2a4469fc2135ed7bca23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: "\uB300\uB9BC"
   NormalWeapons:
   - {fileID: 3103068902690859453, guid: badf27a4cef070b40bcf0bfa2aa80bf7, type: 3}
   - {fileID: 1968983242873684830, guid: 0e2f966455e66a54490a527346b3b29c, type: 3}
@@ -167,6 +168,7 @@ MonoBehaviour:
   - {fileID: 5765471426511432247, guid: 75ba26fdd6056984284befc5a50b0589, type: 3}
   - {fileID: 6695750815749917860, guid: d8949d7898fa0ec4f90d2933a14a0294, type: 3}
   DropWeapon: {fileID: 0}
+  HealthBar: {fileID: 0}
   _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
   _maxHp: 50000
   _attack: 80

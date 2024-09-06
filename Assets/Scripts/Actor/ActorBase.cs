@@ -8,6 +8,8 @@ using Utils;
 public class ActorBase : MonoBehaviour
 {
 
+    public string Name;
+
     [Header("드랍 아이템")]
     public List<GameObject> NormalWeapons;
     public List<GameObject> RareWeapons;
@@ -36,9 +38,6 @@ public class ActorBase : MonoBehaviour
     public Weapon CurrentWeapon { get { return _currentWeapon; } }
 
     public Animator Animator { get { return _animator; } }
-
-    [Header("체력바")]
-    public HealthBar HealthBar;
 
     [SerializeField] GameObject _damageTextPrefab;
 

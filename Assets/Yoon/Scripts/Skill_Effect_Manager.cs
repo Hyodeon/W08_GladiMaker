@@ -17,23 +17,6 @@ public class Skill_Effect_Manager : MonoBehaviour
     [Header("<color=red>Àû")]
     public GameObject Current_Enemy;
 
-    private void Start()
-    {
-        var Enemy = GameObject.FindGameObjectWithTag("Enemy");
-        if(Enemy != null) Current_Enemy = Enemy;
-    }
-
-    private void Update()
-    {
-
-        if(Input.GetKeyDown(KeyCode.Tab)) {
-            ChangeWeapon();
-        }
-
-        if (Input.GetKey(KeyCode.CapsLock)) GetComponent<Animator>().Play(GetComponent<Re_Attack>().My_Animations[Random.Range(0, GetComponent<Re_Attack>().My_Animations.Count)].AnimationName);
-
-    }
-
     public void Spawn_Weapon_Trail()
     {
         if (Current_Weapon.GetComponent<Weapon_Skill>().Weapon_Trail == null) return;
@@ -65,11 +48,9 @@ public class Skill_Effect_Manager : MonoBehaviour
         Camera.main.GetComponent<CameraShake>().startCameraShake(.02f, .2f);
     }
 
-    void ChangeWeapon()
+    public void ChangeWeapon(WeaponObj weapon)
     {
-        weapon_idx = weapon_idx + 1 > L_WeaponList.Count - 1 ? 0 : weapon_idx + 1;
-        if(Current_Weapon != null) Destroy(Current_Weapon);
-        Current_Weapon = Instantiate(L_WeaponList[weapon_idx], Vector3.zero, Quaternion.identity);
+        Current_Weapon = Instantiate(weapon.gameObject, Vector3.zero, Quaternion.identity);
         Current_Weapon.GetComponent<Weapon_Skill>().Player = gameObject;
         Current_Weapon.transform.SetParent(Right_Hand_Socket.transform.GetChild(0));
         Current_Weapon.GetComponent<Weapon_Skill>().Weapon_Initialize();

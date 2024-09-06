@@ -70,13 +70,6 @@ public class Enemy_Doobur : ActorBase
         HealthBar.Initialize();
     }
 
-    void ConnectHealthBar()
-    {
-        HealthBar = GameObject.Find("EnemyHP").GetComponent<HealthBar>();
-        HealthBar.Enemy = gameObject;
-        HealthBar.max_HP = _maxHp;
-        HealthBar.Initialize();
-    }
     GameObject SetRandomDropItem()
     {
         float rand = Random.Range(0, 101);

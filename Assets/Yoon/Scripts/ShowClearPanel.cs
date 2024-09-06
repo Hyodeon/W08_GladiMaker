@@ -10,6 +10,10 @@ public class ShowClearPanel : MonoBehaviour
 
     public float gold, attackRate, overKillRate, LowHPRate, CriticalRate;
 
+    [Header("Àû ÀÌ¸§")]
+    [SerializeField] TMP_Text EnemyNameText;
+
+
     [SerializeField] TMP_Text Gold;
     [SerializeField] TMP_Text Bonus1;
     [SerializeField] TMP_Text Bonus2;
@@ -25,6 +29,17 @@ public class ShowClearPanel : MonoBehaviour
     [SerializeField] TMP_Text WeaponStat;
     [SerializeField] TMP_Text WeaponInfo;
 
+    private void Start()
+    {
+        StartCoroutine(FindEnemyName());
+    }
+
+
+    IEnumerator FindEnemyName()
+    {
+        yield return new WaitUntil(() => GameObject.FindGameObjectWithTag("Enemy") != null);
+        EnemyNameText.text = GameObject.FindGameObjectWithTag("Enemy").GetComponent<ActorBase>().Name;
+    }
 
     public void ConnectUI(float gol, float atk, float ok, float lo, float crit, WeaponObj weap)
     {
@@ -36,16 +51,21 @@ public class ShowClearPanel : MonoBehaviour
         CriticalRate = crit;
         weapon = weap;
 
-        Gold.text = $"X{gold}";
-        Bonus1.text = $"X{atk}";
-        Bonus2.text = $"X{ok}";
-        Bonus3.text = $"X{lo}";
-        Bonus4.text = $"X{crit}";
+        Gold.text = $"X{gold.ToString("N2")}";
+        Bonus1.text = $"X{atk.ToString("N2")}";
+        Bonus2.text = $"X{ok.ToString("N2")}";
+        Bonus3.text = $"X{lo.ToString("N2")}";
+        Bonus4.text = $"X{crit.ToString("N2")}";
 
         Icon.sprite = weap.GetComponent<SpriteRenderer>().sprite;
         WeaponName.text = "<color=black>" + weap.weaponStruct._name;
         WeaponGradeType.text = $"<color=red>{weap.weapon.Tier} | {weap.weapon.Type}";
         WeaponStat.text = "<color=black>" + weap.weaponStruct._skillName;
         WeaponInfo.text = "<color=orange>" + weap.weaponStruct._skillInfo;
+    }
+
+    public void SwitchScene()
+    {
+        GameManager.Instance.SwitchScene("TrainingScene");
     }
 }

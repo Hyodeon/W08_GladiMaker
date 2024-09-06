@@ -196,6 +196,8 @@ public class BattleManager : MonoBehaviour
         float lowHpRate;
         float criticalRate;
 
+        _player.GetComponent<Animator>().Play("Win");
+
         // 1. �÷��̾� ���� Ƚ��
         attackRate = 1f + _playerAttackCount / 100;
 
@@ -211,9 +213,6 @@ public class BattleManager : MonoBehaviour
         goldWeight *= attackRate * overKillRate * lowHpRate * criticalRate;
 
         // TODO : ��� �߰�
-
-        GameManager.Instance.SwitchScene("TrainingScene");
         GameObject.FindAnyObjectByType<ShowClearPanel>().ConnectUI(goldWeight, attackRate, overKillRate, lowHpRate, criticalRate, _enemy.DropWeapon.GetComponent<WeaponObj>());
-
     }
 }
