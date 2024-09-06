@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utils;
+using static UnityEngine.Rendering.DebugUI;
 
 public class BattleManager : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class BattleManager : MonoBehaviour
 
         _damageQueue = new Queue<float>();
 
-        StartCoroutine(StartBattleInTime(4f));
+        StartCoroutine(StartBattleInTime(1f));
     }
 
     private void Update()
@@ -128,7 +129,7 @@ public class BattleManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(skillInfo.Clip.length + 0.5f);
+        yield return new WaitForSeconds(skillInfo.Clip.length + 0.3f);
 
         _isNextTurn = true;
     }
@@ -143,16 +144,14 @@ public class BattleManager : MonoBehaviour
     {
         int currentDamage = Mathf.CeilToInt(_damageQueue.Dequeue());
 
-        Debug.Log($"{currentDamage} �� �������� �־����ϴ�!");
+        Debug.Log($"{currentDamage} 의 데미지를 줍니다!");
 
 
         if (!_isPlayerTurn)
         {
             if (_player.GetDamageCheckDead(currentDamage))
             {
-                // TODO : ���� ����
-                Debug.Log("Game Over");
-                EndBattle();
+                StartCoroutine(EndBattle());
             }
         }
         else
@@ -164,24 +163,20 @@ public class BattleManager : MonoBehaviour
 
             if (_enemy.GetDamageCheckDead(currentDamage))
             {
-                // TODO : ��� ����
-                Debug.Log("Killed Enemy");
-                EndBattle();
+                StartCoroutine(EndBattle());
             }
         }
     }
 
     private IEnumerator StartBattleInTime(float time)
     {
-        // TODO : ���� ���� ����Ʈ ����
-
         yield return new WaitForSeconds(time);
 
         _isNextTurn = true;
         _isFighting = true;
     }
 
-    private void EndBattle()
+    private IEnumerator EndBattle()
     {
         _isFighting = false;
 
@@ -190,12 +185,13 @@ public class BattleManager : MonoBehaviour
             _enemy.PlayAnimationClip("Die");
             _player.GetComponent<Animator>().Play("Win");
         }
-
         else
         {
             _player.GetComponent<Animator>().Play("Die");
             GameOver.SetActive(true);
         }
+
+        yield return new WaitForSeconds(2f);
 
 
         float goldWeight = 1f;
@@ -205,21 +201,28 @@ public class BattleManager : MonoBehaviour
         float lowHpRate;
         float criticalRate;
 
-        // 1. �÷��̾� ���� Ƚ��
+        // 1. 공격 빈도 배수
         attackRate = 1f + _playerAttackCount / 100;
 
-        // 2. ����ų ����Ʈ
+        // 2. 체력보다 많은 양의 데미지로 죽였을 때의 배수
         overKillRate = 1f + Mathf.Abs(_enemy.Status.Hp / _enemy.Status.MaxHp) * 6;
 
-        // 3. �÷��̾� ü�� ����
-        lowHpRate = 1f;
+        // 3. 체력이 낮을 때 배수
+        lowHpRate = 1f + (_player.Status.Hp <= _player.Status.MaxHp * 0.1f ? 3f : 3f * (1f - _player.Status.Hp / _player.Status.MaxHp));
 
-        // 4. ������ ����
-        criticalRate = 1f + _criticalAttackCount / 10;
+        // 4. 강력한 공격을 수행했을 때의 배수
+        criticalRate = 1f + _criticalAttackCount / 2;
 
         goldWeight *= attackRate * overKillRate * lowHpRate * criticalRate;
 
-        // TODO : ��� �߰�
-        GameObject.FindAnyObjectByType<ShowClearPanel>().ConnectUI(goldWeight, attackRate, overKillRate, lowHpRate, criticalRate, _enemy.DropWeapon.GetComponent<WeaponObj>());
+        FindAnyObjectByType<ShowClearPanel>().
+            ConnectUI(
+                goldWeight,
+                attackRate,
+                overKillRate,
+                lowHpRate,
+                criticalRate,
+                _enemy.DropWeapon.GetComponent<WeaponObj>()
+            );
     }
 }

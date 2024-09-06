@@ -8,4 +8,9 @@ public class ClearUI : MonoBehaviour
     {
         GameObject.Find("Canvas").GetComponent<ShowClearPanel>().SetCubeResult();
     }
+
+    public void TriggerGoldUpdate()
+    {
+        transform.parent.GetComponent<ShowClearPanel>().StartUpdateGold();
+    }
 }

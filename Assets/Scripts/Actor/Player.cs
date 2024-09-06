@@ -41,7 +41,7 @@ public class Player : ActorBase
         HealthBar.max_HP = _status.MaxHp;
         HealthBar.Initialize();
 
-        SwitchWeapon(_basicWeapon.GetComponent<WeaponObj>());
+        SwitchWeapon(GameManager.Instance.CurrentWeapon);
 
         BindActions();
     }

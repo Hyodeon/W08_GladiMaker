@@ -32,7 +32,16 @@ public class GameManager : MonoBehaviour
     public int CurrentStage { get { return _currentStage; } }
 
     [SerializeField] private List<StageInfo> _stages;
-    public List<StageInfo> Stages { get { return _stages; } }
+
+    public StageInfo CurrentStageInfo { get { return _stages[_currentStage]; } }
+
+    private PlayerBuildProperty _playerBuildProperty;
+
+    private WeaponObj _currentWeapon;
+
+    [SerializeField] private WeaponObj _basicWeapon;
+
+    public WeaponObj CurrentWeapon { get { return _currentWeapon; } }
 
     private void Start()
     {
@@ -95,9 +104,12 @@ public class GameManager : MonoBehaviour
         GameObject playerSpawnPosition = GameObject.Find("PlayerSpawnPoint");
         GameObject enemySpawnPosition = GameObject.Find("EnemySpawnPoint");
 
-        ActorBase player = Instantiate(_playerPrefab, playerSpawnPosition.transform.position, Quaternion.identity)
+        ActorBase player = Instantiate(_playerPrefab,
+            playerSpawnPosition.transform.position, Quaternion.identity)
             .GetComponent<ActorBase>();
-        ActorBase monster = Instantiate(_stages[CurrentStage].EnemyPrefab, enemySpawnPosition.transform.position, Quaternion.identity)
+
+        ActorBase monster = Instantiate(_stages[CurrentStage].EnemyPrefab,
+            enemySpawnPosition.transform.position, Quaternion.identity)
             .GetComponent<ActorBase>();
 
         if (_playerStatus == null)
@@ -125,9 +137,22 @@ public class GameManager : MonoBehaviour
         _playerStatus.Penetration = 0;
         _playerStatus.Ranged = 0;
         _playerStatus.Counter = 0;
+
+        _playerBuildProperty = GetComponent<PlayerBuildProperty>();
+
+        _currentWeapon = _basicWeapon;
     }
 
-    
+    public void EditGold(int money)
+    {
+        _playerBuildProperty._money += money;
+    }
+
+    public void SwapWeapon(WeaponObj weapon)
+    {
+        _currentWeapon = weapon;
+    }
+
 
     #region Status Management
 
