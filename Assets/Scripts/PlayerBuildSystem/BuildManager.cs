@@ -53,7 +53,6 @@ public class BuildManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("ÀÌ¾Æ¿¬");
         ChangeUI(BuildState.Train);
     }
 
@@ -86,7 +85,10 @@ public class BuildManager : MonoBehaviour
 
         if (LeftTurn == 0)
         {
-            GameManager.Instance.SwitchScene("BattleScene");
+            GameObject.FindAnyObjectByType<Battle_Load_UI>().StartLoading();
+
+
+            //GameManager.Instance.SwitchScene("BattleScene");
         }
     }
 
