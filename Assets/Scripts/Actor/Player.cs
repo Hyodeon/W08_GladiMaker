@@ -38,7 +38,7 @@ public class Player : ActorBase
 
         HealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
         HealthBar.player = this;
-        HealthBar.max_HP = _status.Hp;
+        HealthBar.max_HP = _status.MaxHp;
         HealthBar.Initialize();
 
         SwitchWeapon(_basicWeapon.GetComponent<WeaponObj>());

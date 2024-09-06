@@ -102,6 +102,7 @@ public class ActorBase : MonoBehaviour
         Status.Hp -= damage;
         Debug.Log($"{name}: {damage} 만큼의 피해를 입었습니다! (현재 체력: {Status.Hp}");
         HealthBar.current_HP = Status.Hp;
+        HealthBar.GetComponent<Animator>().Play("Damaged");
         var damageText = Instantiate(_damageTextPrefab, this.transform);
         damageText.GetComponent<RectTransform>().anchoredPosition = damageText.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 200f;
         damageText.GetComponent<TMPro.TMP_Text>().text = damage.ToString();
