@@ -6,7 +6,6 @@ using Utils;
 
 public class Player : ActorBase
 {
-    [SerializeField] HealthBar myHealthBar;
 
     private void Start()
     {
@@ -37,10 +36,10 @@ public class Player : ActorBase
             Debug.Log("[Player.cs] Player Status Initialize Error!");
         }
 
-        myHealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
-        myHealthBar.player = this;
-        myHealthBar.max_HP = _status.MaxHp;
-        myHealthBar.Initialize();
+        HealthBar = GameObject.Find("PlayerHP").GetComponent<HealthBar>();
+        HealthBar.player = this;
+        HealthBar.max_HP = _status.MaxHp;
+        HealthBar.Initialize();
 
         SwitchWeapon(_basicWeapon.GetComponent<WeaponObj>());
 

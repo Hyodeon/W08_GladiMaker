@@ -42,8 +42,6 @@ public class BattleManager : MonoBehaviour
     private int _playerAttackCount;
     private int _criticalAttackCount;
 
-    [SerializeField] GameObject ClearMenu;
-
     public void InitializeActor(ActorBase player, ActorBase enemy)
     {
 
