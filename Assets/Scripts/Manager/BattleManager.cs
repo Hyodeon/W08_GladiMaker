@@ -46,7 +46,6 @@ public class BattleManager : MonoBehaviour
 
     public void InitializeActor(ActorBase player, ActorBase enemy)
     {
-
         _player = player;
         _enemy = enemy;
 
@@ -106,6 +105,9 @@ public class BattleManager : MonoBehaviour
 
         SkillInfo skillInfo = attackAction.Invoke();
 
+        // 방어력 로직 계산
+
+
         _damageQueue.Enqueue(skillInfo.PlayerDamage * skillInfo.DamageRatio);
 
         if (_isPlayerTurn) _player.PlayAnimationClip(skillInfo.Clip.name);
@@ -129,7 +131,9 @@ public class BattleManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(skillInfo.Clip.length + 0.3f);
+        Debug.Log($"{skillInfo.Clip.length + 0.3f}초 뒤에 다음 턴 진행");
+        
+        yield return new WaitForSeconds(skillInfo.Clip.length + 0.15f);
 
         _isNextTurn = true;
     }
@@ -143,9 +147,6 @@ public class BattleManager : MonoBehaviour
     public void TakeDamage()
     {
         int currentDamage = Mathf.CeilToInt(_damageQueue.Dequeue());
-
-        Debug.Log($"{currentDamage} 의 데미지를 줍니다!");
-
 
         if (!_isPlayerTurn)
         {

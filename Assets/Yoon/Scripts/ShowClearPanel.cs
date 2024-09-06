@@ -84,8 +84,6 @@ public class ShowClearPanel : MonoBehaviour
     {
         yield return null;
 
-        Debug.Log("Update Gold Called!!");
-
         while (_currentGold < _targetGold)
         {
             yield return null;
