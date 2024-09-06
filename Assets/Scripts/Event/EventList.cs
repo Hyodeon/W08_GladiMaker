@@ -11,7 +11,7 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event0_Choice0_StrikeUp()
     {
-        GameManager.Instance.EditStrike(20);
+        GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike*20/100);
         EndTurn();
     }
     public void Event0_Choice1_MoneyEarn()
@@ -22,20 +22,20 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event1_Choice0_AllStat()
     {
-        GameManager.Instance.EditMaxHp(10);
-        GameManager.Instance.EditAttack(10);
-        GameManager.Instance.EditGuard(10);
-        GameManager.Instance.EditAccuracy(10);
-        GameManager.Instance.EditEvade(10);
-        GameManager.Instance.EditSlash(10);
-        GameManager.Instance.EditStrike(10);
-        GameManager.Instance.EditRanged(10);
-        GameManager.Instance.EditPenetration(10);
+        GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
+        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 10 / 100);
+        GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 10 / 100);
+        GameManager.Instance.EditAccuracy(GameManager.Instance.PlayerStatus.Accuracy * 10 / 100);
+        GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * 10 / 100);
+        GameManager.Instance.EditSlash(GameManager.Instance.PlayerStatus.Slash * 10 / 100);
+        GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike * 10 / 100);
+        GameManager.Instance.EditRanged(GameManager.Instance.PlayerStatus.Ranged * 10 / 100);
+        GameManager.Instance.EditPenetration(GameManager.Instance.PlayerStatus.Penetration * 10 / 100);
         EndTurn();
     }
     public void Event1_Choice1_LossHp()
     {
-        GameManager.Instance.EditMaxHp(-10);
+        GameManager.Instance.EditMaxHp(-GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
         EndTurn();
     }
     // =====================================================================
@@ -46,30 +46,30 @@ public class EventList : MonoBehaviour
     }
     public void Event2_Choice1_AttackUp()
     {
-        GameManager.Instance.EditAttack(5);
+        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 5 / 100);
         EndTurn();
     }
     // =====================================================================
     public void Event3_Choice0_AttackUp()
     {
-        GameManager.Instance.EditAttack(10);
+        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 10 / 100);
         EndTurn();
     }
     public void Event3_Choice1_LossHp()
     {
-        GameManager.Instance.EditMaxHp(-10);
+        GameManager.Instance.EditMaxHp(-GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
         BuildManager.Instance._playerBuildProperty._money += 7500;
         EndTurn();
     }
     // =====================================================================
     public void Event4_Choice0_HpUp()
     {
-        GameManager.Instance.EditMaxHp(10);
+        GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
         EndTurn();
     }
     public void Event4_Choice1_EvaUp()
     {
-        GameManager.Instance.EditEvade(10);
+        GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * 10 / 100);
         EndTurn();
     }
     // =====================================================================
@@ -77,14 +77,14 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            GameManager.Instance.EditEvade(50);
+            GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * 50 / 100);
         }
-        GameManager.Instance.EditMaxHp(-5);
+        GameManager.Instance.EditMaxHp(-GameManager.Instance.PlayerStatus.MaxHp * 5 / 100);
         EndTurn();
     }
     public void Event5_Choice1_GuardUp()
     {
-        GameManager.Instance.EditGuard(10);
+        GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 10 / 100);
         EndTurn();
     }
     // =====================================================================
@@ -132,7 +132,7 @@ public class EventList : MonoBehaviour
     }
     public void Event8_Choice1_Acc()
     {
-        GameManager.Instance.EditAccuracy(20);
+        GameManager.Instance.EditAccuracy(GameManager.Instance.PlayerStatus.Accuracy * 20 / 100);
         EndTurn();
     }
     // =====================================================================
@@ -143,21 +143,21 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event10_Choice0_AttackUp()
     {
-        GameManager.Instance.EditAttack(5);
+        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 5 / 100);
         EndTurn();
     }
     public void Event10_Choice1_AllStat()
     {
         if (UnityEngine.Random.Range(0, 101) >= 5)
         {
-            GameManager.Instance.EditMaxHp(50);
-            GameManager.Instance.EditAttack(50);
-            GameManager.Instance.EditGuard(50);
-            GameManager.Instance.EditAccuracy(50);
-            GameManager.Instance.EditEvade(50);
-            GameManager.Instance.EditSlash(50);
-            GameManager.Instance.EditStrike(50);
-            GameManager.Instance.EditRanged(50);
+            GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 50 / 100);
+            GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 50 / 100);
+            GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 50 / 100);
+            GameManager.Instance.EditAccuracy(GameManager.Instance.PlayerStatus.Accuracy * 50 / 100);
+            GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * 50 / 100);
+            GameManager.Instance.EditSlash(GameManager.Instance.PlayerStatus.Slash * 50 / 100);
+            GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike * 50 / 100);
+            GameManager.Instance.EditRanged(GameManager.Instance.PlayerStatus.Ranged * 50 / 100);
             GameManager.Instance.EditPenetration(50);
         }
         EndTurn();
@@ -165,12 +165,12 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event11_Choice0_Guard()
     {
-        GameManager.Instance.EditGuard(30);
+        GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 20 / 100);
         EndTurn();
     }
     public void Event11_Choice1_Hp()
     {
-        GameManager.Instance.EditMaxHp(30);
+        GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 20 / 100);
         EndTurn();
     }
     // =====================================================================
@@ -178,7 +178,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            GameManager.Instance.EditSlash(100);
+            GameManager.Instance.EditSlash(GameManager.Instance.PlayerStatus.Slash * 100 / 100);
         }
         EndTurn();
     }
@@ -186,7 +186,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            GameManager.Instance.EditStrike(100);
+            GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike * 100 / 100);
         }
         EndTurn();
     }
@@ -211,7 +211,7 @@ public class EventList : MonoBehaviour
     }
     public void Event14_Choice1_Att()
     {
-        GameManager.Instance.EditAttack(20);
+        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 20 / 100);
         EndTurn();
     }
 }
