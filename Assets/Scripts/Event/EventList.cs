@@ -148,7 +148,7 @@ public class EventList : MonoBehaviour
     }
     public void Event10_Choice1_AllStat()
     {
-        if (UnityEngine.Random.Range(0, 101) >= 5)
+        if (UnityEngine.Random.Range(0, 101) <= 5)
         {
             GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 50 / 100);
             GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 50 / 100);

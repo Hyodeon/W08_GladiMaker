@@ -48,7 +48,7 @@ public class BuildManager : MonoBehaviour
          }
         
         canvasChildrens = CharacterBuildObj.transform.Cast<Transform>().Select(t => t.gameObject).ToArray();
-        _playerBuildProperty = this.GetComponent<PlayerBuildProperty>();
+        _playerBuildProperty = GameManager.Instance.GetComponent<PlayerBuildProperty>();
     }
 
     private void Start()

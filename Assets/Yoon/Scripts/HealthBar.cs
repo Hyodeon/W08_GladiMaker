@@ -30,8 +30,7 @@ public class HealthBar : MonoBehaviour
 
         HP.fillAmount = target;
         HP_Effect.fillAmount = targetEffect;
-
-        HP_Amount_Text.text = $"{Mathf.CeilToInt(target * max_HP)} / {Mathf.CeilToInt(max_HP)}";
+        HP_Amount_Text.text = $"{(target * max_HP).ToString("N0")} / {max_HP.ToString("N0")}";
     }
 
 }

@@ -44,19 +44,19 @@ public class BuildItemObject : MonoBehaviour
                     trainingBar.SetBar();
                 break;
             case 1:
-                GameManager.Instance.EditMaxHp(30);
+                GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.Hp*10/100);
                 break;
             case 2:
-                GameManager.Instance.EditAttack(30);
+                GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 10 / 100);
                 break;
             case 3:
-                GameManager.Instance.EditGuard(30);
+                GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 10 / 100);
                 break;
             case 4:
-                GameManager.Instance.EditAccuracy(30);
+                GameManager.Instance.EditAccuracy(GameManager.Instance.PlayerStatus.Accuracy * 10 / 100);
                 break;
             case 5:
-                GameManager.Instance.EditEvade(30);
+                GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * 10 / 100);
                 break;
             case 6:
                 foreach (var trainingBar in _trainingBar)

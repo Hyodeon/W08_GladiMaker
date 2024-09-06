@@ -60,7 +60,7 @@ public class ShowClearPanel : MonoBehaviour
         Icon.sprite = weap.GetComponent<SpriteRenderer>().sprite;
         WeaponName.text = "<color=black>" + weap.weaponStruct._name;
         WeaponGradeType.text = $"<color=red>{weap.weapon.Tier} | {weap.weapon.Type}";
-        WeaponStat.text = "<color=black>" + weap.weaponStruct._skillName;
+        WeaponStat.text = "<color=black>Att +" + weap.weapon.WeaponDamage;
         WeaponInfo.text = "<color=orange>" + weap.weaponStruct._skillInfo;
     }
 

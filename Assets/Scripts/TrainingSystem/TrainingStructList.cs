@@ -86,7 +86,7 @@ public class TrainingStructList : MonoBehaviour
             else if (randomValue <= _percentage)
             {
                 // rate as combo
-                trainingRate *= ((1+(BuildManager.Instance.gameObject.GetComponent<PlayerBuildProperty>()._trainingRate*combo)));
+                trainingRate *= ((1+(BuildManager.Instance.gameObject.GetComponent<PlayerBuildProperty>()._trainingRate)));
                 trainingRate = (float)System.Math.Round(trainingRate,2);
                 var addStatValue = (int)(trainingRate * unit._trainingRate);
 
@@ -168,31 +168,31 @@ public class TrainingStructList : MonoBehaviour
     {
         switch (statName)
         {
-            case "Hp":
+            case "체력":
                 GameManager.Instance.EditMaxHp(value);
                 break;
-            case "Att":
+            case "공격":
                 GameManager.Instance.EditAttack(value);
                 break;
-            case "Def":
+            case "방어":
                 GameManager.Instance.EditGuard(value);
                 break;
-            case "Acc":
+            case "명중":
                 GameManager.Instance.EditAccuracy(value);
                 break;
-            case "Eva":
+            case "회피":
                 GameManager.Instance.EditEvade(value);
                 break;
-            case "Stk":
+            case "타격":
                 GameManager.Instance.EditStrike(value);
                 break;
-            case "Sla":
+            case "참격":
                 GameManager.Instance.EditSlash(value);
                 break;
-            case "Pen":
+            case "관통":
                 GameManager.Instance.EditPenetration(value);
                 break;
-            case "Ran":
+            case "투척":
                 GameManager.Instance.EditRanged(value);
                 break;
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574396903251131826}
   - component: {fileID: 6557057687422233214}
+  - component: {fileID: 1020678953766031237}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -91,3 +92,17 @@ MonoBehaviour:
   - EnemyPrefab: {fileID: 0}
     nextTurnCount: 5
     gold: 0
+--- !u!114 &1020678953766031237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3293751333319774408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c990cab03a4844c9d4893606007aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money: 0
+  _trainingRate: 0
