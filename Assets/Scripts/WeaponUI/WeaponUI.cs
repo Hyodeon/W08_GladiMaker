@@ -18,6 +18,25 @@ public class WeaponUI : MonoBehaviour
     [SerializeField] TMPro.TMP_Text _tier;
     [SerializeField] TMPro.TMP_Text _info;
 
+    public Color tierColor(Utils.WeaponTier tier)
+    {
+        switch (tier)
+        {
+            case Utils.WeaponTier.Boss:
+                return _bossTier;
+            case Utils.WeaponTier.Legendary:
+                return _legendaryTier;
+
+            case Utils.WeaponTier.Epic:
+                return _epicTier;
+            case Utils.WeaponTier.Rare:
+                return _rareTier;
+            case Utils.WeaponTier.Common:
+                return _commonTier;
+
+        }
+        return Color.black;
+    }
     public void Set(GameObject weapon)
     {
         WeaponObj weaponObj = weapon.GetComponent<WeaponObj>();
