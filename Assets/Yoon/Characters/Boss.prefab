@@ -341,7 +341,7 @@ MonoBehaviour:
   DropWeapon: {fileID: 0}
   HealthBar: {fileID: 0}
   _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
-  _maxHp: 300000000
+  _maxHp: 9999999
   _attack: 0
   _accuracy: 0
   _evade: 0

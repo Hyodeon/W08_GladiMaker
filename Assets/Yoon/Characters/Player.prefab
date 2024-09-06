@@ -554,8 +554,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e14fc1b6e3dbc64ab6933aacba9e6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
+  EnemyAvatar: {fileID: 0}
+  NormalWeapons: []
+  RareWeapons: []
+  EpicWeapons: []
+  LegendaryWeapons: []
+  DropWeapon: {fileID: 0}
+  HealthBar: {fileID: 0}
   _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
-  myHealthBar: {fileID: 0}
   _animators:
   - {fileID: 7400000, guid: 54efe21297d75f546b5e98f7af6df699, type: 2}
   - {fileID: 7400000, guid: c1154c8496ef1fc4bb617b7ac3dde6d7, type: 2}
@@ -569,7 +576,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: acedb1042d42c9b41a5d7e76f9ae4b6d, type: 2}
   - {fileID: 7400000, guid: 8fce96b33f9f28f43b59588c9690f5b1, type: 2}
   - {fileID: 7400000, guid: cefd27fbdc759da4aac47e914c1586bd, type: 2}
-  _basicWeapon: {fileID: 3103068902690859453, guid: badf27a4cef070b40bcf0bfa2aa80bf7, type: 3}
+  _basicWeapon: {fileID: 1968983242873684830, guid: 3a98ca214e6e0cb45a08a7c3564f89a3, type: 3}
   _weaponSocket: {fileID: 6566774252601598642}
 --- !u!114 &9145978135661076122
 MonoBehaviour:

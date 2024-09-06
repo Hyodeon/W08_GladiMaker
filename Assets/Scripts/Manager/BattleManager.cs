@@ -32,6 +32,9 @@ public class BattleManager : MonoBehaviour
     private int _playerAttackCount;
     private int _criticalAttackCount;
 
+
+    [SerializeField] GameObject GameOver;
+
     private void Awake()
     {
         if (_instance == null)
@@ -39,7 +42,6 @@ public class BattleManager : MonoBehaviour
             _instance = this;
         }
     }
-    [SerializeField] GameObject ClearMenu;
 
     public void InitializeActor(ActorBase player, ActorBase enemy)
     {
@@ -186,6 +188,13 @@ public class BattleManager : MonoBehaviour
         if (_isPlayerTurn)
         {
             _enemy.PlayAnimationClip("Die");
+            _player.GetComponent<Animator>().Play("Win");
+        }
+
+        else
+        {
+            _player.GetComponent<Animator>().Play("Die");
+            GameOver.SetActive(true);
         }
 
 
@@ -195,8 +204,6 @@ public class BattleManager : MonoBehaviour
         float overKillRate;
         float lowHpRate;
         float criticalRate;
-
-        _player.GetComponent<Animator>().Play("Win");
 
         // 1. �÷��̾� ���� Ƚ��
         attackRate = 1f + _playerAttackCount / 100;
