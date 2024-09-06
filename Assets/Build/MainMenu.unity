@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 33996008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 662397787}
+        m_TargetAssemblyTypeName: GameOverExit, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &33996008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +457,7 @@ GameObject:
   - component: {fileID: 662397784}
   - component: {fileID: 662397786}
   - component: {fileID: 662397785}
+  - component: {fileID: 662397787}
   m_Layer: 5
   m_Name: GameStartPanel
   m_TagString: Untagged
@@ -511,6 +524,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662397783}
   m_CullTransparentMesh: 1
+--- !u!114 &662397787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662397783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca3f3a972b70ff4b852f107e6107d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &810155965
 GameObject:
   m_ObjectHideFlags: 0
