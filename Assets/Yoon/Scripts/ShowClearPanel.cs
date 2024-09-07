@@ -108,7 +108,7 @@ public class ShowClearPanel : MonoBehaviour
     {
         foreach (var x in CubePanels)
         {
-            x.SetMyResult();
+            x.SetMyResult(weapon);
             yield return new WaitForSeconds(.5f);
         }
     }

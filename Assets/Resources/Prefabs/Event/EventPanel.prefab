@@ -928,7 +928,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8850833984977564111}
           m_TargetAssemblyTypeName: EventList, Assembly-CSharp
-          m_MethodName: Event13_Choice0_Gamble
+          m_MethodName: Event14_Choice0_Hp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -942,7 +942,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8850833984977564111}
           m_TargetAssemblyTypeName: EventList, Assembly-CSharp
-          m_MethodName: Event9_Choice0
+          m_MethodName: Event14_Choice1_Att
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
