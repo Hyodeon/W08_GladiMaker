@@ -71,7 +71,7 @@ public class CurrentWeapon : MonoBehaviour
 
         weaponType.text = myweapon.GetComponent<WeaponObj>().weapon.Type.ToString();
 
-        //weaponStat.text = 
+        weaponStat.text = $"Att + {myweapon.GetComponent<WeaponObj>().weapon.WeaponDamage}";
         weaponDesc.text = obj._skillInfo.ToString();
     }
 }
