@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class WeaponUI : MonoBehaviour
+public class WeaponUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Text Color")]
     [SerializeField] Color _bossTier;
@@ -17,6 +18,10 @@ public class WeaponUI : MonoBehaviour
     [SerializeField] TMPro.TMP_Text _name;
     [SerializeField] TMPro.TMP_Text _tier;
     [SerializeField] TMPro.TMP_Text _info;
+
+
+    [Header("Current_My_Weapon")]
+    public GameObject CurrentWeaponPanel;
 
     public Color tierColor(Utils.WeaponTier tier)
     {
@@ -89,5 +94,15 @@ public class WeaponUI : MonoBehaviour
             $"Attack +{weaponObj.weapon.WeaponDamage}\n\n" +
             $"{weaponObj.weaponStruct._skillInfo}"; //+
             //$"<color=red>Radom Option ================</color>\n\n";
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        CurrentWeaponPanel.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        CurrentWeaponPanel.SetActive(false);
     }
 }
