@@ -13,8 +13,8 @@ public class ShowClearPanel : MonoBehaviour
 
     private bool _isUpdateGold = false;
 
-    private int _targetGold;
-    private int _currentGold;
+    private float _targetGold;
+    private float _currentGold;
 
     [Header("Àû ÀÌ¸§")]
     [SerializeField] TMP_Text EnemyNameText;

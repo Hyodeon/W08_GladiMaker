@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBuildProperty : MonoBehaviour
 {
-    public int _money;
+    public float _money;
     public float _trainingRate;
 
     public void Rezero()

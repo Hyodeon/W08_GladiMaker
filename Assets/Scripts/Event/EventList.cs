@@ -191,9 +191,9 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event7_Choice0_Money()
     {
-        int totalMoney = BuildManager.Instance._playerBuildProperty._money;
+        float totalMoney = BuildManager.Instance._playerBuildProperty._money;
         BuildManager.Instance._playerBuildProperty._money = 0;
-        StatUp_Range(totalMoney / 300);
+        StatUp_Range((int)totalMoney / 300);
 
 
         EndTurn();

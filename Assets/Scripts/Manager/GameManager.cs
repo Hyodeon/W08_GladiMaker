@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
         _currentWeapon = _basicWeapon;
     }
 
-    public void EditGold(int money)
+    public void EditGold(float money)
     {
         _playerBuildProperty._money += money;
     }
