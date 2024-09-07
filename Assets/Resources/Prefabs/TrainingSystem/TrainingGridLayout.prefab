@@ -93,11 +93,11 @@ MonoBehaviour:
     trainingRate: 5
     percentWeight: 150
     isSpecial: 0
-  - color: {r: 0, g: 0.36312842, b: 1, a: 1}
+  - color: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     trainingRate: 2
     percentWeight: 30
     isSpecial: 0
-  - color: {r: 0.5707547, g: 0.727303, b: 1, a: 1}
+  - color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     trainingRate: 1
     percentWeight: 10
     isSpecial: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   - "\uAD00\uD1B5"
   - "\uD22C\uCC99"
   _percentage: 0
-  _trainDelayTime: 1
+  _trainDelayTime: 0.5
   isUsingItem: 0
 --- !u!1001 &2348511797665177522
 PrefabInstance:

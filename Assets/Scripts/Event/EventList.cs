@@ -1,9 +1,91 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class EventList : MonoBehaviour
 {
+    [SerializeField] GameObject _comboTextPrefab;
+
+    [ContextMenu("Test")]
+    void Test()
+    {
+        StatUp_HP(1000);
+    }
+
+
+    void EventResultUI(string text)
+    {
+
+        // create Combo Text
+        var comboText = Instantiate(_comboTextPrefab, this.transform.parent.parent.transform);
+        comboText.GetComponent<TMPro.TMP_Text>().fontSize = 150;
+        comboText.transform.Translate(new Vector3(0, 0, 0));
+        comboText.GetComponent<ComboTxt>().duration = 2f;
+        comboText.GetComponent<ComboTxt>().Set(text,Color.red);
+    }
+    void EarnMoney(int value)
+    {
+        EventResultUI($"돈 +{value}");
+        BuildManager.Instance._playerBuildProperty._money += 5000;
+    }
+    //========================================================================
+    void StatUp_HP(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-"; 
+        EventResultUI($"체력 {plusMinus}{GameManager.Instance.PlayerStatus.MaxHp * per / 100}");
+        GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * per / 100);
+    }
+    void StatUp_Att(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"공격 {plusMinus}{GameManager.Instance.PlayerStatus.Attack * per / 100}");
+        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * per / 100);
+    }
+    void StatUp_Def(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"방어 {plusMinus}{GameManager.Instance.PlayerStatus.Guard * per / 100}");
+        GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * per / 100);
+    }
+    void StatUp_Acc(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"명중 {plusMinus}{GameManager.Instance.PlayerStatus.Accuracy * per / 100}");
+        GameManager.Instance.EditAccuracy(GameManager.Instance.PlayerStatus.Accuracy * per / 100);
+    }
+    void StatUp_Eva(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"회피 {plusMinus}{GameManager.Instance.PlayerStatus.Evade * per / 100}");
+        GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * per / 100);
+    }
+    //===========================================================================
+    void StatUp_Slash(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"참격 {plusMinus}{GameManager.Instance.PlayerStatus.Slash * per / 100}");
+        GameManager.Instance.EditSlash(GameManager.Instance.PlayerStatus.Slash * per / 100);
+    }
+    void StatUp_Strike(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"타격 {plusMinus}{GameManager.Instance.PlayerStatus.Strike * per / 100}");
+        GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike * per / 100);
+    }
+    void StatUp_Penetrate(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"관통 {plusMinus}{GameManager.Instance.PlayerStatus.Penetration * per / 100}");
+        GameManager.Instance.EditPenetration(GameManager.Instance.PlayerStatus.Penetration * per / 100);
+    }
+    void StatUp_Range(int per)
+    {
+        string plusMinus = per >= 0 ? "+" : "-";
+        EventResultUI($"명중 {plusMinus}{GameManager.Instance.PlayerStatus.Ranged * per / 100}");
+        GameManager.Instance.EditRanged(GameManager.Instance.PlayerStatus.Ranged * per / 100);
+    }
+    //===================================================================================
     public void EndTurn()
     {
         BuildManager.Instance.ChangeUI(BuildState.TurnEnd);
@@ -11,17 +93,18 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event0_Choice0_StrikeUp()
     {
-        GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike*20/100);
+        StatUp_Strike(20);
         EndTurn();
     }
     public void Event0_Choice1_MoneyEarn()
     {
-        BuildManager.Instance._playerBuildProperty._money += 5000;
+        EarnMoney(5000);
         EndTurn();
     }
     // =====================================================================
     public void Event1_Choice0_AllStat()
     {
+        EventResultUI($"전스탯 +10%");
         GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
         GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 10 / 100);
         GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 10 / 100);
@@ -35,41 +118,41 @@ public class EventList : MonoBehaviour
     }
     public void Event1_Choice1_LossHp()
     {
-        GameManager.Instance.EditMaxHp(-GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
+        StatUp_HP(-10);
         EndTurn();
     }
     // =====================================================================
     public void Event2_Choice0_MoneyEarn()
     {
-        BuildManager.Instance._playerBuildProperty._money += 3000;
+        EarnMoney(3000);
         EndTurn();
     }
     public void Event2_Choice1_AttackUp()
     {
-        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 5 / 100);
+        StatUp_Att(5);
         EndTurn();
     }
     // =====================================================================
     public void Event3_Choice0_AttackUp()
     {
-        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 10 / 100);
+        StatUp_Att(10);
         EndTurn();
     }
     public void Event3_Choice1_LossHp()
     {
-        GameManager.Instance.EditMaxHp(-GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
+        StatUp_HP(-10);
         BuildManager.Instance._playerBuildProperty._money += 7500;
         EndTurn();
     }
     // =====================================================================
     public void Event4_Choice0_HpUp()
     {
-        GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 10 / 100);
+        StatUp_HP(10);
         EndTurn();
     }
     public void Event4_Choice1_EvaUp()
     {
-        GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * 10 / 100);
+        StatUp_Eva(10);
         EndTurn();
     }
     // =====================================================================
@@ -77,14 +160,14 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * 50 / 100);
+            StatUp_Eva(50);
         }
         GameManager.Instance.EditMaxHp(-GameManager.Instance.PlayerStatus.MaxHp * 5 / 100);
         EndTurn();
     }
     public void Event5_Choice1_GuardUp()
     {
-        GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 10 / 100);
+        StatUp_Def(10);
         EndTurn();
     }
     // =====================================================================
@@ -92,7 +175,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            BuildManager.Instance._playerBuildProperty._money += 10000;
+            EarnMoney(10000);
         }
         EndTurn();
     }
@@ -100,6 +183,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
+            EventResultUI("트레이닝 효율 + 0.1");
             BuildManager.Instance._playerBuildProperty._trainingRate += 0.1f;
         }
         EndTurn();
@@ -109,7 +193,7 @@ public class EventList : MonoBehaviour
     {
         int totalMoney = BuildManager.Instance._playerBuildProperty._money;
         BuildManager.Instance._playerBuildProperty._money = 0;
-        GameManager.Instance.EditRanged(totalMoney/300);
+        StatUp_Range(totalMoney / 300);
 
 
         EndTurn();
@@ -118,6 +202,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
+            EventResultUI("트레이닝 효율 + 0.1");
             BuildManager.Instance._playerBuildProperty._trainingRate += 0.1f;
         }
         EndTurn();
@@ -125,14 +210,12 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event8_Choice0_Attack()
     {
-        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack*(0.1f));
-
-
+        StatUp_Att(10);
         EndTurn();
     }
     public void Event8_Choice1_Acc()
     {
-        GameManager.Instance.EditAccuracy(GameManager.Instance.PlayerStatus.Accuracy * 20 / 100);
+        StatUp_Acc(20);
         EndTurn();
     }
     // =====================================================================
@@ -143,13 +226,14 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event10_Choice0_AttackUp()
     {
-        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 5 / 100);
+        StatUp_Att(5);
         EndTurn();
     }
     public void Event10_Choice1_AllStat()
     {
         if (UnityEngine.Random.Range(0, 101) <= 5)
         {
+            EventResultUI($"전스탯 +50%");
             GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 50 / 100);
             GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 50 / 100);
             GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 50 / 100);
@@ -165,12 +249,12 @@ public class EventList : MonoBehaviour
     // =====================================================================
     public void Event11_Choice0_Guard()
     {
-        GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * 20 / 100);
+        StatUp_Def(20);
         EndTurn();
     }
     public void Event11_Choice1_Hp()
     {
-        GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * 20 / 100);
+        StatUp_HP(20);
         EndTurn();
     }
     // =====================================================================
@@ -178,7 +262,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            GameManager.Instance.EditSlash(GameManager.Instance.PlayerStatus.Slash * 100 / 100);
+            StatUp_Slash(100);
         }
         EndTurn();
     }
@@ -186,7 +270,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike * 100 / 100);
+            StatUp_Strike(100);
         }
         EndTurn();
     }
@@ -195,23 +279,23 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            BuildManager.Instance._playerBuildProperty._money += 50000;
+            EarnMoney(50000);
         }
         else
         {
-            GameManager.Instance.EditMaxHp(-GameManager.Instance.PlayerStatus.MaxHp/2);
+            StatUp_HP(-50);
         }
         EndTurn();
     }
     // =====================================================================
     public void Event14_Choice0_Hp()
     {
-        GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * (0.1f));
+        StatUp_HP(10);
         EndTurn();
     }
     public void Event14_Choice1_Att()
     {
-        GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * 20 / 100);
+        StatUp_Att(20);
         EndTurn();
     }
 }

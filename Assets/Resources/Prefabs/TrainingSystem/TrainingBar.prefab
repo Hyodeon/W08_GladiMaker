@@ -478,10 +478,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainingGridLayout
       objectReference: {fileID: 0}
-    - target: {fileID: 4845774774196788001, guid: c4110ecdc1981ba4bab4cac71c170b86, type: 3}
-      propertyPath: _trainDelayTime
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7187473505349133128, guid: c4110ecdc1981ba4bab4cac71c170b86, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

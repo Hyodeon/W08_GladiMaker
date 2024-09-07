@@ -16,7 +16,7 @@ public class ComboTxt : MonoBehaviour
     {
         text = this.GetComponent<TMPro.TMP_Text>(); 
     }
-
+    
     virtual public void Set(string textValue,Color32 color)
     {
 
