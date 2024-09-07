@@ -147,7 +147,7 @@ public class BattleManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        int currentDamage = Mathf.CeilToInt(_damageQueue.Dequeue());
+        float currentDamage = (float)System.Math.Round(_damageQueue.Dequeue(),0);
 
         if (!_isPlayerTurn)
         {
@@ -208,7 +208,8 @@ public class BattleManager : MonoBehaviour
         attackRate = 1f + _playerAttackCount / 100;
 
         // 2. 체력보다 많은 양의 데미지로 죽였을 때의 배수
-        overKillRate = 1f + Mathf.Abs(_enemy.Status.Hp / _enemy.Status.MaxHp) * 6;
+        overKillRate = 1f + Mathf.Abs((float)_enemy.Status.Hp / (float)_enemy.Status.MaxHp) * 6;
+        overKillRate = overKillRate > 10000 ? 10000 : overKillRate;
 
         // 3. 체력이 낮을 때 배수
         lowHpRate = 1f + (_player.Status.Hp <= _player.Status.MaxHp * 0.1f ? 3f : 3f * (1f - _player.Status.Hp / _player.Status.MaxHp));
@@ -217,6 +218,8 @@ public class BattleManager : MonoBehaviour
         criticalRate = 1f + _criticalAttackCount / 2;
 
         goldWeight *= attackRate * overKillRate * lowHpRate * criticalRate;
+
+        GameManager.Instance.GetComponent<PlayerBuildProperty>()._trainingRate += 0.02f;
 
         FindAnyObjectByType<ShowClearPanel>().
             ConnectUI(
@@ -286,7 +289,7 @@ public class BattleManager : MonoBehaviour
 
         float defenderDefence = defender.Status.Guard;
 
-        defenderDefence *= 1f + (defenderDefence * 0.00025f);
+        defenderDefence *= 1f + (defenderDefence * 0.00005f);
 
         if (damage <= defenderDefence) { return 1; }
         else return damage - defenderDefence;

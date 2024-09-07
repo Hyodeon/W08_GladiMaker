@@ -97,7 +97,7 @@ public class ActorBase : MonoBehaviour
         return Actions[0];
     }
 
-    public bool GetDamageCheckDead(int damage)
+    public bool GetDamageCheckDead(float damage)
     {
 
         // 데미지 적용
@@ -113,7 +113,7 @@ public class ActorBase : MonoBehaviour
         damageText.GetComponent<RectTransform>().anchoredPosition = damageText.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 200f;
 
 
-        var damageTextString = damage<=0?"Evade!":damage.ToString();
+        var damageTextString = damage<=0?"Evade!":damage.ToString("F0");
         damageText.GetComponent<TMPro.TMP_Text>().color = damage <= 0 ? Color.blue : Color.red;
         damageText.GetComponent<TMPro.TMP_Text>().text = damageTextString;
 
