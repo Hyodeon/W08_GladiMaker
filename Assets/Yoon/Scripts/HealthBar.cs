@@ -20,10 +20,14 @@ public class HealthBar : MonoBehaviour
 
     public TMP_Text HP_Amount_Text;
 
-    public void Initialize() => current_HP = max_HP;
+    public void Initialize()
+    {
+        current_HP = max_HP;
+        GameManager.Instance.PlayerStatus.Hp = max_HP;
+    }
 
 
-    private void Update()
+        private void Update()
     {
         float target = Mathf.Lerp(HP.fillAmount, current_HP / max_HP, speed * Time.deltaTime);
         float targetEffect = Mathf.Lerp(HP_Effect.fillAmount, current_HP / max_HP, speedEffect * Time.deltaTime);

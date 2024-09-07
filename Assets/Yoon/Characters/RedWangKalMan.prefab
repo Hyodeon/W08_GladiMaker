@@ -941,7 +941,7 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
   _maxHp: 1000000
-  _attack: 1000
+  _attack: 100
   _accuracy: 100
   _evade: 100
   _guard: 100
