@@ -20,8 +20,6 @@ public class BuildItemObject : MonoBehaviour
 
     public void Awake()
     {
-        _trainingBar = _trainingRoom.gameObject.GetComponentsInChildren<TrainingBar>();
-        _itemShop = this.transform.parent.GetComponent<ItemShop>();
     }
 
     public void Set(BuildItemStruct buildItem)

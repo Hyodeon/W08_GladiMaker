@@ -973,6 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5724b7d393d576848b269a03688fd220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _comboTextPrefab: {fileID: 4858217172922606477, guid: 75ba98061b575004c9ca9ab71c5a5d59, type: 3}
 --- !u!1 &4128965162241146423
 GameObject:
   m_ObjectHideFlags: 0
