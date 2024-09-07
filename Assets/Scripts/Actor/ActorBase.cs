@@ -104,7 +104,7 @@ public class ActorBase : MonoBehaviour
         Debug.Log($"{name}: {damage} 만큼의 피해를 입었습니다! (현재 체력: {Status.Hp}");
         
         // 체력바 적용
-        HealthBar.current_HP -= damage;
+        HealthBar.current_HP = Status.Hp;
         HealthBar.GetComponent<Animator>().Play("Damaged");
 
         // 데미지 텍스트 적용
