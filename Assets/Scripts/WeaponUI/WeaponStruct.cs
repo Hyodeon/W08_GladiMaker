@@ -8,6 +8,7 @@ public struct WeaponStruct
 {
     public string _name;
     public string _skillName;
+    public string _itemInfo;
     public string _skillInfo;
     public List<WeaponCubeStruct> _cubeOption;
 
@@ -21,7 +22,7 @@ public struct WeaponCubeStruct
 }
 public enum WeaponCubeStat
 {
-    Hp,Att,Def,Acc,Eva,Sla,Stk,Pen,Ran
+    체력,공격,방어,명중,회피,참격,타격,관통,투척
 }
 public enum WeaponCubeTier
 {

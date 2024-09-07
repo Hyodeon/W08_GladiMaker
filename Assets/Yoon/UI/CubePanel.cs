@@ -52,27 +52,32 @@ public class CubePanel : MonoBehaviour
     {
         int rand = UnityEngine.Random.Range(0, 101);
         //일반
-        if (rand <= 33)
+        if (rand <= 40)
         {
-            weaponObj.weaponStruct._cubeOption.Add(RandomCubeStruct(WeaponCubeTier.Common));
+            var option = RandomCubeStruct(WeaponCubeTier.Common);
+            weaponObj.weaponStruct._cubeOption.Add(option);
 
             Grade_Result.color = Grade_Colors[0];
             Result_Text.color = Grade_Colors[0];
-            Result_Text.text = "일반";
+            Result_Text.text = $"일반 {option._stat }+{ option._option}%";
         }
-        else if(rand <= 66)
+        else if(rand <= 80)
         {
-            weaponObj.weaponStruct._cubeOption.Add(RandomCubeStruct(WeaponCubeTier.Epic));
+            var option = RandomCubeStruct(WeaponCubeTier.Epic);
+            weaponObj.weaponStruct._cubeOption.Add(option);
             Grade_Result.color = Grade_Colors[1];
             Result_Text.color = Grade_Colors[1];
-            Result_Text.text = "에픽";
+
+            Result_Text.text = $"에픽 {option._stat}+{option._option}%";
         }
         else
         {
-            weaponObj.weaponStruct._cubeOption.Add(RandomCubeStruct(WeaponCubeTier.Legendary));
+            var option = RandomCubeStruct(WeaponCubeTier.Legendary);
+            weaponObj.weaponStruct._cubeOption.Add(option);
             Grade_Result.color = Grade_Colors[2];
             Result_Text.color = Grade_Colors[2];
-            Result_Text.text = "레전드리";
+
+            Result_Text.text = $"레전더리 {option._stat}+{option._option}%";
         }
 
 
