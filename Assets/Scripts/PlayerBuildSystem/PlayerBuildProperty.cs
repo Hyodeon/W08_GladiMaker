@@ -7,7 +7,7 @@ public class PlayerBuildProperty : MonoBehaviour
     public int _money;
     public float _trainingRate;
 
-    private void Awake()
+    public void Rezero()
     {
         _money = 0;
         _trainingRate = 0.1f;

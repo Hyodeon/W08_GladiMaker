@@ -27,6 +27,6 @@ public class TrainingBar : MonoBehaviour
 
     private void FixedUpdate()
     {
-        this._percentText.text = $"Percent : {_trainingStructList._percentage}%";
+        this._percentText.text = $"¼º°ø  È®·ü  : {_trainingStructList._percentage}%";
     }
 }

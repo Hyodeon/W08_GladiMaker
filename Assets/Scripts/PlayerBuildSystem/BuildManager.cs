@@ -30,7 +30,7 @@ public class BuildManager : MonoBehaviour
     public PlayerBuildProperty _playerBuildProperty;
 
     [Header("Attributes")]
-    public int LeftTurn;
+    public int LeftTurn = 9999;
 
     BuildState currentState;
 
@@ -51,10 +51,12 @@ public class BuildManager : MonoBehaviour
         
         canvasChildrens = CharacterBuildObj.transform.Cast<Transform>().Select(t => t.gameObject).ToArray();
         _playerBuildProperty = GameManager.Instance.GetComponent<PlayerBuildProperty>();
+
     }
 
     private void Start()
     {
+        LeftTurn = GameManager.Instance.CurrentStageInfo.nextTurnCount;
         ChangeUI(BuildState.Train);
     }
 
@@ -115,10 +117,10 @@ public class BuildManager : MonoBehaviour
 
     void TextUpdate()
     {
-        LeftTurnUIObj.GetComponentInChildren<TMP_Text>().text = $"Left Turn : {LeftTurn.ToString()}";
+        LeftTurnUIObj.GetComponentInChildren<TMP_Text>().text = $"시합까지  <color=yellow>{LeftTurn.ToString()}</color>일";
         BuildingStatUIObj.GetComponentInChildren<TMP_Text>().text = "" +
-            $"Money : {_playerBuildProperty._money}\n" +
-            $"ComboRate : {_playerBuildProperty._trainingRate}" +
+            $"소지금 : <color=yellow>{_playerBuildProperty._money}</color>\n" +
+            $"훈련 효율 : <color=green>{_playerBuildProperty._trainingRate}</color>" +
             "";
     }
 }

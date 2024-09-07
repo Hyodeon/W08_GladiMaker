@@ -13,7 +13,6 @@ public class StatUI : MonoBehaviour
 
     void TextUpdate()
     {
-
         statTextList[0].text = "체력 : " + System.Math.Round(GameManager.Instance.PlayerStatus.MaxHp, 1).ToString();
         statTextList[1].text = "공격 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Attack, 1).ToString();
         statTextList[2].text = "방어 : " + System.Math.Round(GameManager.Instance.PlayerStatus.Guard, 1).ToString();

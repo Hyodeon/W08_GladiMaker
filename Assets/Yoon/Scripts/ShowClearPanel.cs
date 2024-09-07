@@ -62,7 +62,7 @@ public class ShowClearPanel : MonoBehaviour
 
         _currentGold = GameManager.Instance.CurrentStageInfo.gold;
         _targetGold = Mathf.CeilToInt(_currentGold * gold);
-
+        GameManager.Instance.EditGold(_targetGold);
         Gold.text = $"{_currentGold}";
         Bonus1.text = $"X{attackRate.ToString("N2")}";
         Bonus2.text = $"X{overKillRate.ToString("N2")}";
@@ -93,8 +93,6 @@ public class ShowClearPanel : MonoBehaviour
 
         _currentGold = _targetGold;
         Gold.text = _currentGold.ToString();
-
-        GameManager.Instance.EditGold(_targetGold);
     }
 
     public void StartUpdateGold()

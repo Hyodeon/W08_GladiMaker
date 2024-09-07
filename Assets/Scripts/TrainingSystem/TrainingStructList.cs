@@ -88,7 +88,7 @@ public class TrainingStructList : MonoBehaviour
             else if (randomValue <= _percentage)
             {
                 // rate as combo
-                trainingRate *= ((1+(BuildManager.Instance.gameObject.GetComponent<PlayerBuildProperty>()._trainingRate)));
+                trainingRate *= ((1+(BuildManager.Instance._playerBuildProperty._trainingRate)));
                 trainingRate = (float)System.Math.Round(trainingRate,2);
                 var addStatValue = (int)(trainingRate * unit._trainingRate);
 

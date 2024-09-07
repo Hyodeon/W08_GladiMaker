@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -105,10 +106,12 @@ public class BattleManager : MonoBehaviour
 
         SkillInfo skillInfo = attackAction.Invoke();
 
-        // 방어력 로직 계산
+        // 1. 회피 계산
+        var damage = skillInfo.PlayerDamage * skillInfo.DamageRatio;
+        if (!CalculateEvade()) damage = 0f;
 
+        _damageQueue.Enqueue(CalculateDamage(damage));
 
-        _damageQueue.Enqueue(skillInfo.PlayerDamage * skillInfo.DamageRatio);
 
         if (_isPlayerTurn) _player.PlayAnimationClip(skillInfo.Clip.name);
         else _enemy.PlayAnimationClip(skillInfo.Clip.name);
@@ -130,8 +133,6 @@ public class BattleManager : MonoBehaviour
                 attackAction.Invoke();
             }
         }
-
-        Debug.Log($"{skillInfo.Clip.length + 0.3f}초 뒤에 다음 턴 진행");
         
         yield return new WaitForSeconds(skillInfo.Clip.length + 0.15f);
 
@@ -226,5 +227,68 @@ public class BattleManager : MonoBehaviour
                 criticalRate,
                 _enemy.DropWeapon.GetComponent<WeaponObj>()
             );
+    }
+
+    private bool CalculateEvade()
+    {
+        ActorBase attacker, defender;
+
+        if (_isPlayerTurn)
+        {
+            attacker = _player;
+            defender = _enemy;
+        }
+        else
+        {
+            attacker = _enemy;
+            defender = _player;
+        }
+
+
+        float baseValue = 0.9f;
+
+        if (attacker.Status.Accuracy > defender.Status.Evade)
+        {
+            return true;
+        }
+        else if (defender.Status.Evade >= 2 * attacker.Status.Accuracy)
+        {
+            return UnityEngine.Random.Range(0,1f) <= 0.5f;
+        }
+        else
+        {
+            // evade가 accuracy보다 클 때, 선형적으로 값이 변하도록 함
+            float t = (defender.Status.Evade - attacker.Status.Accuracy) / attacker.Status.Accuracy;
+            Debug.Log("Evade Percent : " + Mathf.Lerp(baseValue, 0.5f, t));
+            return UnityEngine.Random.Range(0, 1f) <= Mathf.Lerp(baseValue, 0.5f, t);
+        }
+    }
+
+    private float CalculateDamage(float damage)
+    {
+        if (damage == 0)
+        {
+            return 0;
+        }
+
+        ActorBase attacker, defender;
+
+        if (_isPlayerTurn)
+        {
+            attacker = _player;
+            defender = _enemy;
+        }
+        else
+        {
+            attacker = _enemy;
+            defender = _player;
+        }
+
+        float defenderDefence = defender.Status.Guard;
+
+        defenderDefence *= 1f + (defenderDefence * 0.00025f);
+
+        if (damage <= defenderDefence) { return 1; }
+        else return damage - defenderDefence;
     }
 }
