@@ -14,8 +14,12 @@ public class Skill_Effect_Manager : MonoBehaviour
 
     [SerializeField] int weapon_idx = 0;
 
-    [Header("<color=red>Àû")]
-    public GameObject Current_Enemy;
+    GameObject Current_Enemy;
+
+    private void Start()
+    {
+        Current_Enemy = GameObject.FindGameObjectWithTag("Enemy").gameObject;
+    }
 
     public void Spawn_Weapon_Trail()
     {

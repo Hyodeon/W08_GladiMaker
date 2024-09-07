@@ -1917,6 +1917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2665414356198687534, guid: ce7a497289cbef64da956ba717e75daa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2950349707798901685, guid: ce7a497289cbef64da956ba717e75daa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
