@@ -185,6 +185,7 @@ public class BattleManager : MonoBehaviour
         {
             _enemy.PlayAnimationClip("Die");
             _player.GetComponent<Animator>().Play("Win");
+            _player.Status.Hp = _player.Status.MaxHp;
         }
         else
         {
