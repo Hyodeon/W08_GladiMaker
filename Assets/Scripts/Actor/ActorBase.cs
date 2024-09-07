@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -110,7 +111,14 @@ public class ActorBase : MonoBehaviour
         // 데미지 텍스트 적용
         var damageText = Instantiate(_damageTextPrefab, this.transform);
         damageText.GetComponent<RectTransform>().anchoredPosition = damageText.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 200f;
-        damageText.GetComponent<TMPro.TMP_Text>().text = damage.ToString();
+
+
+        var damageTextString = damage<=0?"Evade!":damage.ToString();
+        damageText.GetComponent<TMPro.TMP_Text>().color = damage <= 0 ? Color.blue : Color.red;
+        damageText.GetComponent<TMPro.TMP_Text>().text = damageTextString;
+
+        HealthBar.current_HP = Status.Hp;
+
         if (Status.Hp <= 0f)
         {
             return true;
@@ -161,6 +169,8 @@ public class ActorBase : MonoBehaviour
         float randum = UnityEngine.Random.Range(0.8f, 1.2f);
 
         ratio *= randum;
+
+
 
         return ratio * damage;
     }

@@ -54,6 +54,16 @@ public class GameManager : MonoBehaviour
         _currentStage = 0;
 
         _playerStatus = new Status();
+
+        InitializePlayerStatus();
+    }
+
+    public void Rezero()
+    {
+        _currentStage = 0;
+
+        _playerStatus = new Status();
+
         InitializePlayerStatus();
     }
 
@@ -69,11 +79,7 @@ public class GameManager : MonoBehaviour
         _currentStage++;
 
         Debug.Log($"현재 스테이지가 {_currentStage}이 됩니다.");
-
-        BuildManager.Instance.LeftTurn = _stages[_currentStage].nextTurnCount;
-
     }
-
 
     public void InitializeBattle()
     {
@@ -139,6 +145,7 @@ public class GameManager : MonoBehaviour
         _playerStatus.Counter = 0;
 
         _playerBuildProperty = GetComponent<PlayerBuildProperty>();
+        _playerBuildProperty.Rezero();
 
         _currentWeapon = _basicWeapon;
     }

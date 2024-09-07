@@ -801,8 +801,8 @@ MonoBehaviour:
   _damageTextPrefab: {fileID: 7888262040180227289, guid: b1b9abdc2c6445b47a8aa3e5de0fb05d, type: 3}
   _maxHp: 5555555
   _attack: 40000
-  _accuracy: 0
-  _evade: 0
+  _accuracy: 20000
+  _evade: 20000
   _guard: 0
   _strike: 0
   _slash: 0

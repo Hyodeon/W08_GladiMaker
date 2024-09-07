@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleSceneLoader : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         if (GameManager.Instance.CurrentStage == 0)
         {

@@ -445,6 +445,50 @@ PrefabInstance:
       propertyPath: _basicWeapon
       value: 
       objectReference: {fileID: 5701861276282344469, guid: badf27a4cef070b40bcf0bfa2aa80bf7, type: 3}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[0].gold
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[1].gold
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[2].gold
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[3].gold
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[4].gold
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[5].gold
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[6].gold
+      value: 7500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[7].gold
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[8].gold
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[9].gold
+      value: 100000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[10].gold
+      value: 5000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
