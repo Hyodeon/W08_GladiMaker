@@ -27,7 +27,7 @@ public class EventList : MonoBehaviour
     void EarnMoney(int value)
     {
         EventResultUI($"µ· +{value}");
-        BuildManager.Instance._playerBuildProperty._money += 5000;
+        BuildManager.Instance._playerBuildProperty._money += value;
     }
     //========================================================================
     void StatUp_HP(int per)
