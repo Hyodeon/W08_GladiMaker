@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public int CurrentStage { get { return _currentStage; } }
 
-    [SerializeField] private List<StageInfo> _stages;
+    public List<StageInfo> _stages;
 
     public StageInfo CurrentStageInfo { get { return _stages[_currentStage]; } }
 
@@ -79,6 +79,11 @@ public class GameManager : MonoBehaviour
         _currentStage++;
 
         Debug.Log($"현재 스테이지가 {_currentStage}이 됩니다.");
+
+        if(SceneManager.GetActiveScene().name == "TrainingScene")
+        {
+            GameObject.Find("UI_NextEnemy").GetComponent<NextEnemy>().AlertNextEnemy(_stages, _currentStage);
+        }
     }
 
     public void InitializeBattle()
