@@ -553,8 +553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e14fc1b6e3dbc64ab6933aacba9e6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  EnemyAvatar: {fileID: 0}
+  Name: "\uCC9C\uD2F0\uC6B0\uC2A4 4\uC138"
+  EnemyAvatar: {fileID: 21300000, guid: b69f805a1219c1645bfbe84e4278fbee, type: 3}
   NormalWeapons: []
   RareWeapons: []
   EpicWeapons: []

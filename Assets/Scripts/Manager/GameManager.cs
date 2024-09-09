@@ -158,6 +158,7 @@ public class GameManager : MonoBehaviour
     public void SwapWeapon(WeaponObj weapon)
     {
         _currentWeapon = weapon;
+
     }
 
 

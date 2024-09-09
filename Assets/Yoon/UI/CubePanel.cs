@@ -10,7 +10,6 @@ public class CubePanel : MonoBehaviour
     public Color[] Grade_Colors;
     [SerializeField] Image Grade_Result;
     [SerializeField] TMP_Text Result_Text;
-
     WeaponCubeStat GetRandomWeaponCubeStat()
     {
         WeaponCubeStat[] values = (WeaponCubeStat[])System.Enum.GetValues(typeof(WeaponCubeStat));
@@ -41,7 +40,7 @@ public class CubePanel : MonoBehaviour
                     break;
                 }
         }
-        WeaponCubeStruct weaponCubeStruct = new WeaponCubeStruct();
+        WeaponCubeStruct weaponCubeStruct = new WeaponCubeStruct(0,0,0);
         weaponCubeStruct._stat = randomStat;
         weaponCubeStruct._tier = tier;
         weaponCubeStruct._option = option;
@@ -51,10 +50,11 @@ public class CubePanel : MonoBehaviour
     public void SetMyResult(WeaponObj weaponObj)
     {
         int rand = UnityEngine.Random.Range(0, 101);
+        WeaponCubeStruct option;
         //일반
         if (rand <= 40)
         {
-            var option = RandomCubeStruct(WeaponCubeTier.Common);
+            option = RandomCubeStruct(WeaponCubeTier.Common);
             weaponObj.weaponStruct._cubeOption.Add(option);
 
             Grade_Result.color = Grade_Colors[0];
@@ -63,7 +63,7 @@ public class CubePanel : MonoBehaviour
         }
         else if(rand <= 80)
         {
-            var option = RandomCubeStruct(WeaponCubeTier.Epic);
+            option = RandomCubeStruct(WeaponCubeTier.Epic);
             weaponObj.weaponStruct._cubeOption.Add(option);
             Grade_Result.color = Grade_Colors[1];
             Result_Text.color = Grade_Colors[1];
@@ -72,7 +72,7 @@ public class CubePanel : MonoBehaviour
         }
         else
         {
-            var option = RandomCubeStruct(WeaponCubeTier.Legendary);
+            option = RandomCubeStruct(WeaponCubeTier.Legendary);
             weaponObj.weaponStruct._cubeOption.Add(option);
             Grade_Result.color = Grade_Colors[2];
             Result_Text.color = Grade_Colors[2];
@@ -80,8 +80,9 @@ public class CubePanel : MonoBehaviour
             Result_Text.text = $"레전더리 {option._stat}+{option._option}%";
         }
 
-
+        print("123");
         GetComponent<Animator>().Play("Cube_Result");
-
+        GameObject.Find("Canvas").GetComponent<ShowClearPanel>().drop_weaponStruct._cubeOption.Add(new WeaponCubeStruct(option._stat, option._tier, option._option));
+        GameObject.Find("Canvas").GetComponent<ShowClearPanel>().drop_weaponStruct._cubeOption.RemoveAt(GameObject.Find("Canvas").GetComponent<ShowClearPanel>().drop_weaponStruct._cubeOption.Count - 1);
     }
 }

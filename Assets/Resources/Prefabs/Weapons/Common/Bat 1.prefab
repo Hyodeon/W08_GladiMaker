@@ -131,5 +131,7 @@ MonoBehaviour:
   weaponStruct:
     _name: "\uAC00\uC2DC\uBE60\uB530"
     _skillName: 
+    _itemInfo: 
     _skillInfo: "\uAE38\uAC70\uB9AC\uC5D0\uC11C \uC27D\uAC8C \uC8FC\uC6B8 \uC218
       \uC788\uB294 \uB454\uAE30\uC785\uB2C8\uB2E4."
+    _cubeOption: []

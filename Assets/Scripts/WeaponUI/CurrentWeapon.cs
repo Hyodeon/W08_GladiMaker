@@ -20,23 +20,40 @@ public class CurrentWeapon : MonoBehaviour
     public TMP_Text weaponName, weaponGrade, weaponType;
     public TMP_Text weaponStat, weaponDesc, weaponSkillDesc;
 
-    
+    [Header("큐브")]
+    public TMP_Text[] Cube_Text; 
+
+
+
     void Start()
     {
-        StartCoroutine(FindPlayer());
-    }
-
-    IEnumerator FindPlayer()
-    {
-        yield return new WaitUntil(() => GameObject.FindGameObjectWithTag("Player") != null);
-        SEM = GameObject.FindGameObjectWithTag("Player").GetComponent<Skill_Effect_Manager>();
         Get_Player_Weapon_Data();
     }
 
 
+    void SetMyColor(int idx)
+    {
+        var myweapon = GameManager.Instance.CurrentWeapon;
+        switch (myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption[idx]._tier)
+        {
+            case WeaponCubeTier.Legendary:
+                Cube_Text[idx].color = Color.red;
+                Cube_Text[idx].text = "레전드리 ";
+                break;
+            case WeaponCubeTier.Epic:
+                Cube_Text[idx].color = Color.green;
+                Cube_Text[idx].text = "에픽 ";
+                break;
+            case WeaponCubeTier.Common:
+                Cube_Text[idx].color = Color.grey;
+                Cube_Text[idx].text = "일반 ";
+                break;
+        }
+    }
+
     void Get_Player_Weapon_Data()
     {
-        var myweapon = SEM.Current_Weapon;
+        var myweapon = GameManager.Instance.CurrentWeapon;
 
         weaponIcon.sprite = myweapon.GetComponent<SpriteRenderer>().sprite;
 
@@ -68,6 +85,13 @@ public class CurrentWeapon : MonoBehaviour
                 weaponGrade.text = "일반 ";
                 break;
         }
+
+        for( int i = 0; i < Cube_Text.Length; i++)
+        {
+            SetMyColor(i);
+            Cube_Text[i].text += $"{myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption[i]._stat} {myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption[i]._option}%";
+        }
+
 
         weaponType.text = myweapon.GetComponent<WeaponObj>().weapon.Type.ToString();
 
