@@ -117,10 +117,12 @@ public class BuildManager : MonoBehaviour
 
     void TextUpdate()
     {
+        var money = System.Math.Round(_playerBuildProperty._money, 0);
+        var trainingRate = System.Math.Round(_playerBuildProperty._trainingRate, 0);
         LeftTurnUIObj.GetComponentInChildren<TMP_Text>().text = $"시합까지  <color=yellow>{LeftTurn.ToString()}</color>일";
         BuildingStatUIObj.GetComponentInChildren<TMP_Text>().text = "" +
-            $"소지금 : <color=yellow>{_playerBuildProperty._money}</color>\n" +
-            $"훈련 효율 : <color=green>{_playerBuildProperty._trainingRate}</color>" +
+            $"소지금 : <color=yellow>{money}</color>\n" +
+            $"훈련 효율 : <color=green>{trainingRate}</color>" +
             "";
     }
 }
