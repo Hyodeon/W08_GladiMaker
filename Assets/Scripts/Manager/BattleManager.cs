@@ -189,7 +189,7 @@ public class BattleManager : MonoBehaviour
 
         if (_isPlayerTurn)
         {
-            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(!_isPlayerTurn);
+            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(_isPlayerTurn);
             _enemy.PlayAnimationClip("Die");
             _player.GetComponent<Animator>().Play("Win");
             _player.Status.Hp = _player.Status.MaxHp;

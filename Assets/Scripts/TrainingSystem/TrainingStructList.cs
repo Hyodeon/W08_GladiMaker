@@ -18,17 +18,18 @@ public class TrainingStructList : MonoBehaviour
     [Header("Variables")]
     public int _percentage;
     public float _trainDelayTime;
+    public float _DelayPlusTime;
     public bool isUsingItem = false;
 
     int percentChkMinScore;
     int percentChkMaxScore;
 
-    
+    float origin_DelayTime;
     
     private void Awake()
     {
         trainingUnits = this.transform.GetComponentsInChildren<TrainingUnit>();
-
+        origin_DelayTime = _trainDelayTime;
 
     }
 
@@ -70,6 +71,7 @@ public class TrainingStructList : MonoBehaviour
 
     IEnumerator TrainUnitRoutine(TrainingUnit[] units)
     {
+        _trainDelayTime = origin_DelayTime;
         BuildManager.Instance.ChangeUI(BuildState.isTraining);
 
         Dictionary<string, int> trainResult = new Dictionary<string, int>();
@@ -121,6 +123,7 @@ public class TrainingStructList : MonoBehaviour
                 SetPercentage();
 
                 yield return new WaitForSeconds(_trainDelayTime);
+                _trainDelayTime += _DelayPlusTime;
             }
             else
             {   
