@@ -131,5 +131,7 @@ MonoBehaviour:
   weaponStruct:
     _name: "\uC1E0\uB9DD\uCE58"
     _skillName: Skill_Strike_ShockWave
-    _skillInfo: "\uACF5\uACA9 \uC2DC, \uC77C\uC815 \uD655\uB960\uB85C \uCDA9\uACA9\uD30C\uB97C
-      \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
+    _itemInfo: "\uBB34\uAC81\uB2E4."
+    _skillInfo: "\uAC00\uB054 \uAC15\uD558\uAC8C \uB0B4\uB9AC\uCCD0 \uCDA9\uACA9\uD30C\uB97C
+      \uB0A0\uB9B0\uB2E4."
+    _cubeOption: []

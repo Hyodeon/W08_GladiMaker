@@ -10,6 +10,8 @@ public class CubePanel : MonoBehaviour
     public Color[] Grade_Colors;
     [SerializeField] Image Grade_Result;
     [SerializeField] TMP_Text Result_Text;
+    [SerializeField] Image CubePanelImage;
+
     WeaponCubeStat GetRandomWeaponCubeStat()
     {
         WeaponCubeStat[] values = (WeaponCubeStat[])System.Enum.GetValues(typeof(WeaponCubeStat));
@@ -59,7 +61,9 @@ public class CubePanel : MonoBehaviour
 
             Grade_Result.color = Grade_Colors[0];
             Result_Text.color = Grade_Colors[0];
-            Result_Text.text = $"일반 {option._stat }+{ option._option}%";
+            CubePanelImage.color = Grade_Colors[0];
+
+            Result_Text.text = $"일반 {option._stat}+ {option._option}%";
         }
         else if(rand <= 80)
         {
@@ -67,8 +71,9 @@ public class CubePanel : MonoBehaviour
             weaponObj.weaponStruct._cubeOption.Add(option);
             Grade_Result.color = Grade_Colors[1];
             Result_Text.color = Grade_Colors[1];
+            CubePanelImage.color = Grade_Colors[1];
 
-            Result_Text.text = $"에픽 {option._stat}+{option._option}%";
+            Result_Text.text = $"에픽 {option._stat}+ {option._option}%";
         }
         else
         {
@@ -76,8 +81,9 @@ public class CubePanel : MonoBehaviour
             weaponObj.weaponStruct._cubeOption.Add(option);
             Grade_Result.color = Grade_Colors[2];
             Result_Text.color = Grade_Colors[2];
+            CubePanelImage.color = Grade_Colors[2];
 
-            Result_Text.text = $"레전더리 {option._stat}+{option._option}%";
+            Result_Text.text = $"레전더리 {option._stat}+ {option._option}%";
         }
 
         print("123");

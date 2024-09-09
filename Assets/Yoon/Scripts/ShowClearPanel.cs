@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Utils;
 
 public class ShowClearPanel : MonoBehaviour
 {
@@ -33,8 +34,10 @@ public class ShowClearPanel : MonoBehaviour
     [SerializeField] Image Icon;
     [SerializeField] TMP_Text WeaponName;
     [SerializeField] TMP_Text WeaponGradeType;
+    [SerializeField] TMP_Text WeaponTypeText;
     [SerializeField] TMP_Text WeaponStat;
     [SerializeField] TMP_Text WeaponInfo;
+    [SerializeField] TMP_Text WeaponSkillInfo;
 
     [Header("큐브칸")]
     [SerializeField] CubePanel[] CubePanels;
@@ -91,7 +94,6 @@ public class ShowClearPanel : MonoBehaviour
 
     public void ConnectUI(float gol, float atk, float ok, float lo, float crit, WeaponObj weap)
     {
-        ClearPanel.SetActive(true);
         gold = gol;
         attackRate = atk;
         overKillRate = ok;
@@ -102,6 +104,7 @@ public class ShowClearPanel : MonoBehaviour
         _currentGold = GameManager.Instance.CurrentStageInfo.gold;
         _targetGold = Mathf.CeilToInt(_currentGold * gold);
         GameManager.Instance.EditGold(_targetGold);
+
         Gold.text = $"{_currentGold}";
         Bonus1.text = $"X{attackRate.ToString("N2")}";
         Bonus2.text = $"X{overKillRate.ToString("N2")}";
@@ -113,10 +116,16 @@ public class ShowClearPanel : MonoBehaviour
         WeaponName.text = "<color=black>" + weap.weaponStruct._name;
 
         WeaponGradeType.color = weaponItemUI.tierColor(weap.weapon.Tier);
-        WeaponGradeType.text = $"{weap.weapon.Tier} | {weap.weapon.Type}";
+        WeaponGradeType.text = $"[{ConvertWeaponGrade(weap.weapon.Tier)}]";
+        WeaponTypeText.color = Color.white;
+        WeaponTypeText.text = $"{ConvertWeaponType(weap.weapon.Type)}";
 
-        WeaponStat.text = "<color=black>Att +" + weap.weapon.WeaponDamage;
-        WeaponInfo.text = "<color=orange>" + weap.weaponStruct._skillInfo;
+
+        WeaponStat.text = "<color=white>공격 " + weap.weapon.WeaponDamage + "%";
+        WeaponInfo.text = "<color=white>" + weap.weaponStruct._itemInfo;
+        WeaponSkillInfo.text = "<color=white><스킬 설명>\n" + weap.weaponStruct._skillInfo;
+
+        ClearPanel.SetActive(true);
     }
 
     private IEnumerator UpdateGold()
@@ -170,5 +179,30 @@ public class ShowClearPanel : MonoBehaviour
 
         if (isPlayerDie) StatManage.PlayerDie.SetActive(true);
         else StatManage.EnemyDie.SetActive(true);
+    }
+
+    public string ConvertWeaponGrade(WeaponTier tier)
+    {
+        return tier switch
+        {
+            WeaponTier.Boss => "보스",
+            WeaponTier.Legendary => "전설",
+            WeaponTier.Epic => "영웅",
+            WeaponTier.Rare => "레어",
+            WeaponTier.Common => "일반",
+            _ => "뭐야 이건"
+        };
+    }
+
+    public string ConvertWeaponType(WeaponAttackType type)
+    {
+        return type switch
+        {
+            WeaponAttackType.Strike => "타격",
+            WeaponAttackType.Slash => "참격",
+            WeaponAttackType.Penetration => "관통",
+            WeaponAttackType.Ranged => "투척",
+            _ => "뭐야 이건"
+        };
     }
 }

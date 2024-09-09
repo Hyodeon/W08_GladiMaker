@@ -174,7 +174,7 @@ public class BattleManager : MonoBehaviour
     private IEnumerator StartBattleInTime(float time)
     {
         yield return new WaitForSeconds(time);
-
+        Time.timeScale = 1.2f;
         _isNextTurn = true;
         _isFighting = true;
 
@@ -234,15 +234,17 @@ public class BattleManager : MonoBehaviour
 
         GameManager.Instance.GetComponent<PlayerBuildProperty>()._trainingRate += 0.02f;
 
-        FindAnyObjectByType<ShowClearPanel>().
-            ConnectUI(
-                goldWeight,
-                attackRate,
-                overKillRate,
-                lowHpRate,
-                criticalRate,
-                _enemy.DropWeapon.GetComponent<WeaponObj>()
-            );
+        if (_isPlayerTurn)
+            FindAnyObjectByType<ShowClearPanel>().
+                ConnectUI(
+                    goldWeight,
+                    attackRate,
+                    overKillRate,
+                    lowHpRate,
+                    criticalRate,
+                    _enemy.DropWeapon.GetComponent<WeaponObj>()
+                );
+
     }
 
     private bool CalculateEvade()

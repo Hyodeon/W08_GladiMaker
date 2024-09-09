@@ -11,8 +11,8 @@ public class NextEnemy : MonoBehaviour
 
     public void AlertNextEnemy(List<StageInfo> stages, int stageIdx)
     {
-        accuracy_Text.text = $"명중 : {stages[stageIdx + 1].EnemyPrefab.GetComponent<ActorBase>().Status.Accuracy}";
-        Evade_Text.text = $"회피 : {stages[stageIdx + 1].EnemyPrefab.GetComponent<ActorBase>().Status.Evade}";
+        accuracy_Text.text = $"명중 : 알기 어렵다.";
+        Evade_Text.text = $"회피 : 잘 모르겠다.";
     }
 
 }

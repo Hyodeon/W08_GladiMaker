@@ -30,7 +30,6 @@ public class Player : ActorBase
 
         _status = GameManager.Instance.PlayerStatus;
 
-
         if (_status == null)
         {
             Debug.Log("[Player.cs] Player Status Initialize Error!");

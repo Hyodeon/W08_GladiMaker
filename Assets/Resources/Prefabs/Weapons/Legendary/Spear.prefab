@@ -131,7 +131,7 @@ MonoBehaviour:
   weaponStruct:
     _name: "\uAD81\uB2C8\uB974"
     _skillName: Skill_Penetrate_Execution
-    _itemInfo: 
-    _skillInfo: "<color=yellow>\uC720\uC131\uCC3D</color> - \uACF5\uACA9 \uC2DC,
-      \uB0AE\uC740 \uD655\uB960\uB85C \uC801\uC758 \uC2EC\uC7A5\uC774 \uAD00\uD1B5\uB429\uB2C8\uB2E4."
+    _itemInfo: "\uC2E0\uD654\uC18D\uC758 \uCC3D."
+    _skillInfo: "<color=yellow>\uC720\uC131\uCC3D</color> - \uAD81\uADF9\uC758 \uC77C\uACA9\uC73C\uB85C
+      \uC801\uC758 \uC2EC\uC7A5\uC744 \uBD80\uC21C\uB2E4."
     _cubeOption: []

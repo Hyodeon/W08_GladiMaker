@@ -87,7 +87,6 @@ public class WeaponUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 break;
 
         }
-                    
 
         _image.sprite = sr.sprite;
         _info.text = $"" +

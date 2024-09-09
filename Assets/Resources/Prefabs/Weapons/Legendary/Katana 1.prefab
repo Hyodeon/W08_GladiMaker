@@ -131,5 +131,7 @@ MonoBehaviour:
   weaponStruct:
     _name: "\uC804\uAD6D\uB3C4"
     _skillName: Skill_Slash_FullMoonSlash
-    _skillInfo: "<color=yellow>\uB9CC\uC6D4\uC77C\uC12C</color> - \uB208\uC5D0 \uBCF4\uC774\uC9C0
-      \uC54A\uB294 \uC18D\uB3C4\uB85C \uC138\uC0C1\uC744 \uAC00\uB985\uB2C8\uB2E4."
+    _itemInfo: "\uB2EC\uBE5B \uBB34\uC0AC\uC758 \uD63C."
+    _skillInfo: "<color=yellow>\uB9CC\uC6D4\uC77C\uC12C</color> - \uADF8 \uB140\uC11D\uC740
+      \uB2EC\uC870\uCC28 \uAC08\uB790\uB2E4.  \uB108\uB3C4 \uC138\uC0C1\uC744 \uAC00\uB978\uB2E4."
+    _cubeOption: []

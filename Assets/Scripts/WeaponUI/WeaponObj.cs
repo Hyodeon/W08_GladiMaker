@@ -7,5 +7,4 @@ public class WeaponObj : MonoBehaviour
     public Utils.Weapon weapon;
     public WeaponStruct weaponStruct;
 
-
 }

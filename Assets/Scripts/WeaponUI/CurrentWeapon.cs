@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 public class CurrentWeapon : MonoBehaviour
 {
@@ -61,29 +62,30 @@ public class CurrentWeapon : MonoBehaviour
         var obj = myweapon.GetComponent<WeaponObj>().weaponStruct;
 
         weaponName.text = obj._name;
-        weaponGrade.text = myweapon.GetComponent<WeaponObj>().weapon.Tier.ToString();
+        weaponGrade.text = $"[{ConvertWeaponGrade(myweapon.GetComponent<WeaponObj>().weapon.Tier)}]";
+        weaponType.text = "<color=white>" + ConvertWeaponType(myweapon.GetComponent<WeaponObj>().weapon.Type);
 
         switch (myweapon.GetComponent<WeaponObj>().weapon.Tier)
         {
             case Utils.WeaponTier.Boss:
                 weaponGrade.color = _bossTier;
-                weaponGrade.text = "º¸½º ";
+                weaponGrade.text = "[º¸½º]";
                 break;
             case Utils.WeaponTier.Legendary:
                 weaponGrade.color = _legendaryTier;
-                weaponGrade.text = "Àü¼³ ";
+                weaponGrade.text = "[Àü¼³]";
                 break;
             case Utils.WeaponTier.Epic:
                 weaponGrade.color = _epicTier;
-                weaponGrade.text = "¿µ¿õ ";
+                weaponGrade.text = "[¿µ¿õ]";
                 break;
             case Utils.WeaponTier.Rare:
                 weaponGrade.color = _rareTier;
-                weaponGrade.text = "Èñ±Í ";
+                weaponGrade.text = "[Èñ±Í]";
                 break;
             case Utils.WeaponTier.Common:
                 weaponGrade.color = _commonTier;
-                weaponGrade.text = "ÀÏ¹Ý ";
+                weaponGrade.text = "[ÀÏ¹Ý]";
                 break;
         }
 
@@ -93,10 +95,33 @@ public class CurrentWeapon : MonoBehaviour
             Cube_Text[i].text += $"{myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption[i]._stat} {myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption[i]._option}%";
         }
 
+        weaponStat.text = $"°ø°Ý {myweapon.GetComponent<WeaponObj>().weapon.WeaponDamage}%";
+        weaponDesc.text = "<color=white>" + obj._itemInfo.ToString();
+        weaponSkillDesc.text = "<color=white>" + obj._skillInfo.ToString();
+    }
 
-        weaponType.text = myweapon.GetComponent<WeaponObj>().weapon.Type.ToString();
+    public string ConvertWeaponGrade(WeaponTier tier)
+    {
+        return tier switch
+        {
+            WeaponTier.Boss => "º¸½º",
+            WeaponTier.Legendary => "Àü¼³",
+            WeaponTier.Epic => "¿µ¿õ",
+            WeaponTier.Rare => "·¹¾î",
+            WeaponTier.Common => "ÀÏ¹Ý",
+            _ => "¹¹¾ß ÀÌ°Ç"
+        };
+    }
 
-        weaponStat.text = $"Att + {myweapon.GetComponent<WeaponObj>().weapon.WeaponDamage}";
-        weaponDesc.text = obj._skillInfo.ToString();
+    public string ConvertWeaponType(WeaponAttackType type)
+    {
+        return type switch
+        {
+            WeaponAttackType.Strike => "Å¸°Ý",
+            WeaponAttackType.Slash => "Âü°Ý",
+            WeaponAttackType.Penetration => "°üÅë",
+            WeaponAttackType.Ranged => "ÅõÃ´",
+            _ => "¹¹¾ß ÀÌ°Ç"
+        };
     }
 }

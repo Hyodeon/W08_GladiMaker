@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO.Pipes;
 using UnityEngine;
 
 namespace Utils
@@ -110,6 +107,8 @@ namespace Utils
     public struct StageInfo
     {
         public GameObject EnemyPrefab;
+
+        public ActorBase EnemyInfo;
 
         public int nextTurnCount;
 
