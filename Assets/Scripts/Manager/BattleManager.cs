@@ -27,6 +27,7 @@ public class BattleManager : MonoBehaviour
 
     // is On Fighting
     private bool _isFighting;
+    public bool IsFighting { get { return _isFighting; } }
 
     private int _playerTurnCount;
     private int _enemyTurnCount;
@@ -185,18 +186,20 @@ public class BattleManager : MonoBehaviour
         Time.timeScale = 1;
         _isFighting = false;
 
+        GameObject.Find("Canvas").GetComponent<ShowClearPanel>().HideAllFlames();
+
         Camera.main.GetComponent<CameraShake>().startCameraShake(.05f, .15f);
 
         if (_isPlayerTurn)
         {
-            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(_isPlayerTurn);
+            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(false);
             _enemy.PlayAnimationClip("Die");
             _player.GetComponent<Animator>().Play("Win");
             _player.Status.Hp = _player.Status.MaxHp;
         }
         else
         {
-            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(_isPlayerTurn);
+            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(true);
             _player.GetComponent<Animator>().Play("Die");
             GameOver.SetActive(true);
         }
@@ -313,6 +316,8 @@ public class BattleManager : MonoBehaviour
         {
             yield return new WaitForSeconds(5f);
             Time.timeScale += 0.5f;
+
+
         }
 
         Time.timeScale = 1;

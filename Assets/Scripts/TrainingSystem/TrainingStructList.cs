@@ -85,6 +85,8 @@ public class TrainingStructList : MonoBehaviour
             if (failChk)
             {
                 unit.transform.GetChild(1).GetComponent<Animator>().Play("Training_Fail");
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().Play("WhyFail");
+                GameObject.FindGameObjectWithTag("Flame").GetComponent<Animator>().Play("TrainingFail");
                 unit.SetColor(Color.black);
             }
             else if (randomValue <= _percentage)

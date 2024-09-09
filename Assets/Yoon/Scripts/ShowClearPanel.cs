@@ -49,10 +49,33 @@ public class ShowClearPanel : MonoBehaviour
     public Utils.Weapon drop_Weapon;
     public WeaponStruct drop_weaponStruct;
 
+    [Header("ø¨√‚»≠ø∞")]
+    public SpriteRenderer Flame, Flame2, RedPanel;
+
 
     private void Start()
     {
         StartCoroutine(FindEnemyName());
+    }
+
+    private void Update()
+    {
+        if(BattleManager.Instance.IsFighting) SetFlameColor();
+    }
+
+    void SetFlameColor()
+    {
+        if (Time.timeScale <= 2) return;
+        Flame.color = new Color(Flame.color.r, Flame.color.g, Flame.color.b, Time.timeScale / 10);
+        Flame2.color = new Color(Flame.color.r, Flame.color.g, Flame.color.b, Time.timeScale / 10);
+        RedPanel.color = new Color(Flame.color.r, Flame.color.g, Flame.color.b, Time.timeScale / 10);
+    }
+
+    public void HideAllFlames()
+    {
+        Flame.gameObject.SetActive(false); Flame2.gameObject.SetActive(false);
+        RedPanel.gameObject.SetActive(false);
+
     }
 
 
@@ -124,7 +147,7 @@ public class ShowClearPanel : MonoBehaviour
         foreach (var x in CubePanels)
         {
             x.SetMyResult(weapon);
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.075f);
         }
     }
 

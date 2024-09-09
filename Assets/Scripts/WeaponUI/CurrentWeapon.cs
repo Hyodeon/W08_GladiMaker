@@ -34,8 +34,7 @@ public class CurrentWeapon : MonoBehaviour
     void SetMyColor(int idx)
     {
         var myweapon = GameManager.Instance.CurrentWeapon;
-
-        if (myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption[idx] == null) return;
+        if (myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption.Count <= 0) return;
         switch (myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption[idx]._tier)
         {
             case WeaponCubeTier.Legendary:
@@ -56,7 +55,7 @@ public class CurrentWeapon : MonoBehaviour
     void Get_Player_Weapon_Data()
     {
         var myweapon = GameManager.Instance.CurrentWeapon;
-
+        if (myweapon.GetComponent<WeaponObj>().weaponStruct._cubeOption.Count <= 0) return;
         weaponIcon.sprite = myweapon.GetComponent<SpriteRenderer>().sprite;
 
         var obj = myweapon.GetComponent<WeaponObj>().weaponStruct;
