@@ -93,9 +93,9 @@ MonoBehaviour:
   - _no: 0
     _sprite: {fileID: 21300000, guid: a161bc3634b9f1346b473e8293f70546, type: 3}
     _name: "<color=yellow>\uB9E5\uBC18\uC11D \uB2EC\uAC40</color>"
-    _info: "\uB9C8\uC2DC\uBA74 \uC7A0\uC2DC \uAE30\uC5B5\uC744 \uC783\uACE0 \uD6C8\uB828\uC774
-      \uB2E4\uC2DC \uC0DD\uC131\uB429\uB2C8\uB2E4."
-    _price: 20000
+    _info: "\uB9C8\uC2DC\uBA74 \uC7A0\uC2DC \uAE30\uC5B5\uC744 \uC783\uACE0 \uC774\uBC88
+      \uD134\uC758 \uD6C8\uB828\uC774 \uB2E4\uC2DC \uC0DD\uC131\uB429\uB2C8\uB2E4."
+    _price: 9000
   - _no: 1
     _sprite: {fileID: 21300000, guid: a56a4f03bd39e3f4190ba42740355ae6, type: 3}
     _name: "\uAC01\uAC1C\uBE64\uC2A4"
@@ -126,11 +126,11 @@ MonoBehaviour:
     _name: "<color=yellow>\uBD80\uCD94 \uC62C\uB9B0 \uC7A5\uC5B4\uAD6C\uC774</color>"
     _info: "\uB2E4\uC74C \uD6C8\uB828 \uC2DC, \uC2E4\uD328\uD655\uB960\uC774 \uC904\uC5B4\uB4E4\uC9C0
       \uC54A\uC2B5\uB2C8\uB2E4."
-    _price: 50000
+    _price: 30000
   - _no: 7
     _sprite: {fileID: 21300000, guid: c936af8cf96c96d4aafa0cf527426e86, type: 3}
     _name: "<color=red>\uACE0\uCD94\uC7A5\uCC38\uAE30\uB984\uBCF6\uC74C</color>"
-    _info: "\uCF64\uBCF4 \uBC30\uC728\uC774 0.1 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    _info: "\uD6C8\uB828 \uD6A8\uC728\uC774 0.1 \uC99D\uAC00\uD569\uB2C8\uB2E4."
     _price: 10000
 --- !u!1001 &1741716138134415759
 PrefabInstance:
