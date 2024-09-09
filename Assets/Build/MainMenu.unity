@@ -487,7 +487,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
       propertyPath: _stages.Array.data[10].gold
-      value: 5000
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[10].EnemyPrefab
+      value: 
+      objectReference: {fileID: 7444808472329751549, guid: 4a601ef2add75a248bc84379ed6a0f86, type: 3}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[2].nextTurnCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[6].nextTurnCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[7].nextTurnCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557057687422233214, guid: d1bb9e9670d34d44db94ee014e457caf, type: 3}
+      propertyPath: _stages.Array.data[8].nextTurnCount
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
