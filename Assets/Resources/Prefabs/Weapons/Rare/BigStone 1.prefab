@@ -131,5 +131,7 @@ MonoBehaviour:
   weaponStruct:
     _name: "\uC9F1\uB3CC"
     _skillName: Skill_Throw_SuperThrow
-    _skillInfo: "5\uD134\uC5D0 \uD55C \uBC88 \uC9F1\uB3CC\uC744 \uAC15\uD558\uAC8C
-      \uB358\uC9D1\uB2C8\uB2E4."
+    _itemInfo: "\uAD74\uB7EC\uB2E4\uB2C8\uB294 \uB2E8\uB2E8\uD55C \uB3CC./n \uAD75\uC740
+      \uAC83\uC774 \uB9C8\uC74C\uC5D0 \uB4E0\uB2E4."
+    _skillInfo: "\uB2E4\uC12F \uBC88\uC5D0 \uD55C \uBC88 \uAC15\uD558\uAC8C \uB358\uC9C4\uB2E4."
+    _cubeOption: []
