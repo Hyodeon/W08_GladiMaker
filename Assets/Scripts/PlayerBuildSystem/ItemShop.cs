@@ -20,9 +20,12 @@ public class ItemShop : MonoBehaviour
 
     public void Reset()
     {
+        List<BuildItemStruct> list = buildItemList.GetRandomObjects(3);
+        int i = 0;
         foreach (var buildItemObject in buildItemObjects)
         {
-            buildItemObject.Set(buildItemList._randomBuildItemStruct());
+            buildItemObject.Set(list[i]);
+            i++;
         }
     }
 }

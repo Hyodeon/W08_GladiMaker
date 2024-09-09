@@ -52,7 +52,7 @@ public class TrainingStructList : MonoBehaviour
             unit.Set(trainingStruct,unitText);
             percentChkMaxScore += 100;
         }
-        percentChkMinScore = percentChkMaxScore - trainingUnits[0]._trainingStruct.percentWeight;
+        percentChkMinScore = percentChkMaxScore - trainingUnits[0]._trainingStruct.percentWeight/3;
         SetPercentage();
     }
 
@@ -116,7 +116,7 @@ public class TrainingStructList : MonoBehaviour
                 
 
                 //set new percentage
-                var percentageLossRate = (isUsingItem) ? 7 : 3;
+                var percentageLossRate = (isUsingItem) ? 0 : 3;
                 percentChkMinScore -= unit._trainingStruct.percentWeight/ percentageLossRate;
                 SetPercentage();
 
