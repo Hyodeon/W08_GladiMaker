@@ -113,7 +113,8 @@ MonoBehaviour:
   - "\uAD00\uD1B5"
   - "\uD22C\uCC99"
   _percentage: 0
-  _trainDelayTime: 0.5
+  _trainDelayTime: 0.1
+  _DelayPlusTime: 0.05
   isUsingItem: 0
 --- !u!1001 &2348511797665177522
 PrefabInstance:

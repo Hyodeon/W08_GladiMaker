@@ -1,0 +1,620 @@
+fileFormatVersion: 2
+guid: 270ce282a7d3e514c93bf319a91a914b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: All_Training_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 925.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f935854095467f547b76613a44e7f223
+      internalID: 188911285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 925.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b26718451853c4eb5550484a2ac05e
+      internalID: -268723186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 925.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c6df97e47665c449e474ad639f1477
+      internalID: 12223352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 925.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3716771a963d18e4d87f63063c05dfcf
+      internalID: 2086340844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_4
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 925.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f395dee55ce2c488d3e76b32b5903e
+      internalID: -278006006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 771.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15340b460cd4cf45a0b4ba95524ccb1
+      internalID: 893123278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 771.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c7f2ece46d4304a84dd9d8429d1fa2
+      internalID: -1882657070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 771.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60bce3340f6794049b460a0fd96e2f67
+      internalID: 190844558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_8
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 771.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74aa52bf2968ea44ea9f74df0660205c
+      internalID: -2093095681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_9
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 771.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3cd45e9728ded74697a510ad0d9fcb3
+      internalID: 1909712359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 617.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88622f4dba15454489f2eb57497c1f16
+      internalID: -602442649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 617.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ffe42c37d15d7439c2feb90868d9ea
+      internalID: -51164105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 617.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a1f07d2b228a984cb4475401440fff3
+      internalID: 317638547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_13
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 617.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d69c0a750736134cacfd326b5791a36
+      internalID: 1032024287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 617.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1322ba63892b6744b9b8ad8b1e5433be
+      internalID: -911667181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68dd031463f3864abcac21abae00f6d
+      internalID: -943716804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 463.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72e5cd23a2e6064e872bff89359e156
+      internalID: -1608107024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_17
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 463.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eab90f4c57a0654ab7067654d74670e
+      internalID: -760097969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 463.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fa4c7513b775a4cabd3ad65f34d744
+      internalID: 1436113854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_19
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 463.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80d45fd58c0f22429db8b1243afadca
+      internalID: 1385360098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 309.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40fea8f170e6aa40971eeafce463be8
+      internalID: -1894914606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 309.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961348be099f04340b0ca59bdb47be53
+      internalID: 1171547072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: All_Training_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 309.7143
+        width: 384
+        height: 154.28572
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149ab8beb3a1bc746aa6e0e63fb2e691
+      internalID: 1637928715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      All_Training_0: 188911285
+      All_Training_1: -268723186
+      All_Training_10: -602442649
+      All_Training_11: -51164105
+      All_Training_12: 317638547
+      All_Training_13: 1032024287
+      All_Training_14: -911667181
+      All_Training_15: -943716804
+      All_Training_16: -1608107024
+      All_Training_17: -760097969
+      All_Training_18: 1436113854
+      All_Training_19: 1385360098
+      All_Training_2: 12223352
+      All_Training_20: -1894914606
+      All_Training_21: 1171547072
+      All_Training_22: 1637928715
+      All_Training_3: 2086340844
+      All_Training_4: -278006006
+      All_Training_5: 893123278
+      All_Training_6: -1882657070
+      All_Training_7: 190844558
+      All_Training_8: -2093095681
+      All_Training_9: 1909712359
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
