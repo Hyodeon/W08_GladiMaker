@@ -176,6 +176,8 @@ public class BattleManager : MonoBehaviour
 
         _isNextTurn = true;
         _isFighting = true;
+
+        StartCoroutine(GetFasterAfterTime());
     }
 
     private IEnumerator EndBattle()
@@ -300,5 +302,18 @@ public class BattleManager : MonoBehaviour
 
         if (damage <= defenderDefence) { return 1; }
         else return damage - defenderDefence;
+    }
+
+    private IEnumerator GetFasterAfterTime()
+    {
+        yield return null;
+
+        while (_isFighting)
+        {
+            yield return new WaitForSeconds(5f);
+            Time.timeScale += 1;
+        }
+
+        Time.timeScale = 1;
     }
 }
