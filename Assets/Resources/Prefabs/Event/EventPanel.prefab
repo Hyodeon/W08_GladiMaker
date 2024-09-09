@@ -417,7 +417,7 @@ MonoBehaviour:
           m_CallState: 2
     choicesInfo:
     - "1. \uD560\uC544\uBC84\uC9C0\uC758 \uAC00\uB974\uCE68\uC744 \uBC1B\uB294\uB2E4.<color=red>(\uD0C0\uACA9
-      + 2%)</color>"
+      + 20%)</color>"
     - "2. \uBB34\uC2DC\uD558\uACE0 \uD560\uC544\uBC84\uC9C0\uC758 \uB3C8\uC744 \uB72F\uB294\uB2E4.
       <color=red>(\uB3C8 +5000)</color>"
   - _npcSprite: {fileID: 21300000, guid: 7d93e5625591dfb46ad568bee8da1e3f, type: 3}
@@ -647,7 +647,7 @@ MonoBehaviour:
           m_CallState: 2
     choicesInfo:
     - "1. \uB625 <color=red>( 50%\uB85C \uB3C8+10000)</color>"
-    - "2.  \uD734\uC9C0 <color=red>(50%\uB85C  \uCF64\uBCF4\uD6A8\uC728+0.1)</color>"
+    - "2.  \uD734\uC9C0 <color=red>(50%\uB85C  \uD6C8\uB828 \uBC30\uC728+0.1)</color>"
   - _npcSprite: {fileID: 21300000, guid: 6c16915166f5e8146b21fc16536eaed7, type: 3}
     _title: "\uC2AC\uD508 \uB300\uB9AC\uBBF8"
     _info: "\"\uC220 \uB9C8 \uC2DC \uACE0 \uC2DC \uD37C~ \uC220 \uC774 \uBD80 \uC870
@@ -684,8 +684,7 @@ MonoBehaviour:
     choicesInfo:
     - "1. \uC54C\uBE60\uB2E4.  <color=red>( \uB3C8\uC744 \uBAA8\uB450 \uC783\uACE0,
       \uADF8\uC5D0 \uBE44\uB840\uD574\uC11C \uD22C\uCC99\uC0C1\uC2B9)</color>"
-    - "2.  \uC54C\uBE60No\uB2E4. <color=red>(\uC544\uBB34 \uC77C\uB3C4 \uC77C\uC5B4\uB098\uC9C0
-      \uC54A\uC74C)</color>"
+    - "2.  \uC54C\uBE60No\uB2E4. <color=red>(\uD6C8\uB828\uBC30\uC728 + 0.1)</color>"
   - _npcSprite: {fileID: 21300000, guid: aafd8f8e2672ec744b0cf60f5655fe9e, type: 3}
     _title: "\uBD88\uC9EC\uBF55\uC758 \uC2AC\uD508 \uC0AC\uC5F0"
     _info: "\"\uC138\uC0C1\uC774 \uBC09\uB2E4. \uB204\uAD70\uAC00\uB294 \uC0AC\uB791\uD558\uB294
