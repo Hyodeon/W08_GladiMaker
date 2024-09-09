@@ -182,20 +182,27 @@ public class BattleManager : MonoBehaviour
     {
         _isFighting = false;
 
+        Camera.main.GetComponent<CameraShake>().startCameraShake(.05f, .15f);
+
         if (_isPlayerTurn)
         {
+            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(!_isPlayerTurn);
             _enemy.PlayAnimationClip("Die");
             _player.GetComponent<Animator>().Play("Win");
             _player.Status.Hp = _player.Status.MaxHp;
         }
         else
         {
+            GameObject.Find("Canvas").GetComponent<ShowClearPanel>().ShowDieImage(_isPlayerTurn);
             _player.GetComponent<Animator>().Play("Die");
             GameOver.SetActive(true);
         }
 
-        yield return new WaitForSeconds(2f);
+        Time.timeScale = .2f;
+        yield return new WaitForSecondsRealtime(1);
+        Time.timeScale = 1;
 
+        yield return new WaitForSeconds(2f);
 
         float goldWeight = 1f;
 

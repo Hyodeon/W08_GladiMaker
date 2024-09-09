@@ -14,11 +14,18 @@ public struct WeaponStruct
 
 }
 [System.Serializable]
-public struct WeaponCubeStruct
+public class WeaponCubeStruct
 {
     public WeaponCubeStat _stat;
     public WeaponCubeTier _tier;
     public int _option;
+
+    public WeaponCubeStruct(WeaponCubeStat stat, WeaponCubeTier tier, int option)
+    {
+        _stat = stat;
+        _tier = tier;
+        _option = option;
+    }
 }
 public enum WeaponCubeStat
 {

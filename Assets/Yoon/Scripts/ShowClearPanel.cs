@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ShowClearPanel : MonoBehaviour
 {
     public GameObject ClearPanel;
+    public InGameStatPanel StatManage;
 
     public float gold, attackRate, overKillRate, LowHPRate, CriticalRate;
 
@@ -38,6 +39,17 @@ public class ShowClearPanel : MonoBehaviour
     [Header("큐브칸")]
     [SerializeField] CubePanel[] CubePanels;
 
+    [Header("클리어시 패널")]
+    public GameObject ClearEffectPanel;
+
+
+    GameObject Enemy;
+
+    [Header("드랍아이템정보")]
+    public Utils.Weapon drop_Weapon;
+    public WeaponStruct drop_weaponStruct;
+
+
     private void Start()
     {
         StartCoroutine(FindEnemyName());
@@ -47,7 +59,11 @@ public class ShowClearPanel : MonoBehaviour
     IEnumerator FindEnemyName()
     {
         yield return new WaitUntil(() => GameObject.FindGameObjectWithTag("Enemy") != null);
+        Enemy = GameObject.FindGameObjectWithTag("Enemy");
         EnemyNameText.text = GameObject.FindGameObjectWithTag("Enemy").GetComponent<ActorBase>().Name;
+
+        drop_Weapon = Enemy.GetComponent<ActorBase>().DropWeapon.GetComponent<WeaponObj>().weapon;
+        drop_weaponStruct = Enemy.GetComponent<ActorBase>().DropWeapon.GetComponent<WeaponObj>().weaponStruct;
     }
 
     public void ConnectUI(float gol, float atk, float ok, float lo, float crit, WeaponObj weap)
@@ -104,6 +120,7 @@ public class ShowClearPanel : MonoBehaviour
 
     IEnumerator Set_Cube_Result_Sequencely()
     {
+        GameObject.Find("Canvas").GetComponent<ShowClearPanel>().drop_weaponStruct._cubeOption.Clear();
         foreach (var x in CubePanels)
         {
             x.SetMyResult(weapon);
@@ -118,6 +135,17 @@ public class ShowClearPanel : MonoBehaviour
 
     public void SwapWeapon()
     {
+        weapon.weaponStruct = drop_weaponStruct;
+        weapon.weapon = drop_Weapon;
         GameManager.Instance.SwapWeapon(weapon);
+    }
+
+    public void ShowDieImage(bool isPlayerDie)
+    {
+        if (isPlayerDie) ClearEffectPanel.GetComponent<Image>().color = Color.red;
+        ClearEffectPanel.SetActive(true);
+
+        if (isPlayerDie) StatManage.PlayerDie.SetActive(true);
+        else StatManage.EnemyDie.SetActive(true);
     }
 }
