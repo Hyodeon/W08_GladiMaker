@@ -209,7 +209,7 @@ public class BattleManager : MonoBehaviour
 
         // 2. 체력보다 많은 양의 데미지로 죽였을 때의 배수
         overKillRate = 1f + Mathf.Abs((float)_enemy.Status.Hp / (float)_enemy.Status.MaxHp) * 6;
-        overKillRate = overKillRate > 10000 ? 10000 : overKillRate;
+        overKillRate = overKillRate > 20 ? 20 : overKillRate;
 
         // 3. 체력이 낮을 때 배수
         lowHpRate = 1f + (_player.Status.Hp <= _player.Status.MaxHp * 0.1f ? 3f : 3f * (1f - _player.Status.Hp / _player.Status.MaxHp));
