@@ -74,14 +74,14 @@ public class TrainingStructList : MonoBehaviour
         _trainDelayTime = origin_DelayTime;
         BuildManager.Instance.ChangeUI(BuildState.isTraining);
 
-        Dictionary<string, int> trainResult = new Dictionary<string, int>();
+        Dictionary<string, float> trainResult = new Dictionary<string, float>();
         int combo = 0;
         float trainingRate = 1;
         bool failChk = false;
         
         foreach (TrainingUnit unit in units)
         {
-            var randomValue = UnityEngine.Random.Range(0, 101);
+            var randomValue = UnityEngine.Random.Range(0, 100);
             if (failChk)
             {
                 unit.transform.GetChild(1).GetComponent<Animator>().Play("Training_Fail");
@@ -94,7 +94,7 @@ public class TrainingStructList : MonoBehaviour
                 // rate as combo
                 trainingRate *= ((1+(BuildManager.Instance._playerBuildProperty._trainingRate)));
                 trainingRate = (float)System.Math.Round(trainingRate,2);
-                var addStatValue = (int)(trainingRate * unit._trainingRate);
+                var addStatValue = (float)(trainingRate * unit._trainingRate);
 
                 // create Combo Text
                 var comboText = Instantiate(_comboTextPrefab,unit.transform);
@@ -120,8 +120,8 @@ public class TrainingStructList : MonoBehaviour
                 
 
                 //set new percentage
-                var percentageLossRate = (isUsingItem) ? 99999999 : 3;
-                percentChkMinScore -= unit._trainingStruct.percentWeight/ percentageLossRate;
+                var percentageLossRate = (isUsingItem) ? 0 : unit._trainingStruct.percentWeight / 3;
+                percentChkMinScore -= percentageLossRate;
                 SetPercentage();
 
                 yield return new WaitForSeconds(_trainDelayTime);
@@ -140,7 +140,7 @@ public class TrainingStructList : MonoBehaviour
         {
             var resultText = Instantiate(_comboTextPrefab, this.transform);
             string resultTextInfo = "";
-            foreach (KeyValuePair<string, int> kvp in trainResult)
+            foreach (KeyValuePair<string, float> kvp in trainResult)
             {
                 resultTextInfo = resultTextInfo + $" [{kvp.Key}+{kvp.Value}] ";
                 trainStat(kvp.Key, kvp.Value);
@@ -171,7 +171,7 @@ public class TrainingStructList : MonoBehaviour
             BuildManager.Instance.ChangeUI(BuildState.TurnEnd);
     }
 
-    private void trainStat(string statName, int value)
+    private void trainStat(string statName, float value)
     {
         switch (statName)
         {
