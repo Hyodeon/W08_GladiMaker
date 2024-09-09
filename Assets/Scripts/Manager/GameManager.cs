@@ -78,6 +78,8 @@ public class GameManager : MonoBehaviour
     {
         _currentStage++;
 
+        if (_currentStage >= _stages.Count) SceneManager.LoadScene("Ending");
+
         Debug.Log($"현재 스테이지가 {_currentStage}이 됩니다.");
 
         if(SceneManager.GetActiveScene().name == "TrainingScene")
