@@ -86,7 +86,7 @@ public class TrainingStructList : MonoBehaviour
             {
                 unit.transform.GetChild(1).GetComponent<Animator>().Play("Training_Fail");
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().Play("WhyFail");
-                GameObject.FindGameObjectWithTag("Flame").GetComponent<Animator>().Play("TrainingFail");
+                GameObject.Find("Flame").GetComponent<Animator>().Play("TrainingFail");
                 unit.SetColor(Color.black);
             }
             else if (randomValue <= _percentage)
@@ -120,7 +120,7 @@ public class TrainingStructList : MonoBehaviour
                 
 
                 //set new percentage
-                var percentageLossRate = (isUsingItem) ? 0 : 3;
+                var percentageLossRate = (isUsingItem) ? 99999999 : 3;
                 percentChkMinScore -= unit._trainingStruct.percentWeight/ percentageLossRate;
                 SetPercentage();
 
