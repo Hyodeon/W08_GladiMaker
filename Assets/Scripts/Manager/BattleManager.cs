@@ -182,6 +182,7 @@ public class BattleManager : MonoBehaviour
 
     private IEnumerator EndBattle()
     {
+        Time.timeScale = 1;
         _isFighting = false;
 
         Camera.main.GetComponent<CameraShake>().startCameraShake(.05f, .15f);
@@ -311,7 +312,7 @@ public class BattleManager : MonoBehaviour
         while (_isFighting)
         {
             yield return new WaitForSeconds(5f);
-            Time.timeScale += 1;
+            Time.timeScale += 0.5f;
         }
 
         Time.timeScale = 1;
