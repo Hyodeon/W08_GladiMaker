@@ -32,35 +32,35 @@ public class EventList : MonoBehaviour
     //========================================================================
     void StatUp_HP(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.MaxHp * per / 100, 0);
         EventResultUI($"체력 {plusMinus}{value}");
         GameManager.Instance.EditMaxHp(GameManager.Instance.PlayerStatus.MaxHp * per / 100);
     }
     void StatUp_Att(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Attack * per / 100, 0);
         EventResultUI($"공격 {plusMinus}{value}");
         GameManager.Instance.EditAttack(GameManager.Instance.PlayerStatus.Attack * per / 100);
     }
     void StatUp_Def(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Guard * per / 100, 0);
         EventResultUI($"방어 {plusMinus}{value}");
         GameManager.Instance.EditGuard(GameManager.Instance.PlayerStatus.Guard * per / 100);
     }
     void StatUp_Acc(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Accuracy * per / 100, 0);
         EventResultUI($"명중 {plusMinus}{value}");
         GameManager.Instance.EditAccuracy(GameManager.Instance.PlayerStatus.Accuracy * per / 100);
     }
     void StatUp_Eva(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Evade * per / 100, 0);
         EventResultUI($"회피 {plusMinus}{value}");
         GameManager.Instance.EditEvade(GameManager.Instance.PlayerStatus.Evade * per / 100);
@@ -68,28 +68,28 @@ public class EventList : MonoBehaviour
     //===========================================================================
     void StatUp_Slash(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Slash * per / 100, 0);
         EventResultUI($"참격 {plusMinus}{value}");
         GameManager.Instance.EditSlash(GameManager.Instance.PlayerStatus.Slash * per / 100);
     }
     void StatUp_Strike(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Strike * per / 100, 0);
         EventResultUI($"타격 {plusMinus}{value}");
         GameManager.Instance.EditStrike(GameManager.Instance.PlayerStatus.Strike * per / 100);
     }
     void StatUp_Penetrate(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Penetration * per / 100, 0);
         EventResultUI($"관통 {plusMinus}{value}");
         GameManager.Instance.EditPenetration(GameManager.Instance.PlayerStatus.Penetration * per / 100);
     }
     void StatUp_Range(int per)
     {
-        string plusMinus = per >= 0 ? "+" : "-";
+        string plusMinus = per >= 0 ? "+" : "";
         float value = (float)System.Math.Round(GameManager.Instance.PlayerStatus.Ranged * per / 100, 0);
         EventResultUI($"명중 {plusMinus}{value}");
         GameManager.Instance.EditRanged(GameManager.Instance.PlayerStatus.Ranged * per / 100);
@@ -192,7 +192,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            EventResultUI("훈련 배율 + 0.1");
+            EventResultUI("훈련 효율 + 0.1");
             BuildManager.Instance._playerBuildProperty._trainingRate += 0.1f;
         }
         EndTurn();
@@ -211,7 +211,7 @@ public class EventList : MonoBehaviour
     {
         if (UnityEngine.Random.Range(0, 101) >= 50)
         {
-            EventResultUI("훈련 배율 + 0.1");
+            EventResultUI("훈련 효율 + 0.1");
             BuildManager.Instance._playerBuildProperty._trainingRate += 0.1f;
         }
         EndTurn();
